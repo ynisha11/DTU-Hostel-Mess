@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/SCROLLER_ID"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+
+    android:scrollbars="vertical"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/bg_register"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp" >
+
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textOff="Student"
+                android:textOn="Only Admin"
+                android:id="@+id/toggleButton"
+                android:layout_gravity="right"
+                android:onClick="toggle"/>
+
+
+            <EditText
+            android:id="@+id/etName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"
+            android:hint="@string/hint_name"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:inputType="textCapWords"
+            android:background="#e0e0e0"
+            android:textColor="#000000"
+            android:textColorHint="#555555" />
+
+
+            <LinearLayout
+                android:id="@+id/LRoll"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp"
+                android:weightSum="1">
+
+                <Spinner
+                    android:id="@+id/spinner1"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:spinnerMode="dropdown"
+                    android:layout_weight=".41" />
+
+                <Spinner
+                    android:id="@+id/spinner2"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:spinnerMode="dropdown"
+                    android:layout_weight=".42"
+                    android:layout_marginRight="2dp"/>
+
+
+                <EditText
+                    android:id="@+id/etRollNo"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:background="#e0e0e0"
+                    android:inputType="phone"
+                    android:layout_weight=".17"
+                    android:layout_gravity="top"
+                    android:layout_marginTop="1dp"/>
+
+            </LinearLayout>
+            <EditText
+                android:id="@+id/etUsername"
+                android:visibility="gone"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:hint="Username"
+                android:singleLine="true"
+                android:background="#e0e0e0"
+                android:textColor="#000000"
+                android:textColorHint="#555555" />
+
+
+
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+
+                android:hint="@string/hint_password"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:background="#e0e0e0"
+                android:textColor="#000000"
+                android:textColorHint="#555555"  />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:orientation="horizontal">
+
+
+            <Spinner
+                android:id="@+id/spinnerHostel"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:spinnerMode="dropdown"
+                android:background="@android:drawable/btn_dropdown"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:layout_marginRight="5dp"
+                android:textColor="@color/input_register"
+                android:textColorHint="@color/input_register_hint"
+                android:layout_weight="0.6"
+                />
+
+                <EditText
+                    android:id="@+id/etRoomNo"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.4"
+                    android:layout_height="35dp"
+                    android:hint="Room No"
+                    android:inputType="phone"
+                    android:paddingLeft="10dp"
+                    android:background="#e0e0e0"
+                    android:textColor="#000000"
+                    android:textColorHint="#555555"
+                    android:layout_marginTop="0dp"/>
+
+            </LinearLayout>
+
+
+            <Spinner
+                android:id="@+id/spinnerMess"
+                android:visibility="gone"
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:spinnerMode="dropdown"
+
+                android:background="@android:drawable/btn_dropdown"
+
+                android:layout_marginBottom="10dp"
+                android:hint="@string/hint_roll"
+                android:padding="10dp"
+                android:textColor="@color/input_register"
+                android:textColorHint="@color/input_register_hint"
+                />
+
+
+
+            <EditText
+                android:id="@+id/etPhoneNo"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="#e0e0e0"
+                android:textColor="#000000"
+                android:textColorHint="#555555"
+                android:hint="@string/hint_phone"
+                android:inputType="phone"
+                android:padding="10dp"
+
+                android:singleLine="true" />
+
+
+
+
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+
+                android:hint="@string/hint_email"
+                android:inputType="textEmailAddress"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:background="#e0e0e0"
+                android:textColor="#000000"
+                android:textColorHint="#555555" />
+
+            <RadioGroup
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/veg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vegetarian"
+                    android:textColor="#FFFFFF"
+                    android:layout_weight="1"
+                    />
+
+
+                <RadioButton
+                    android:id="@+id/non"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Non-vegetarian"
+                    android:textColor="#FFFFFF"
+                    android:layout_weight="1"
+                    />
+
+            </RadioGroup>
+
+
+            <CheckBox
+                android:id="@+id/cb1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mess Secretary"
+                android:textColor="#FFFFFF"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"/>
+
+
+
+            <!-- Login Button -->
+
+            <Button
+                android:id="@+id/btSubmit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:background="#ea4c88"
+                android:text="@string/btn_register"
+                android:textColor="#FFFFFF"
+                android:onClick="submit"/>
+
+            <!-- Link to Login Screen -->
+
+            <Button
+                android:id="@+id/btLinkToLoginScreen"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:background="@null"
+                android:text="@string/btn_link_to_login"
+                android:textAllCaps="false"
+                android:textColor="#ea4c88"
+                android:textSize="15dp"
+                android:onClick="login"/>
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/progressBar"
+                android:layout_gravity="center"
+                android:visibility="gone"/>
+
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>

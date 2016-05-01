@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+
+    android:paddingTop="0dip" android:layout_gravity="top"   >
+
+    <TableRow
+        android:id="@+id/tableLayout">
+
+        <CheckBox
+            android:id="@+id/cbMessOff"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+
+            android:textSize="16sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dip"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/tvMessOff"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:visibility="gone"/>
+
+
+
+    </TableRow>
+
+
+
+</TableLayout>
+
+
+

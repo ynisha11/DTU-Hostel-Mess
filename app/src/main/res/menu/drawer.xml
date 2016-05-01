@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/messMenu"
+            android:checked="false"
+            android:icon="@drawable/ic_messmenu_black"
+            android:title="@string/mess_menu" />
+
+        <item
+            android:id="@+id/buy"
+            android:checked="false"
+            android:icon="@drawable/ic_buy_black"
+            android:title="@string/buy" />
+
+        <item
+            android:id="@+id/mess_off"
+            android:checked="false"
+            android:icon="@drawable/ic_messoff_black"
+            android:title="@string/mess_off" />
+
+
+        <item
+            android:id="@+id/monthly_bill"
+            android:checked="false"
+            android:icon="@drawable/ic_messbill_black"
+            android:title="@string/monthly_bill" />
+
+
+        <item
+            android:id="@+id/billPay"
+            android:checked="false"
+            android:icon="@drawable/ic_web"
+            android:title="Pay Bill Online" />
+
+        <item
+            android:id="@+id/profile"
+            android:checked="false"
+            android:icon="@drawable/ic_prof"
+            android:title="Update Profile" />
+
+
+        <item
+            android:id="@+id/allmail"
+            android:checked="false"
+            android:icon="@drawable/ic_feedback"
+            android:title="Feedback" />
+
+
+
+    </group>
+</menu>
