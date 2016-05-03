@@ -25,51 +25,45 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import utils.GlobalVariables;
+import utils.ListModel;
 import utils.MyAsyncTask;
 import utils.URLS;
-
 
 public class MonthlyBill extends AppCompatActivity {
 
     public ListView list2;
     public CustomAdapterBill adapter;
-    public  MonthlyBill CustomListView = null;
+    public MonthlyBill CustomListView = null;
     public ArrayList<ListModel> CustomListViewValuesArr = new ArrayList<ListModel>();
-
-
-    TextView tv;
-    TextView tvHeaderName, tvHeaderBill;
+    TextView tv, tvHeaderName, tvHeaderBill, Veg, Basic, des, mo;
+    Spinner month, year;
     private Toolbar toolbar;
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
     private String mActivityTitle;
 
-    TextView Veg, Basic, des, mo;
-
-    Spinner month, year;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_monthly_bill);
 
-        tv = (TextView)findViewById(R.id.tvBill);
-        des = (TextView)findViewById(R.id.tvDes);
-        mo = (TextView)findViewById(R.id.tvMon);
-        Veg = (TextView)findViewById(R.id.tvbasicDes);
-        Basic = (TextView)findViewById(R.id.tvbasicAmo);
+        tv = (TextView) findViewById(R.id.tvBill);
+        des = (TextView) findViewById(R.id.tvDes);
+        mo = (TextView) findViewById(R.id.tvMon);
+        Veg = (TextView) findViewById(R.id.tvbasicDes);
+        Basic = (TextView) findViewById(R.id.tvbasicAmo);
 
         month = (Spinner) findViewById(R.id.spinnerMonth);
         year = (Spinner) findViewById(R.id.spinnerYear);
-        String[] items1 = new String[]{"January", "February", "March", "April", "May", "June", "July","August", "September", "October", "November", "December"};
+        String[] items1 = new String[]{"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items1);
         month.setAdapter(adapter1);
 
         String[] items2 = new String[]{"2016", "2017", "2018"};
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items2);
         year.setAdapter(adapter2);
-
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -97,9 +91,9 @@ public class MonthlyBill extends AppCompatActivity {
                         startActivity(new Intent(MonthlyBill.this, MessMenu.class));
                     }
                     return true;
-                    // For rest of the options we just show a toast on click
+
                     case R.id.monthly_bill:
-                       // startActivity(new Intent(MonthlyBill.this, MonthlyBill.class));
+                        // startActivity(new Intent(MonthlyBill.this, MonthlyBill.class));
                         return true;
 
                     case R.id.mess_off:
@@ -111,21 +105,20 @@ public class MonthlyBill extends AppCompatActivity {
                         startActivity(new Intent(MonthlyBill.this, Profile.class));
                     }
                     return true;
+
                     case R.id.allmail:
                         Toast.makeText(getApplicationContext(), "All Mail Selected", Toast.LENGTH_SHORT).show();
                         return true;
+
                     case R.id.buy: {
                         Toast.makeText(getApplicationContext(), "Buy Food Item", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(MonthlyBill.this, Buy.class));
                     }
                     return true;
 
-                    case R.id.billPay:{
-
-                        goToUrl( "https://www.onlinesbi.com/prelogin/icollecthome.htm");
-                    }
-
-                    return true;
+                    case R.id.billPay:
+                        goToUrl("https://www.onlinesbi.com/prelogin/icollecthome.htm");
+                        return true;
 
                     default:
                         Toast.makeText(getApplicationContext(), "Somethings Wrong", Toast.LENGTH_SHORT).show();
@@ -135,12 +128,13 @@ public class MonthlyBill extends AppCompatActivity {
         });
         // Initializing Drawer Layout and ActionBarToggle
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
-        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.openDrawer, R.string.closeDrawer){
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.openDrawer, R.string.closeDrawer) {
             @Override
             public void onDrawerClosed(View drawerView) {
                 // Code here will be triggered once the drawer closes as we dont want anything to happen so we leave this blank
                 super.onDrawerClosed(drawerView);
             }
+
             @Override
             public void onDrawerOpened(View drawerView) {
                 // Code here will be triggered once the drawer open as we dont want anything to happen so we leave this blank
@@ -152,41 +146,36 @@ public class MonthlyBill extends AppCompatActivity {
         //calling sync state is necessay or else your hamburger icon wont show up
         actionBarDrawerToggle.syncState();
         mActivityTitle = getTitle().toString();
-        //  addDrawerItems();
+
         setupDrawer();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
-        tvHeaderName = (TextView)findViewById(R.id.headerName);
-        tvHeaderBill = (TextView)findViewById(R.id.headerBill);
+        tvHeaderName = (TextView) findViewById(R.id.headerName);
+        tvHeaderBill = (TextView) findViewById(R.id.headerBill);
         tvHeaderName.setText(GlobalVariables.currentName);
         tvHeaderBill.setText("Current Mess Bill : " + GlobalVariables.currentMessBill);
 
-
         CustomListView = this;
 
-        /******** Take some data in Arraylist ( CustomListViewValuesArr ) ***********/
-       // setListData();
+        // Take some data in Arraylist ( CustomListViewValuesArr )
+        Resources res = getResources();
+        list2 = (ListView) findViewById(R.id.listBill);
 
-        Resources res =getResources();
-        list2=(ListView)findViewById(R.id.listBill);
-
-        /**************** Create Custom Adapter *********/
-        adapter=new CustomAdapterBill(CustomListView, CustomListViewValuesArr,res);
+        // Create Custom Adapter
+        adapter = new CustomAdapterBill(CustomListView, CustomListViewValuesArr, res);
         list2.setAdapter(adapter);
-
-
-
     }
 
     private void setupDrawer() {
         mDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.drawer_open, R.string.drawer_close) {
-            /** Called when a drawer has settled in a completely open state. */
+            //Called when a drawer has settled in a completely open state.
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
                 getSupportActionBar().setTitle("Navigation!");
                 invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
-            /** Called when a drawer has settled in a completely closed state. */
+
+            // Called when a drawer has settled in a completely closed state.
             public void onDrawerClosed(View view) {
                 super.onDrawerClosed(view);
                 getSupportActionBar().setTitle(mActivityTitle);
@@ -236,34 +225,28 @@ public class MonthlyBill extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void goToUrl (String url) {
+    private void goToUrl(String url) {
         Uri uriUrl = Uri.parse(url);
         Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
         startActivity(launchBrowser);
     }
 
-
-    /****** Function to set data in ArrayList *************/
-    public void go(View view){
+    //Function to set data in ArrayList
+    public void go(View view) {
 
         final String selectedMonth = month.getSelectedItem().toString();
         String selectedYear = year.getSelectedItem().toString();
-
         int year = Integer.parseInt(selectedYear);
-
 
         JSONObject jsonObject = new JSONObject();
         try {
             jsonObject.put("roll_number", GlobalVariables.currentRollNo);
             jsonObject.put("month", selectedMonth);
             jsonObject.put("year", year);
-
-
         } catch (Exception e) {
             Toast.makeText(MonthlyBill.this, "" + e, Toast.LENGTH_LONG).show();
             // System.out.println("Exception in json encoding "+e);
         }
-
 
         new MyAsyncTask(MonthlyBill.this, jsonObject.toString(), URLS.API_BillHistory_URL, new MyAsyncTask.AsyncResponse() {
             @Override
@@ -273,17 +256,13 @@ public class MonthlyBill extends AppCompatActivity {
                     JSONObject response = new JSONObject(output);
                     String resultedMessage = response.getString("responseType");
 
-
                     if (resultedMessage.equals("success")) {
 
                         response = response.getJSONObject("payload");
-
                         String totalBill = response.getString("bill_amount");
-
                         JSONArray responseArr = response.getJSONArray("history");
 
-                        if(responseArr.length() ==0){
-
+                        if (responseArr.length() == 0) {
                             AlertDialog alertDialog = new AlertDialog.Builder(MonthlyBill.this).create(); //Read Update
                             alertDialog.setTitle("No History");
                             alertDialog.setMessage("You haven't bought any food items in the selected Month and Year\nPlease choose again!");
@@ -292,7 +271,6 @@ public class MonthlyBill extends AppCompatActivity {
 
                         for (int i = 0; i < responseArr.length(); i++) {
                             JSONObject childJSONObject = responseArr.getJSONObject(i);
-
                             String date = childJSONObject.getString("timestamp");
                             String mess = childJSONObject.getString("counter_name");
                             String food = childJSONObject.getString("food_item");
@@ -300,72 +278,53 @@ public class MonthlyBill extends AppCompatActivity {
 
                             String dd = date.substring(8, 10);
                             String mm = date.substring(5, 8);
-                            String yy = date.substring(0,4);
-
+                            String yy = date.substring(0, 4);
                             String time = date.substring(11);
 
                             tv.setText("Total Mess Bill : Rs " + totalBill);
-                            Veg.setText(" "+GlobalVariables.currentVegOrNon);
-
+                            Veg.setText(" " + GlobalVariables.currentVegOrNon);
 
                             des.setText(" Basic Bill ");
-                            mo.setText(selectedMonth+" Month ");
-                            if(GlobalVariables.currentVegOrNon.equals("Vegetarian")){
+                            mo.setText(selectedMonth + " Month ");
+                            if (GlobalVariables.currentVegOrNon.equals("Vegetarian")) {
                                 Basic.setText("Rs 1875");
-                            }
-
-                            else {
+                            } else {
                                 Basic.setText("Rs 1925");
                             }
 
-                            final  ListModel sched = new ListModel();
+                            final ListModel sched = new ListModel();
 
-                            /******* Firstly take data in model object ******/
-                            sched.setDateTime(dd+"-"+mm+yy+" "+time);
+                            // Firstly take data in model object
+                            sched.setDateTime(dd + "-" + mm + yy + " " + time);
                             sched.setMess(mess);
                             sched.setFood(food);
                             sched.setTotal(total);
 
-
-                            /******** Take Model Object in ArrayList **********/
+                            // Take Model Object in ArrayList
                             CustomListViewValuesArr.add(sched);
                         }
 
-
-
                         Resources res = getResources();
-                        adapter = new CustomAdapterBill(CustomListView, CustomListViewValuesArr,res);
+                        adapter = new CustomAdapterBill(CustomListView, CustomListViewValuesArr, res);
                         list2.setAdapter(adapter);
 
-
                     } else {
-
                         response = response.getJSONObject("payload");
                         String errorMessage = response.getString("message");
-                        Toast.makeText(MonthlyBill.this, errorMessage, Toast.LENGTH_LONG).show();
-
+                        Toast.makeText(MonthlyBill.this, errorMessage, Toast.LENGTH_SHORT).show();
                     }
 
                 } catch (Exception e) {
-                    Toast.makeText(MonthlyBill.this, "" + e, Toast.LENGTH_LONG).show();
+                    Toast.makeText(MonthlyBill.this, "" + e, Toast.LENGTH_SHORT).show();
                 }
 
             }
         }).execute();
-
     }
 
-
-
-    public void onItemClick(int mPosition)
-    {
+    public void onItemClick(int mPosition) {
         ListModel tempValues = (ListModel) CustomListViewValuesArr.get(mPosition);
-
-        Toast.makeText(CustomListView,
-                "" + tempValues.getItemName() +  " \nCost:" + tempValues.getCost(),
-                Toast.LENGTH_LONG)
-                .show();
+        //Toast.makeText(CustomListView,tempValues.getItemName() +  " \nCost:" + tempValues.getCost(), Toast.LENGTH_LONG).show();
     }
-
 
 }

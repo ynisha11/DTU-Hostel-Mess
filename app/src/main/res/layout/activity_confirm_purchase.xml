@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/SCROLLER_ID"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#ea4c88"
-    android:scrollbars="vertical"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:scrollbars="vertical">
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="20dp">
+
         <TextView
             android:id="@+id/tvmess"
             android:layout_width="wrap_content"
@@ -21,261 +22,290 @@
             android:padding="10dp"
             android:textColor="@color/white"
             android:textSize="25sp" />
+
         <LinearLayout
             android:id="@+id/Layout1"
-            android:visibility="gone"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="horizontal"
+            android:paddingBottom="15dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:paddingBottom="15dp"
+            android:visibility="gone"
             android:weightSum="1">
+
             <Spinner
                 android:id="@+id/spinner1"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
+                android:layout_weight="0.31"
                 android:background="@android:drawable/btn_dropdown"
-                android:spinnerMode="dropdown"
                 android:gravity="center"
-                android:layout_weight="0.31"/>
+                android:spinnerMode="dropdown" />
+
             <TextView
                 android:id="@+id/item1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
+                android:layout_weight="0.46"
                 android:padding="10dp"
-                android:textColor="@color/white"
-                android:layout_weight="0.46"/>
+                android:textColor="@color/white" />
+
             <TextView
                 android:id="@+id/price1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:padding="10dp"
-                android:textColor="@color/white"
                 android:layout_gravity="right"
-                android:layout_weight="0.23"/>
+                android:layout_marginBottom="10dp"
+                android:layout_weight="0.23"
+                android:padding="10dp"
+                android:textColor="@color/white" />
+
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/Layout2"
-            android:visibility="gone"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="horizontal"
+            android:paddingBottom="15dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:paddingBottom="15dp"
+            android:visibility="gone"
             android:weightSum="1">
+
             <Spinner
                 android:id="@+id/spinner2"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
+                android:layout_weight="0.31"
                 android:background="@android:drawable/btn_dropdown"
-                android:spinnerMode="dropdown"
                 android:gravity="center"
-                android:layout_weight="0.31"/>
+                android:spinnerMode="dropdown" />
+
             <TextView
                 android:id="@+id/item2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
+                android:layout_weight="0.46"
                 android:padding="10dp"
-                android:textColor="@color/white"
-                android:layout_weight="0.46"/>
+                android:textColor="@color/white" />
+
             <TextView
                 android:id="@+id/price2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
+                android:layout_weight="0.23"
                 android:padding="10dp"
-                android:textColor="@color/white"
-                android:layout_weight="0.23"/>
+                android:textColor="@color/white" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/Layout3"
-            android:visibility="gone"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="horizontal"
+            android:paddingBottom="15dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:paddingBottom="15dp"
+            android:visibility="gone"
             android:weightSum="1">
+
             <Spinner
                 android:id="@+id/spinner3"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
+                android:layout_weight="0.31"
                 android:background="@android:drawable/btn_dropdown"
-                android:spinnerMode="dropdown"
                 android:gravity="center"
-                android:layout_weight="0.31"/>
+                android:spinnerMode="dropdown" />
+
             <TextView
                 android:id="@+id/item3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
+                android:layout_weight="0.46"
                 android:padding="10dp"
-                android:textColor="@color/white"
-                android:layout_weight="0.46"/>
+                android:textColor="@color/white" />
+
             <TextView
                 android:id="@+id/price3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:padding="10dp"
-                android:textColor="@color/white"
                 android:layout_gravity="right"
-                android:layout_weight="0.23"/>
+                android:layout_marginBottom="10dp"
+                android:layout_weight="0.23"
+                android:padding="10dp"
+                android:textColor="@color/white" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/Layout4"
-            android:visibility="gone"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="horizontal"
+            android:paddingBottom="15dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:paddingBottom="15dp"
+            android:visibility="gone"
             android:weightSum="1">
+
             <Spinner
                 android:id="@+id/spinner4"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
+                android:layout_weight="0.31"
                 android:background="@android:drawable/btn_dropdown"
-                android:spinnerMode="dropdown"
                 android:gravity="center"
-                android:layout_weight="0.31"/>
+                android:spinnerMode="dropdown" />
+
             <TextView
                 android:id="@+id/item4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
+                android:layout_weight="0.46"
                 android:padding="10dp"
-                android:textColor="@color/white"
-                android:layout_weight="0.46"/>
+                android:textColor="@color/white" />
+
             <TextView
                 android:id="@+id/price4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
+                android:layout_weight="0.23"
                 android:padding="10dp"
-                android:textColor="@color/white"
-                android:layout_weight="0.23"/>
+                android:textColor="@color/white" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/Layout5"
-            android:visibility="gone"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="horizontal"
+            android:paddingBottom="15dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:paddingBottom="15dp"
+            android:visibility="gone"
             android:weightSum="1">
+
             <Spinner
                 android:id="@+id/spinner5"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
+                android:layout_weight="0.31"
                 android:background="@android:drawable/btn_dropdown"
-                android:spinnerMode="dropdown"
                 android:gravity="center"
-                android:layout_weight="0.31"/>
+                android:spinnerMode="dropdown" />
+
             <TextView
                 android:id="@+id/item5"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
+                android:layout_weight="0.46"
                 android:padding="10dp"
-                android:textColor="@color/white"
-                android:layout_weight="0.46"/>
+                android:textColor="@color/white" />
+
             <TextView
                 android:id="@+id/price5"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:padding="10dp"
-                android:textColor="@color/white"
                 android:layout_gravity="right"
-                android:layout_weight="0.23"/>
+                android:layout_marginBottom="10dp"
+                android:layout_weight="0.23"
+                android:padding="10dp"
+                android:textColor="@color/white" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/Layout6"
-            android:visibility="gone"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="horizontal"
+            android:paddingBottom="15dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:paddingBottom="15dp"
+            android:visibility="gone"
             android:weightSum="1">
+
             <Spinner
                 android:id="@+id/spinner6"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
+                android:layout_weight="0.31"
                 android:background="@android:drawable/btn_dropdown"
-                android:spinnerMode="dropdown"
                 android:gravity="center"
-                android:layout_weight="0.31"/>
+                android:spinnerMode="dropdown" />
+
             <TextView
                 android:id="@+id/item6"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
+                android:layout_weight="0.46"
                 android:padding="10dp"
-                android:textColor="@color/white"
-                android:layout_weight="0.46"/>
+                android:textColor="@color/white" />
+
             <TextView
                 android:id="@+id/price6"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
+                android:layout_weight="0.23"
                 android:padding="10dp"
-                android:textColor="@color/white"
-                android:layout_weight="0.23"/>
+                android:textColor="@color/white" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/Layout7"
-            android:visibility="gone"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="horizontal"
+            android:paddingBottom="15dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:paddingBottom="15dp"
+            android:visibility="gone"
             android:weightSum="1">
+
             <Spinner
                 android:id="@+id/spinner7"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
+                android:layout_weight="0.31"
                 android:background="@android:drawable/btn_dropdown"
-                android:spinnerMode="dropdown"
                 android:gravity="center"
-                android:layout_weight="0.31"/>
+                android:spinnerMode="dropdown" />
+
             <TextView
                 android:id="@+id/item7"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
+                android:layout_weight="0.46"
                 android:padding="10dp"
-                android:textColor="@color/white"
-                android:layout_weight="0.46"/>
+                android:textColor="@color/white" />
+
             <TextView
                 android:id="@+id/price7"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:padding="10dp"
-                android:textColor="@color/white"
                 android:layout_gravity="right"
-                android:layout_weight="0.23"/>
+                android:layout_marginBottom="10dp"
+                android:layout_weight="0.23"
+                android:padding="10dp"
+                android:textColor="@color/white" />
         </LinearLayout>
 
         <LinearLayout
@@ -284,38 +314,39 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="horizontal"
+            android:paddingBottom="15dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:paddingBottom="15dp"
-            android:weightSum="1"
-            android:visibility="gone">
+            android:visibility="gone"
+            android:weightSum="1">
 
             <Spinner
                 android:id="@+id/spinnerOthers"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
+                android:layout_weight="0.31"
                 android:background="@android:drawable/btn_dropdown"
-                android:spinnerMode="dropdown"
                 android:gravity="center"
-                android:layout_weight="0.31"/>
+                android:spinnerMode="dropdown" />
+
             <TextView
                 android:id="@+id/itemOthers"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
+                android:layout_weight="0.46"
                 android:padding="10dp"
-                android:textColor="@color/white"
-                android:layout_weight="0.46"/>
+                android:textColor="@color/white" />
+
             <TextView
                 android:id="@+id/priceOthers"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
+                android:layout_weight="0.23"
                 android:padding="10dp"
-                android:textColor="@color/white"
-                android:layout_weight="0.23"/>
+                android:textColor="@color/white" />
         </LinearLayout>
-
 
 
         <Button
@@ -324,14 +355,17 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="3dip"
             android:background="#FFFFFF"
+            android:onClick="confirmOrder"
             android:text="Place order"
-            android:textColor="#ea4c88"
-            android:onClick="confirmOrder" />
+            android:textColor="#ea4c88" />
+
         <ProgressBar
+            android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/progressBar"
             android:layout_gravity="center"
-            android:visibility="gone"/>
+            android:visibility="gone" />
+
     </LinearLayout>
+
 </ScrollView>
