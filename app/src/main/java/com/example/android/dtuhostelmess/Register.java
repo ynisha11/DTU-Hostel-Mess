@@ -221,7 +221,8 @@ public class Register extends AppCompatActivity {
                             Toast.makeText(Register.this, "Congrats! You have successfully registered.", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(Register.this, MessSubscribe.class));
                         } else {
-                            String errorMessage = response.getString("message");
+                            JSONObject payload = response.getJSONObject("payload");
+                            String errorMessage = payload.getString("message");
                             Toast.makeText(Register.this, errorMessage, Toast.LENGTH_LONG).show();
                         }
 

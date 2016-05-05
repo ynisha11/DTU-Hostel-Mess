@@ -24,7 +24,7 @@
 
             <include
                 android:id="@+id/toolbar"
-                layout="@layout/tool_bar" />
+                layout="@layout/tool_bar_buy" />
 
             <FrameLayout
                 android:id="@+id/frame"
@@ -42,12 +42,20 @@
 
                     <Spinner
                         android:id="@+id/spinner1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="45dp"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
                         android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
                         android:layout_marginBottom="20dp"
                         android:background="@android:drawable/btn_dropdown"
                         android:spinnerMode="dropdown" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
 
                     <ListView
                         android:id="@+id/list"
@@ -99,17 +107,12 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dip"
-                        android:background="#ea4c88"
+                        android:background="#009688"
                         android:onClick="placeOrder"
                         android:text="Place order"
                         android:textColor="@color/white" />
 
-                    <ProgressBar
-                        android:id="@+id/progressBar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:visibility="gone" />
+
 
                 </LinearLayout>
 

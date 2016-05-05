@@ -15,9 +15,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,25 +40,30 @@ public class Buy extends AppCompatActivity {
     public CustomAdapter adapter;
     public Buy CustomListView = null;
     public ArrayList<ListModel> CustomListViewValuesArr = new ArrayList<ListModel>();
-    TextView tv1, tv2, tvHeaderName, tvHeaderBill;
+    TextView tv1, tv2, tvHeaderName, tvHeaderBill, type;
     CheckBox tv;
     CheckBox cbOthers;
     EditText cbOthersName, cbOthersPrice;
     Spinner dropdown1;
+    Button bt;
     private Toolbar toolbar;
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
     private String mActivityTitle;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buy);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
+      //  type = (TextView) findViewById(R.id.tvType);
         tv = (CheckBox) findViewById(R.id.text);
         tv1 = (TextView) findViewById(R.id.text2);
         tv2 = (TextView) findViewById(R.id.text3);
+        bt = (Button) findViewById(R.id.btPlaceOrder);
 
         CustomListView = this;
         /******** Take some data in Arraylist ( CustomListViewValuesArr ) ***********/
@@ -76,6 +83,15 @@ public class Buy extends AppCompatActivity {
         String[] items = new String[]{"Aryabhatta Mess", "CVR Mess", "HJB Mess", "VVS Mess", "SNH Mess"};
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
         dropdown1.setAdapter(adapter1);
+
+        list.setVisibility(View.INVISIBLE);
+        dropdown1.setVisibility(View.INVISIBLE);
+        cbOthers.setVisibility(View.INVISIBLE);
+        cbOthersName.setVisibility(View.INVISIBLE);
+        cbOthersPrice.setVisibility(View.INVISIBLE);
+        bt.setVisibility(View.INVISIBLE);
+
+        progressBar.setVisibility(View.VISIBLE);
 
         JSONObject jsonObject = new JSONObject();
         try {
@@ -100,26 +116,156 @@ public class Buy extends AppCompatActivity {
                         response = response.getJSONObject("payload");
                         JSONArray responseArr = response.getJSONArray("food_items");
 
+                      //  int flagBeverages=0, flagChips =0, flagBiscuits =0, flagIceCreams=0;
+
+
+
                         for (int i = 0; i < responseArr.length(); i++) {
 
                             JSONObject childJSONObject = responseArr.getJSONObject(i);
                             String name = childJSONObject.getString("name");
                             String cost = childJSONObject.getString("cost");
                             String id = childJSONObject.getString("food_id");
+                            String type = childJSONObject.getString("type");
 
-                            final ListModel sched = new ListModel();
-                            /******* Firstly take data in model object ******/
-                            sched.setItemName(name);
-                            sched.setCost(cost);
-                            sched.setFoodId(id);
+//                            if(type.equals("Beverages")){
 
-                            /******** Take Model Object in ArrayList **********/
-                            CustomListViewValuesArr.add(sched);
-                        }
 
-                        Resources res = getResources();
-                        adapter = new CustomAdapter(CustomListView, CustomListViewValuesArr, res);
-                        list.setAdapter(adapter);
+
+//                              if(flagBeverages ==0){
+//                                  final ListModel sched1 = new ListModel();
+//                                  sched1.setType("Beverages");
+//                                  CustomListViewValuesArr.add(sched1);
+//                                  flagBeverages =1;
+//
+//                                  Resources res = getResources();
+//                                  adapter = new CustomAdapter(CustomListView, CustomListViewValuesArr, res);
+//                                  list.setAdapter(adapter);
+//
+//                              }
+
+                                final ListModel sched2 = new ListModel();
+
+                                /******* Firstly take data in model object ******/
+
+                                sched2.setItemName(name);
+                                sched2.setCost(cost);
+                                sched2.setFoodId(id);
+
+                                /******** Take Model Object in ArrayList **********/
+                                CustomListViewValuesArr.add(sched2);
+
+                                Resources res = getResources();
+                                adapter = new CustomAdapter(CustomListView, CustomListViewValuesArr, res);
+                                list.setAdapter(adapter);
+
+//                            }
+//
+//                            if(type.equals("Ice Creams")){
+//
+//
+//
+//                                if(flagIceCreams ==0){
+//                                    final ListModel sched3 = new ListModel();
+//                                    sched3.setType("Ice Creams");
+//                                    CustomListViewValuesArr.add(sched3);
+//                                    flagIceCreams =1;
+//
+//                                    Resources res = getResources();
+//                                    adapter = new CustomAdapter(CustomListView, CustomListViewValuesArr, res);
+//                                    list.setAdapter(adapter);
+//
+//                                }
+//
+//                               final ListModel sched4 = new ListModel();
+//
+//                                /******* Firstly take data in model object ******/
+//                                sched4.setType("");
+//                                sched4.setItemName(name);
+//                                sched4.setCost(cost);
+//                                sched4.setFoodId(id);
+//
+//                                /******** Take Model Object in ArrayList **********/
+//                                CustomListViewValuesArr.add(sched4);
+//
+//                                Resources res = getResources();
+//                                adapter = new CustomAdapter(CustomListView, CustomListViewValuesArr, res);
+//                                list.setAdapter(adapter);
+//
+//                            }
+//
+//                            if(type.equals("Chips")){
+//
+//
+//                                if(flagChips ==0){
+//                                    final ListModel sched5 = new ListModel();
+//
+//                                    sched5.setType("Chips");
+//                                    CustomListViewValuesArr.add(sched5);
+//                                    flagChips =1;
+//
+//                                }
+//
+//                                final ListModel sched6 = new ListModel();
+//
+//                                /******* Firstly take data in model object ******/
+//                                sched6.setType("");
+//                                sched6.setItemName(name);
+//                                sched6.setCost(cost);
+//                                sched6.setFoodId(id);
+//
+//                                /******** Take Model Object in ArrayList **********/
+//                                CustomListViewValuesArr.add(sched6);
+//
+//                                Resources res = getResources();
+//                                adapter = new CustomAdapter(CustomListView, CustomListViewValuesArr, res);
+//                                list.setAdapter(adapter);
+//
+//
+//
+//                            }
+//
+//
+//                            if(type.equals("Biscuits")){
+//
+//
+//
+//                                if(flagBiscuits ==0){
+//                                    final ListModel sched7 = new ListModel();
+//                                    sched7.setType("Biscuits");
+//                                    CustomListViewValuesArr.add(sched7);
+//                                    flagBiscuits =1;
+//
+//                                }
+//
+//                                final ListModel sched8 = new ListModel();
+//                                /******* Firstly take data in model object ******/
+//                                sched8.setType("");
+//                                sched8.setItemName(name);
+//                                sched8.setCost(cost);
+//                                sched8.setFoodId(id);
+//
+//                                /******** Take Model Object in ArrayList **********/
+//                                CustomListViewValuesArr.add(sched8);
+//
+//                                Resources res = getResources();
+//                                adapter = new CustomAdapter(CustomListView, CustomListViewValuesArr, res);
+//                                list.setAdapter(adapter);
+//
+//                            }
+
+//                            Resources res = getResources();
+//                            adapter = new CustomAdapter(CustomListView, CustomListViewValuesArr, res);
+//                            list.setAdapter(adapter);
+                   }
+                        list.setVisibility(View.VISIBLE);
+                        dropdown1.setVisibility(View.VISIBLE);
+                        cbOthers.setVisibility(View.VISIBLE);
+                        cbOthersName.setVisibility(View.VISIBLE);
+                        cbOthersPrice.setVisibility(View.VISIBLE);
+                        bt.setVisibility(View.VISIBLE);
+                        progressBar.setVisibility(View.GONE);
+
 
                     } else {
                         response = response.getJSONObject("payload");
@@ -133,6 +279,8 @@ public class Buy extends AppCompatActivity {
 
             }
         }).execute();
+
+        int flagBeverages=0, flagChips =0, flagBiscuits =0, flagIceCreams=0;
 
         // Initializing Toolbar and setting it as the actionbar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -174,9 +322,15 @@ public class Buy extends AppCompatActivity {
                         startActivity(new Intent(Buy.this, Profile.class));
                         return true;
 
-                    case R.id.allmail:
-                        Toast.makeText(getApplicationContext(), "All Mail Selected", Toast.LENGTH_SHORT).show();
+                    case R.id.feedbackMail: {
+                        Intent intent = new Intent(Intent.ACTION_SEND);
+                        intent.setType("plain/text");
+                        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"ynisha11@gmail.com", "maskaravivek@gmail.com"});
+                        intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback: DTU Hostel Mess App");
+                        intent.putExtra(Intent.EXTRA_TEXT, "We would love to hear your feedback!");
+                        startActivity(Intent.createChooser(intent, ""));
                         return true;
+                    }
 
                     case R.id.buy:
                         Toast.makeText(getApplicationContext(), "Buy Food Item", Toast.LENGTH_SHORT).show();

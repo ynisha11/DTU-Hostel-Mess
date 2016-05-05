@@ -1,8 +1,6 @@
 package com.example.android.dtuhostelmess;
 
-import android.content.ContentValues;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -17,7 +15,6 @@ import org.json.JSONObject;
 
 import utils.GlobalVariables;
 import utils.MyAsyncTask;
-import utils.OpenHelper;
 import utils.URLS;
 
 public class MessSubscribe extends AppCompatActivity {
@@ -79,24 +76,24 @@ public class MessSubscribe extends AppCompatActivity {
         boolean checked;
         String counter;
 
-        OpenHelper h = new OpenHelper(this);
-        SQLiteDatabase db = h.getWritableDatabase();
+//        OpenHelper h = new OpenHelper(this);
+//        SQLiteDatabase db = h.getWritableDatabase();
 
         checked = cb1.isChecked();
         if (checked) {
             counter = "1";
             addToList(counter);
-            ContentValues c = new ContentValues();
-            c.put("Id", "1");
-            c.put("CounterName", "CVR Mess");
-            c.put("MenuVersion", "0");
-            long id = db.insert("Counter", null, c);
-
-            if (id == -1)
-                Toast.makeText(this, "Not Subscribed CVR Mess Menu", Toast.LENGTH_SHORT).show();
-            else {
-                Toast.makeText(this, "Subscribed CVR Mess Menu", Toast.LENGTH_SHORT).show();
-            }
+//            ContentValues c = new ContentValues();
+//            c.put("Id", "1");
+//            c.put("CounterName", "CVR Mess");
+//            c.put("MenuVersion", "0");
+//            long id = db.insert("Counter", null, c);
+//
+//            if (id == -1)
+//                Toast.makeText(this, "Not Subscribed CVR Mess Menu", Toast.LENGTH_SHORT).show();
+//            else {
+//                Toast.makeText(this, "Subscribed CVR Mess Menu", Toast.LENGTH_SHORT).show();
+//            }
 
         }
 
@@ -104,51 +101,51 @@ public class MessSubscribe extends AppCompatActivity {
         if (checked) {
             counter = "2";
             addToList(counter);
-            ContentValues c = new ContentValues();
-            c.put("Id", "2");
-            c.put("CounterName", "HJB Mess");
-            c.put("MenuVersion", "0");
-            long id = db.insert("Counter", null, c);
-
-            if (id == -1)
-                Toast.makeText(this, "Not Subscribed HJB Mess Menu", Toast.LENGTH_SHORT).show();
-            else {
-                Toast.makeText(this, "Subscribed HJB Mess Menu", Toast.LENGTH_SHORT).show();
-            }
+//            ContentValues c = new ContentValues();
+//            c.put("Id", "2");
+//            c.put("CounterName", "HJB Mess");
+//            c.put("MenuVersion", "0");
+//            long id = db.insert("Counter", null, c);
+//
+//            if (id == -1)
+//                Toast.makeText(this, "Not Subscribed HJB Mess Menu", Toast.LENGTH_SHORT).show();
+//            else {
+//                Toast.makeText(this, "Subscribed HJB Mess Menu", Toast.LENGTH_SHORT).show();
+//            }
         }
 
         checked = cb3.isChecked();
         if (checked) {
             counter = "3";
             addToList(counter);
-            ContentValues c = new ContentValues();
-            c.put("Id", "3");
-            c.put("CounterName", "VVS Mess");
-            c.put("MenuVersion", "0");
-            long id = db.insert("Counter", null, c);
-
-            if (id == -1)
-                Toast.makeText(this, "Not Subscribed VVS Mess Menu", Toast.LENGTH_SHORT).show();
-            else {
-                Toast.makeText(this, "Subscribed HJB VVS Menu", Toast.LENGTH_SHORT).show();
-            }
+//            ContentValues c = new ContentValues();
+//            c.put("Id", "3");
+//            c.put("CounterName", "VVS Mess");
+//            c.put("MenuVersion", "0");
+//            long id = db.insert("Counter", null, c);
+//
+//            if (id == -1)
+//                Toast.makeText(this, "Not Subscribed VVS Mess Menu", Toast.LENGTH_SHORT).show();
+//            else {
+//                Toast.makeText(this, "Subscribed VVS Mess Menu", Toast.LENGTH_SHORT).show();
+//            }
         }
 
         checked = cb4.isChecked();
         if (checked) {
             counter = "4";
             addToList(counter);
-            ContentValues c = new ContentValues();
-            c.put("Id", "4");
-            c.put("CounterName", "Aryabhatta Mess");
-            c.put("MenuVersion", "0");
-            long id = db.insert("Counter", null, c);
-
-            if (id == -1)
-                Toast.makeText(this, "Not Subscribed Aryabhatta Mess Menu", Toast.LENGTH_SHORT).show();
-            else {
-                Toast.makeText(this, "Subscribed Aryabhatta Mess Menu", Toast.LENGTH_SHORT).show();
-            }
+//            ContentValues c = new ContentValues();
+//            c.put("Id", "4");
+//            c.put("CounterName", "Aryabhatta Mess");
+//            c.put("MenuVersion", "0");
+//            long id = db.insert("Counter", null, c);
+//
+//            if (id == -1)
+//                Toast.makeText(this, "Not Subscribed Aryabhatta Mess Menu", Toast.LENGTH_SHORT).show();
+//            else {
+//                Toast.makeText(this, "Subscribed Aryabhatta Mess Menu", Toast.LENGTH_SHORT).show();
+//            }
         }
 
 
@@ -156,17 +153,17 @@ public class MessSubscribe extends AppCompatActivity {
         if (checked) {
             counter = "5";
             addToList(counter);
-            ContentValues c = new ContentValues();
-            c.put("Id", "5");
-            c.put("CounterName", "SNH Mess");
-            c.put("MenuVersion", "0");
-            long id = db.insert("Counter", null, c);
-
-            if (id == -1)
-                Toast.makeText(this, "Not Subscribed SNH Mess Menu", Toast.LENGTH_SHORT).show();
-            else {
-                Toast.makeText(this, "Subscribed SNH Mess Menu", Toast.LENGTH_SHORT).show();
-            }
+//            ContentValues c = new ContentValues();
+//            c.put("Id", "5");
+//            c.put("CounterName", "SNH Mess");
+//            c.put("MenuVersion", "0");
+//            long id = db.insert("Counter", null, c);
+//
+//            if (id == -1)
+//                Toast.makeText(this, "Not Subscribed SNH Mess Menu", Toast.LENGTH_SHORT).show();
+//            else {
+//                Toast.makeText(this, "Subscribed SNH Mess Menu", Toast.LENGTH_SHORT).show();
+//            }
         }
 
         subscribeToCounter(listOfCounters);

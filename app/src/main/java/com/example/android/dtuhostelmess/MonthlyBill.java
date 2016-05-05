@@ -103,18 +103,27 @@ public class MonthlyBill extends AppCompatActivity {
                     case R.id.profile: {
                         Toast.makeText(getApplicationContext(), "View your Profile Details", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(MonthlyBill.this, Profile.class));
-                    }
-                    return true;
-
-                    case R.id.allmail:
-                        Toast.makeText(getApplicationContext(), "All Mail Selected", Toast.LENGTH_SHORT).show();
                         return true;
+                    }
+
+                    case R.id.feedbackMail: {
+                        Intent intent = new Intent(Intent.ACTION_SEND);
+                        intent.setType("plain/text");
+                        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"ynisha11@gmail.com", "maskaravivek@gmail.com"});
+                        intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback: DTU Hostel Mess App");
+                        intent.putExtra(Intent.EXTRA_TEXT, "We would love to hear your feedback!");
+                        startActivity(Intent.createChooser(intent, ""));
+                        return true;
+                    }
+
+
 
                     case R.id.buy: {
                         Toast.makeText(getApplicationContext(), "Buy Food Item", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(MonthlyBill.this, Buy.class));
+                        return true;
                     }
-                    return true;
+
 
                     case R.id.billPay:
                         goToUrl("https://www.onlinesbi.com/prelogin/icollecthome.htm");

@@ -22,6 +22,8 @@ public class URLS {
 
     public static String API_UpdateProfile_URL = "http://devilsnareapps.com/food/user/updateProfile.php";
 
+    public static String API_GetMenu_URL = "http://devilsnareapps.com/food/getMenu.php";
+
 }
 
 
