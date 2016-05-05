@@ -44,4 +44,12 @@ public class GlobalVariables {
     public static String idItem5;
     public static String idItem6;
     public static String idItem7;
+
+    public static int counter1Subscribed;
+    public static int counter2Subscribed;
+    public static int counter3Subscribed;
+    public static int counter4Subscribed;
+    public static int counter5Subscribed;
+
+
 }

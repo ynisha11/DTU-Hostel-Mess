@@ -35,107 +35,18 @@
                     android:layout_margin="20dp"
                     android:orientation="vertical">
 
-                    <EditText
-                        android:id="@+id/tv1"
+                    <ListView
+                        android:id="@+id/listMenu"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginBottom="6dp"
-                        android:hint="TEXT"
-                        android:paddingBottom="5dp"
-                        android:textColor="#33691e"
-                        android:textSize="18dp" />
-
-                    <EditText
-                        android:id="@+id/tv2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="6dp"
-                        android:hint="INTEGER"
-                        android:paddingBottom="5dp"
-                        android:textColor="#33691e"
-                        android:textSize="18dp" />
-
-                    <EditText
-                        android:id="@+id/tv4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="6dp"
-                        android:hint="TEXT"
-                        android:paddingBottom="5dp"
-                        android:textColor="#33691e"
-                        android:textSize="18dp" />
-
-                    <EditText
-                        android:id="@+id/tv5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="6dp"
-                        android:hint="DOUBLE"
-                        android:paddingBottom="5dp"
-                        android:textColor="#33691e"
-                        android:textSize="18dp" />
-
-                    <EditText
-                        android:id="@+id/tv6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="6dp"
-                        android:hint="INTEGER"
-                        android:paddingBottom="5dp"
-                        android:textColor="#33691e"
-                        android:textSize="18dp" />
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:onClick="insert"
-                        android:text="Insert into Counter Table" />
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:onClick="insert2"
-                        android:text="Insert into Items Table" />
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:onClick="insert3"
-                        android:text="Insert into Menu Table" />
-
-
-                    <EditText
-                        android:id="@+id/tv3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="6dp"
-                        android:paddingBottom="5dp"
-                        android:textColor="#33691e"
-                        android:textSize="18dp" />
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:onClick="fetch"
-                        android:text="Fetch from Counters table" />
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:onClick="fetch2"
-                        android:text="Fetch from Items table" />
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:onClick="fetch3"
-                        android:text="Fetch from Menu table" />
+                        android:visibility="gone" />
 
                 </LinearLayout>
 

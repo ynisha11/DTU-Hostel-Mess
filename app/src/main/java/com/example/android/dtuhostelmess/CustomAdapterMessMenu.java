@@ -3,12 +3,12 @@ package com.example.android.dtuhostelmess;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import utils.ListModel;
 
 //Adapter class extends with BaseAdapter and implements with OnClickListener
-public class CustomAdapter extends BaseAdapter implements View.OnClickListener {
+public class CustomAdapterMessMenu extends BaseAdapter implements View.OnClickListener {
 
     private static LayoutInflater inflater = null;
     public Resources res;
@@ -27,7 +27,7 @@ public class CustomAdapter extends BaseAdapter implements View.OnClickListener {
     private ArrayList data;
 
     //CustomAdapterforConfirm Constructor
-    public CustomAdapter(Activity a, ArrayList d, Resources resLocal) {
+    public CustomAdapterMessMenu(Activity a, ArrayList d, Resources resLocal) {
         //Take passed values
         activity = a;
         data = d;
@@ -60,14 +60,13 @@ public class CustomAdapter extends BaseAdapter implements View.OnClickListener {
         if (convertView == null) {
 
             //Inflate tabitem.xml file for each row ( Defined below )
-            vi = inflater.inflate(R.layout.tabitem, null);
+            vi = inflater.inflate(R.layout.tabitemmenu, null);
 
-            // View Holder Object to contain tabitem.xml file elements
+            // View Holder Object to contain tabitemmenu.xml file elements
             holder = new ViewHolder();
-          //  holder.type = (TextView) vi.findViewById(R.id.tvType);
-            holder.text = (CheckBox) vi.findViewById(R.id.text);
-            holder.text2 = (TextView) vi.findViewById(R.id.text2);
-            holder.text3 = (TextView) vi.findViewById(R.id.text3);
+            holder.meal = (TextView) vi.findViewById(R.id.Meal);
+            holder.text = (TextView) vi.findViewById(R.id.tv);
+            holder.counterName = (TextView) vi.findViewById(R.id.CounterName);
 
             //Set holder with LayoutInflater
             vi.setTag(holder);
@@ -75,25 +74,19 @@ public class CustomAdapter extends BaseAdapter implements View.OnClickListener {
             holder = (ViewHolder) vi.getTag();
 
         if (data.size() <= 0) {
-            holder.text.setText("No Data");
+            holder.text.setText("Please Wait. Loading...");
 
         } else {
             // Get each Model object from Arraylist
             tempValues = null;
             tempValues = (ListModel) data.get(position);
 
-            if(tempValues.getType().equals("Beverages") || tempValues.getType().equals("Ice Creams") || tempValues.getType().equals("Chips") || tempValues.getType().equals("Biscuits")){
-                holder.type.setText(tempValues.getType());
-                holder.text.setVisibility(View.INVISIBLE);
-                holder.text2.setVisibility(View.INVISIBLE);
-            }
+            //Set Model values in Holder elements
+            holder.counterName.setText(tempValues.getCounterName());
+            holder.meal.setText(tempValues.getMealName());
 
-            else {
-                //Set Model values in Holder elements
-                holder.text.setText(tempValues.getItemName());
-                holder.text2.setText("Rs " + tempValues.getCost());
-                holder.text3.setText(tempValues.getFoodId());
-            }
+            holder.text.setText(tempValues.getFoodName());
+            holder.text.setTextColor(Color.parseColor("#2196f3"));
 
             // Set Item Click Listner for LayoutInflater for each row
             vi.setOnClickListener(new OnItemClickListener(position));
@@ -108,10 +101,10 @@ public class CustomAdapter extends BaseAdapter implements View.OnClickListener {
 
     //Create a holder to contain inflated xml file elements
     public static class ViewHolder {
-        public CheckBox text;
-        public TextView text2;
-        public TextView text3;
-        private TextView type;
+        public TextView meal;
+        public TextView text;
+        public TextView counterName;
+
     }
 
     //Called when Item click in ListView
@@ -124,7 +117,7 @@ public class CustomAdapter extends BaseAdapter implements View.OnClickListener {
 
         @Override
         public void onClick(View arg0) {
-            Buy sct = (Buy) activity;
+            MessMenu sct = (MessMenu) activity;
             sct.onItemClick(mPosition);
         }
     }

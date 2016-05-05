@@ -1,6 +1,9 @@
 package com.example.android.dtuhostelmess;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -17,10 +20,12 @@ import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import utils.GlobalVariables;
 import utils.MyAsyncTask;
+import utils.OpenHelper;
 import utils.URLS;
 
 public class MainActivity extends AppCompatActivity implements Animation.AnimationListener {
@@ -206,8 +211,9 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
                     JSONObject response = new JSONObject(output);
                     String resultedMessage = response.getString("responseType");
                     if (resultedMessage.equals("success")) {
-                        response = response.getJSONObject("payload");
-                        response = response.getJSONObject("user_profile");
+                        JSONObject response1 = response.getJSONObject("payload");
+                        response = response1.getJSONObject("user_profile");
+
                         int isVeg = response.getInt("is_veg");
                         String name = response.getString("name");
                         String phoneNumber = response.getString("phone_number");
@@ -230,6 +236,52 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
                             GlobalVariables.currentVegOrNon = "Non-Veg";
                         }
 
+                        JSONArray responseArr = response1.getJSONArray("counters_subscribed");
+
+                        for (int i = 0; i < responseArr.length(); i++) {
+
+                            JSONObject childJSONObject = responseArr.getJSONObject(i);
+
+                            String counterId = childJSONObject.getString("counter_id");
+                            String counterName = childJSONObject.getString("name");
+
+                            OpenHelper h1 = new OpenHelper(MainActivity.this);
+                            String col1[] = {"Id", "CounterName", "MenuVersion"};
+                            SQLiteDatabase db1 = h1.getReadableDatabase();
+                            Cursor c1 = db1.query("Counter", col1, null, null, null, null, null);
+
+                            int flag=0;
+
+                            while (c1.moveToNext()) {
+
+                                String id = c1.getString(0);
+
+                                if (id.equals(counterId)) {
+                                 //   Toast.makeText(MainActivity.this, "counter EXISTS in local db table", Toast.LENGTH_SHORT).show();
+                                    flag=1;
+                                    break;
+                                }
+                            }
+
+                            if(flag==0) {
+                                OpenHelper h = new OpenHelper(MainActivity.this);
+                                SQLiteDatabase db = h.getWritableDatabase();
+                                ContentValues c = new ContentValues();
+
+                                c.put("Id", counterId);
+                                c.put("CounterName", counterName);
+                                c.put("MenuVersion", "0");
+                                long id1 = db.insert("Counter", null, c);
+
+                                if (id1 == -1)
+                                    Toast.makeText(MainActivity.this, "Error in inserting counters in local db", Toast.LENGTH_SHORT).show();
+                                else {
+                                   // Toast.makeText(MainActivity.this, "counter ADDED in local db table", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+
+                        }
+
                         startActivity(new Intent(MainActivity.this, MessMenu.class));
                     } else {
                         response = response.getJSONObject("payload");
@@ -242,6 +294,7 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
             }
         }).execute();
     }
+
 
     public void register(View v) {
         Intent i = new Intent(this, Register.class);

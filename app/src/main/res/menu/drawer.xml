@@ -40,7 +40,7 @@
             android:title="Update Profile" />
 
         <item
-            android:id="@+id/allmail"
+            android:id="@+id/feedbackMail"
             android:checked="false"
             android:icon="@drawable/ic_feedback"
             android:title="Feedback" />

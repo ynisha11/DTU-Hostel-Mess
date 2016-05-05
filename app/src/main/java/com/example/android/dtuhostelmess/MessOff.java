@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -39,6 +40,7 @@ public class MessOff extends AppCompatActivity {
     public ArrayList<ListModel> CustomListViewValuesArr = new ArrayList<ListModel>();
 
     TextView tvHeaderName, tvHeaderBill;
+    Button btMessOff;
     ProgressBar progressBar;
     private Toolbar toolbar;
     private NavigationView navigationView;
@@ -52,6 +54,7 @@ public class MessOff extends AppCompatActivity {
         setContentView(R.layout.activity_mess_off);
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        btMessOff = (Button) findViewById(R.id.btMessOff);
 
         // Initializing Toolbar and setting it as the actionbar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -91,19 +94,28 @@ public class MessOff extends AppCompatActivity {
 
                     case R.id.profile: {
                         Toast.makeText(getApplicationContext(), "Update Profile Details", Toast.LENGTH_SHORT).show();
-                        //startActivity(new Intent(Profile.this, Profile.class));
-                    }
-                    return true;
-
-                    case R.id.allmail:
-                        Toast.makeText(getApplicationContext(), "All Mail Selected", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(MessOff.this, Profile.class));
                         return true;
+                    }
+
+
+                    case R.id.feedbackMail: {
+                        Intent intent = new Intent(Intent.ACTION_SEND);
+                        intent.setType("plain/text");
+                        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"ynisha11@gmail.com", "maskaravivek@gmail.com"});
+                        intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback: DTU Hostel Mess App");
+                        intent.putExtra(Intent.EXTRA_TEXT, "We would love to hear your feedback!");
+                        startActivity(Intent.createChooser(intent, ""));
+                        return true;
+                    }
+
 
                     case R.id.buy: {
                         Toast.makeText(getApplicationContext(), "Buy Food Item", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(MessOff.this, Buy.class));
+                        return true;
                     }
-                    return true;
+
 
                     case R.id.billPay:
                         goToUrl("https://www.onlinesbi.com/prelogin/icollecthome.htm");
@@ -154,6 +166,10 @@ public class MessOff extends AppCompatActivity {
         adapter = new CustomAdapterMessOff(CustomListView, CustomListViewValuesArr, res);
         list3.setAdapter(adapter);
 
+        list3.setVisibility(View.INVISIBLE);
+        btMessOff.setVisibility(View.INVISIBLE);
+        progressBar.setVisibility(View.VISIBLE);
+
         JSONObject jsonObject = new JSONObject();
         try {
             jsonObject.put("roll_number", GlobalVariables.currentRollNo);
@@ -201,6 +217,9 @@ public class MessOff extends AppCompatActivity {
                         Resources res = getResources();
                         adapter = new CustomAdapterMessOff(CustomListView, CustomListViewValuesArr, res);
                         list3.setAdapter(adapter);
+                        list3.setVisibility(View.VISIBLE);
+                        btMessOff.setVisibility(View.VISIBLE);
+                        progressBar.setVisibility(View.GONE);
                     } else {
                         response = response.getJSONObject("payload");
                         String errorMessage = response.getString("message");

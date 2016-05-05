@@ -16,12 +16,33 @@ public class ListModel extends AppCompatActivity {
     private String holiday = "";
     private int messOff;
 
-    // Get Methods
+    private String itemName = "";
+    private String mealName = "";
+
+    private String type = "";
+
+    private String counterName = "";
+
+    public String getCounterName(){
+        return this.counterName;
+    }
+
+    public void setCounterName(String str){
+        this.counterName = str;
+    }
+
+    public String getType(){
+        return this.type;
+    }
+
+    public void setType(String str){
+        this.type = str;
+    }
+
     public String getItemName() {
         return this.CompanyName;
     }
 
-    //Set Methods
     public void setItemName(String CompanyName) {
         this.CompanyName = CompanyName;
     }
@@ -106,5 +127,22 @@ public class ListModel extends AppCompatActivity {
     public void setMessOff(int messOff) {
         this.messOff = messOff;
     }
+
+    public String getFoodName(){
+        return this.itemName;
+    }
+
+    public void setFoodName(String Item){
+        this.itemName = Item;
+    }
+
+    public String getMealName(){
+        return this.mealName;
+    }
+
+    public void setMealName(String Item){
+        this.mealName = Item;
+    }
+
 
 }

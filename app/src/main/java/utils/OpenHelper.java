@@ -15,7 +15,7 @@ public class OpenHelper extends SQLiteOpenHelper {
 
         db.execSQL("CREATE TABLE Counter(Id INTEGER PRIMARY KEY , CounterName TEXT, MenuVersion INTEGER)");
 
-        db.execSQL("CREATE TABLE Menu(MenuId INTEGER PRIMARY KEY AUTOINCREMENT, CounterId INTEGER, Day TEXT, StartTime DATETIME, EndTime DATETIME, MenuType TEXT, Cost DOUBLE, Version INTEGER )");
+        db.execSQL("CREATE TABLE Menu(MenuId INTEGER PRIMARY KEY, CounterId INTEGER, Day TEXT, StartTime DATETIME, EndTime DATETIME, MenuType TEXT, Cost DOUBLE, Version INTEGER )");
 
         db.execSQL("CREATE TABLE Item(Id INTEGER PRIMARY KEY AUTOINCREMENT, MenuId INTEGER, Name TEXT, Type TEXT)");
     }
