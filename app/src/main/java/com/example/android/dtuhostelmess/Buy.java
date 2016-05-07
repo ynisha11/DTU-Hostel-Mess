@@ -301,14 +301,10 @@ public class Buy extends AppCompatActivity {
                 switch (menuItem.getItemId()) {
                     //Replacing the main content with ContentFragment Which is our Inbox View;
                     case R.id.messMenu: {
-                        Toast.makeText(getApplicationContext(), "View Mess Menu", Toast.LENGTH_SHORT).show();
-                        ContentFragment fragment = new ContentFragment();
-                        android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction.replace(R.id.frame, fragment);
-                        fragmentTransaction.commit();
                         startActivity(new Intent(Buy.this, MessMenu.class));
+                        return true;
+
                     }
-                    return true;
 
                     case R.id.monthly_bill:
                         startActivity(new Intent(Buy.this, MonthlyBill.class));
@@ -333,13 +329,18 @@ public class Buy extends AppCompatActivity {
                     }
 
                     case R.id.buy:
-                        Toast.makeText(getApplicationContext(), "Buy Food Item", Toast.LENGTH_SHORT).show();
                         // startActivity(new Intent(Buy.this, Buy.class));
                         return true;
 
                     case R.id.billPay:
                         goToUrl("https://www.onlinesbi.com/prelogin/icollecthome.htm");
                         return true;
+
+                    case R.id.logout:
+                    {
+
+                        return true;
+                    }
 
                     default:
                         Toast.makeText(getApplicationContext(), "Somethings Wrong", Toast.LENGTH_SHORT).show();
@@ -425,9 +426,7 @@ public class Buy extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+
         // Activate the navigation drawer toggle
         if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;

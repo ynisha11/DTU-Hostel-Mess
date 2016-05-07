@@ -24,7 +24,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.Calendar;
-import java.util.Date;
 
 import utils.AppPreferences;
 import utils.Constants;
@@ -108,9 +107,7 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+
 
         return super.onOptionsItemSelected(item);
     }

@@ -45,6 +45,12 @@
             android:icon="@drawable/ic_feedback"
             android:title="Feedback" />
 
+        <item
+            android:id="@+id/logout"
+            android:checked="false"
+            android:icon="@drawable/logout"
+            android:title="Log Out" />
+
     </group>
 
 </menu>

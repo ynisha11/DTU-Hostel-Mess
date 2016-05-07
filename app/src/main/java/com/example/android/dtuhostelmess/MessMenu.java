@@ -75,11 +75,7 @@ public class MessMenu extends AppCompatActivity {
                     //Replacing the main content with ContentFragment Which is our Inbox View;
 
                     case R.id.messMenu: {
-                       // Toast.makeText(getApplicationContext(), "View Mess Menu", Toast.LENGTH_SHORT).show();
-                        ContentFragment fragment = new ContentFragment();
-                        android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction.replace(R.id.frame, fragment);
-                        fragmentTransaction.commit();
+
                         //startActivity(new Intent(MessMenu.this, MessMenu.class));
                         return true;
                     }
@@ -94,7 +90,6 @@ public class MessMenu extends AppCompatActivity {
                         return true;
 
                     case R.id.profile: {
-                        Toast.makeText(getApplicationContext(), "View your Profile Details", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(MessMenu.this, Profile.class));
                         return true;
                     }
@@ -102,7 +97,6 @@ public class MessMenu extends AppCompatActivity {
 
 
                     case R.id.buy: {
-                        Toast.makeText(getApplicationContext(), "Buy Food Item", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(MessMenu.this, Buy.class));
                         return true;
                     }
@@ -217,9 +211,7 @@ public class MessMenu extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+
         // Activate the navigation drawer toggle
         if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;

@@ -83,14 +83,11 @@ public class MonthlyBill extends AppCompatActivity {
                 switch (menuItem.getItemId()) {
                     //Replacing the main content with ContentFragment Which is our Inbox View;
                     case R.id.messMenu: {
-                        Toast.makeText(getApplicationContext(), "View Mess Menu", Toast.LENGTH_SHORT).show();
-                        ContentFragment fragment = new ContentFragment();
-                        android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                        fragmentTransaction.replace(R.id.frame, fragment);
-                        fragmentTransaction.commit();
+
                         startActivity(new Intent(MonthlyBill.this, MessMenu.class));
+                        return true;
                     }
-                    return true;
+
 
                     case R.id.monthly_bill:
                         // startActivity(new Intent(MonthlyBill.this, MonthlyBill.class));
@@ -101,7 +98,6 @@ public class MonthlyBill extends AppCompatActivity {
                         return true;
 
                     case R.id.profile: {
-                        Toast.makeText(getApplicationContext(), "View your Profile Details", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(MonthlyBill.this, Profile.class));
                         return true;
                     }
@@ -119,7 +115,6 @@ public class MonthlyBill extends AppCompatActivity {
 
 
                     case R.id.buy: {
-                        Toast.makeText(getApplicationContext(), "Buy Food Item", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(MonthlyBill.this, Buy.class));
                         return true;
                     }
@@ -223,9 +218,7 @@ public class MonthlyBill extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+
 
         if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;
