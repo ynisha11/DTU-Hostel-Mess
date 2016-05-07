@@ -23,6 +23,9 @@ import android.widget.Toast;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import utils.GlobalVariables;
 import utils.MyAsyncTask;
 import utils.OpenHelper;
@@ -66,8 +69,16 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
 
         dropdown1 = (Spinner) findViewById(R.id.spinner1);
         dropdown2 = (Spinner) findViewById(R.id.spinner2);
-        String[] items1 = new String[]{"2K10/", "2K11/", "2K12/", "2K13/", "2K14/", "2K15/", "2K16/"};
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items1);
+        String[] rollYearItems=new String[8];
+        Calendar c = Calendar.getInstance();
+        int currentYear = c.get(Calendar.YEAR);
+        int index= 0;
+        for(int i=currentYear-6;i<=currentYear+1;i++)
+        {
+            rollYearItems[index++]= Integer.toString(i).replaceFirst("0","K");
+        }
+
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, rollYearItems);
         dropdown1.setAdapter(adapter1);
         String[] items2 = new String[]{"HO/", "HO/G/"};
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items2);
