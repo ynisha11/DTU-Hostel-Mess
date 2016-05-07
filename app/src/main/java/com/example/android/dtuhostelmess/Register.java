@@ -1,6 +1,7 @@
 package com.example.android.dtuhostelmess;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -19,6 +20,10 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Calendar;
+
+import utils.AppPreferences;
+import utils.Constants;
 import utils.GlobalVariables;
 import utils.MyAsyncTask;
 import utils.URLS;
@@ -31,13 +36,17 @@ public class Register extends AppCompatActivity {
     CheckBox cbAdmin;
     int basicBill = 0, onStartCount = 0;
     ProgressBar progressBar;
+    int isVeg = 0;
     Switch aSwitch;
     Spinner dropdown1, dropdown2, dropdownHostel, dropdownMess;
+    private AppPreferences prefManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        prefManager= AppPreferences.getInstance(this);
+
 
         onStartCount = 1;
         if (savedInstanceState == null) // 1st time
@@ -64,8 +73,15 @@ public class Register extends AppCompatActivity {
         aSwitch = (Switch) findViewById(R.id.toggleButton);
 
         dropdown1 = (Spinner) findViewById(R.id.spinner1);
-        String[] items1 = new String[]{"2K10/", "2K11/", "2K12/", "2K13/", "2K14/", "2K15/", "2K16/"};
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items1);
+        String[] rollYearItems=new String[8];
+        Calendar c = Calendar.getInstance();
+        int currentYear = c.get(Calendar.YEAR);
+        int index= 0;
+        for(int i=currentYear-6;i<=currentYear+1;i++)
+        {
+            rollYearItems[index++]= Integer.toString(i).replaceFirst("0","K")+"/";
+        }
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, rollYearItems);
         dropdown1.setAdapter(adapter1);
 
         dropdown2 = (Spinner) findViewById(R.id.spinner2);
@@ -159,13 +175,13 @@ public class Register extends AppCompatActivity {
                 hostel = dropdownHostel.getSelectedItem().toString();
             }
 
-            String name = e2.getText().toString();
-            String emailId = e4.getText().toString();
+            final String name = e2.getText().toString();
+            final String emailId = e4.getText().toString();
             String password = e5.getText().toString();
-            String phoneNo = e6.getText().toString();
-            String room = eRoom.getText().toString();
+            final String phoneNo = e6.getText().toString();
+            final String room = eRoom.getText().toString();
 
-            int isVeg = 0;
+
             if (rveg.isChecked()) {
                 isVeg = 1;
             } else isVeg = 0;
@@ -218,6 +234,14 @@ public class Register extends AppCompatActivity {
                         String resultedMessage = response.getString("responseType");
 
                         if (resultedMessage.equals("success")) {
+                            prefManager.putString(Constants.RollNumber, rollNo);
+                            prefManager.putString(Constants.CurrentEmailId, emailId);
+                            prefManager.putString(Constants.CurrentHostel, hostel);
+                            prefManager.putString(Constants.CurrentMessBill, isVeg==1?"1875":"1925");
+                            prefManager.putString(Constants.CurrentName, name);
+                            prefManager.putString(Constants.CurrentPhoneNumber, phoneNo);
+                            prefManager.putString(Constants.CurrentRoomNumber, room);
+                            prefManager.putString(Constants.CurrentVegOrNonVeg, isVeg==1?"Veg":"Non-Veg");
                             Toast.makeText(Register.this, "Congrats! You have successfully registered.", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(Register.this, MessSubscribe.class));
                         } else {
@@ -250,6 +274,4 @@ public class Register extends AppCompatActivity {
             onStartCount++;
         }
     }
-
-
 }

@@ -26,6 +26,8 @@ import org.json.JSONObject;
 import java.util.Calendar;
 import java.util.Date;
 
+import utils.AppPreferences;
+import utils.Constants;
 import utils.GlobalVariables;
 import utils.MyAsyncTask;
 import utils.OpenHelper;
@@ -40,11 +42,13 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
     Spinner dropdown1, dropdown2;
     Animation animFadeIn, animFadeOut;
     LinearLayout lSt;
+    private AppPreferences prefManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        prefManager= AppPreferences.getInstance(this);
 
         lSt = (LinearLayout) findViewById(R.id.LinearStudent);
         lSt.setVisibility(View.VISIBLE);
@@ -75,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
         int index= 0;
         for(int i=currentYear-6;i<=currentYear+1;i++)
         {
-            rollYearItems[index++]= Integer.toString(i).replaceFirst("0","K");
+            rollYearItems[index++]= Integer.toString(i).replaceFirst("0","K")+"/";
         }
 
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, rollYearItems);
@@ -181,8 +185,16 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
 
             dropdown1 = (Spinner) findViewById(R.id.spinner1);
             dropdown2 = (Spinner) findViewById(R.id.spinner2);
-            String[] items1 = new String[]{"2K10/", "2K11/", "2K12/", "2K13/", "2K14/", "2K15/", "2K16/"};
-            ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items1);
+            String[] rollYearItems=new String[8];
+            Calendar c = Calendar.getInstance();
+            int currentYear = c.get(Calendar.YEAR);
+            int index= 0;
+            for(int i=currentYear-6;i<=currentYear+1;i++)
+            {
+                rollYearItems[index++]= Integer.toString(i).replaceFirst("0","K")+"/";
+            }
+
+            ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, rollYearItems);
             dropdown1.setAdapter(adapter1);
             String[] items2 = new String[]{"HO/", "HO/G/"};
             ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items2);
@@ -292,6 +304,15 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
                             }
 
                         }
+
+                        prefManager.putString(Constants.RollNumber, rollNumber);
+                        prefManager.putString(Constants.CurrentEmailId, emailId);
+                        prefManager.putString(Constants.CurrentHostel, hostel);
+                        prefManager.putString(Constants.CurrentMessBill, billAmount);
+                        prefManager.putString(Constants.CurrentName, name);
+                        prefManager.putString(Constants.CurrentPhoneNumber, phoneNumber);
+                        prefManager.putString(Constants.CurrentRoomNumber, roomNumber);
+                        prefManager.putString(Constants.CurrentVegOrNonVeg, isVeg==1?"Veg":"Non-Veg");
 
                         startActivity(new Intent(MainActivity.this, MessMenu.class));
                     } else {
