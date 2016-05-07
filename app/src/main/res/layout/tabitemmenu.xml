@@ -7,46 +7,38 @@
 
     <TableRow
         android:id="@+id/tableLayout"
-        android:weightSum="1">
+        android:weightSum="1"
+       >
 
-        <!---
         <TextView
-            android:id="@+id/tvType"
+            android:id="@+id/CounterName"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textColor="@color/PrimaryColor"
-            android:layout_marginTop="4dip"  />
-        -->
-
-        <CheckBox
-            android:id="@+id/text"
-            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="4dip"
-            android:layout_weight="0.8"
             android:textColor="#000000"
-            android:textSize="16sp" />
+            android:textSize="18sp"
 
+           />
         <TextView
-            android:id="@+id/text2"
-            android:layout_width="0dp"
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dip"
-            android:layout_weight="0.2"
-            android:textColor="#000000"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/text3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dip"
-            android:layout_weight="0"
-            android:textColor="#000000"
             android:textSize="16sp"
-            android:visibility="gone" />
+            />
+
+        <TextView
+            android:id="@+id/Meal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dip"
+            android:textSize="16sp"
+            android:inputType="textMultiLine"
+            android:layout_weight="0.9"
+        />
+
+
 
     </TableRow>
 

@@ -3,6 +3,7 @@ package com.example.android.dtuhostelmess;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,17 +15,19 @@ import java.util.ArrayList;
 
 import utils.ListModel;
 
-public class CustomAdapterBill extends BaseAdapter implements View.OnClickListener {
+//Adapter class extends with BaseAdapter and implements with OnClickListener
+public class CustomAdapterMessMenu extends BaseAdapter implements View.OnClickListener {
 
     private static LayoutInflater inflater = null;
     public Resources res;
     ListModel tempValues = null;
     int i = 0;
+    //Declare Used Variables
     private Activity activity;
     private ArrayList data;
 
-    // CustomAdapterforConfirm Constructor
-    public CustomAdapterBill(Activity a, ArrayList d, Resources resLocal) {
+    //CustomAdapterforConfirm Constructor
+    public CustomAdapterMessMenu(Activity a, ArrayList d, Resources resLocal) {
         //Take passed values
         activity = a;
         data = d;
@@ -33,7 +36,7 @@ public class CustomAdapterBill extends BaseAdapter implements View.OnClickListen
         inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
-    // What is the size of Passed Arraylist Size
+    //What is the size of Passed Arraylist Size
     public int getCount() {
         if (data.size() <= 0)
             return 1;
@@ -48,45 +51,44 @@ public class CustomAdapterBill extends BaseAdapter implements View.OnClickListen
         return position;
     }
 
-    // Depends upon data size called for each row , Create each ListView row
+    //Depends upon data size called for each row , Create each ListView row
     public View getView(int position, View convertView, ViewGroup parent) {
+
         View vi = convertView;
         ViewHolder holder;
 
         if (convertView == null) {
 
             //Inflate tabitem.xml file for each row ( Defined below )
-            vi = inflater.inflate(R.layout.tabitembill, null);
+            vi = inflater.inflate(R.layout.tabitemmenu, null);
 
-            //View Holder Object to contain tabitem.xml file elements
+            // View Holder Object to contain tabitemmenu.xml file elements
             holder = new ViewHolder();
-            holder.date = (TextView) vi.findViewById(R.id.tv1);
-            holder.mess = (TextView) vi.findViewById(R.id.tv2);
-            holder.food = (TextView) vi.findViewById(R.id.tv3);
-            holder.total = (TextView) vi.findViewById(R.id.tv4);
+            holder.meal = (TextView) vi.findViewById(R.id.Meal);
+            holder.text = (TextView) vi.findViewById(R.id.tv);
+            holder.counterName = (TextView) vi.findViewById(R.id.CounterName);
 
-            // Set holder with LayoutInflater
+            //Set holder with LayoutInflater
             vi.setTag(holder);
         } else
             holder = (ViewHolder) vi.getTag();
 
         if (data.size() <= 0) {
-//            holder.date.setText("Please");
-//            holder.mess.setText("Select");
-//            holder.food.setText("and Click");
-//            holder.total.setText("Go!");
+            holder.text.setText("Please Wait. Loading...");
+
         } else {
-            //Get each Model object from Arraylist
+            // Get each Model object from Arraylist
             tempValues = null;
             tempValues = (ListModel) data.get(position);
 
             //Set Model values in Holder elements
-            holder.date.setText(tempValues.getDateTime());
-            holder.mess.setText(tempValues.getMess());
-            holder.food.setText(tempValues.getFood());
-            holder.total.setText("Rs " + tempValues.getTotal());
+            holder.counterName.setText(tempValues.getCounterName());
+            holder.meal.setText(tempValues.getMealName());
 
-            //Set Item Click Listner for LayoutInflater for each row
+            holder.text.setText(tempValues.getFoodName());
+            holder.text.setTextColor(Color.parseColor("#2196f3"));
+
+            // Set Item Click Listner for LayoutInflater for each row
             vi.setOnClickListener(new OnItemClickListener(position));
         }
         return vi;
@@ -97,15 +99,15 @@ public class CustomAdapterBill extends BaseAdapter implements View.OnClickListen
         Log.v("CustomAdapterforConfirm", "=====Row button clicked");
     }
 
-    // Create a holder to contain inflated xml file elements
+    //Create a holder to contain inflated xml file elements
     public static class ViewHolder {
-        public TextView date;
-        public TextView mess;
-        public TextView food;
-        public TextView total;
+        public TextView meal;
+        public TextView text;
+        public TextView counterName;
+
     }
 
-    // Called when Item click in ListView
+    //Called when Item click in ListView
     private class OnItemClickListener implements View.OnClickListener {
         private int mPosition;
 
@@ -115,9 +117,8 @@ public class CustomAdapterBill extends BaseAdapter implements View.OnClickListen
 
         @Override
         public void onClick(View arg0) {
-            MonthlyBill sct = (MonthlyBill) activity;
+            MessMenu sct = (MessMenu) activity;
             sct.onItemClick(mPosition);
         }
     }
-
 }

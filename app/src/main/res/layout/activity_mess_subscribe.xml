@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/SCROLLER_ID"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:scrollbars="vertical"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:scrollbars="vertical">
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="10dp" >
-
+        android:padding="10dp">
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -22,78 +19,69 @@
             android:layout_gravity="center"
             android:orientation="vertical"
             android:paddingLeft="20dp"
-            android:paddingRight="20dp" >
-
-
+            android:paddingRight="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Select one or more boxes to subscribe to their Mess Menu"
                 android:layout_marginBottom="40dp"
-                android:textColor="#00bfa5"
                 android:gravity="center_horizontal"
-                android:textSize="20sp"/>
+                android:text="Select one or more boxes to subscribe to their Mess Menu"
+                android:textColor="#00bfa5"
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Boys Mess"
                 android:gravity="center_horizontal"
+                android:text="Boys Mess"
                 android:textColor="#00bfa5"
-                android:textSize="16sp"/>
+                android:textSize="16sp" />
 
             <CheckBox
                 android:id="@+id/counter4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Aryabhatta Mess"
                 android:layout_weight="1"
-
-                />
+                android:text="Aryabhatta Mess" />
 
             <CheckBox
                 android:id="@+id/counter1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="CVR Mess"
                 android:layout_weight="1"
-                />
+                android:text="CVR Mess" />
 
             <CheckBox
                 android:id="@+id/counter2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="HJB Mess"
                 android:layout_weight="1"
-                />
+                android:text="HJB Mess" />
+
             <CheckBox
                 android:id="@+id/counter3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="VVS Mess"
                 android:layout_weight="1"
-                />
+                android:text="VVS Mess" />
 
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
                 android:paddingTop="30dp"
                 android:text="Girls Mess"
-                android:gravity="center_horizontal"
                 android:textColor="#00bfa5"
-                android:textSize="16sp"/>
+                android:textSize="16sp" />
 
             <CheckBox
                 android:id="@+id/counter5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="SNH Mess"
                 android:layout_weight="1"
-                />
-
-
+                android:text="SNH Mess" />
 
             <Button
                 android:id="@+id/btSubscribe"
@@ -101,22 +89,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dip"
                 android:background="#fbc02d"
-                android:text="Subscribe"
-                android:onClick="subscribe"/>
-
+                android:onClick="subscribe"
+                android:text="Subscribe" />
 
             <ProgressBar
+                android:id="@+id/progressBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/progressBar"
                 android:layout_gravity="center"
-                android:visibility="gone"/>
-
-
+                android:visibility="gone" />
 
         </LinearLayout>
 
     </LinearLayout>
-
 
 </ScrollView>

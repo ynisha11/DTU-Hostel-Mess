@@ -21,13 +21,11 @@
             android:icon="@drawable/ic_messoff_black"
             android:title="@string/mess_off" />
 
-
         <item
             android:id="@+id/monthly_bill"
             android:checked="false"
             android:icon="@drawable/ic_messbill_black"
             android:title="@string/monthly_bill" />
-
 
         <item
             android:id="@+id/billPay"
@@ -41,14 +39,12 @@
             android:icon="@drawable/ic_prof"
             android:title="Update Profile" />
 
-
         <item
-            android:id="@+id/allmail"
+            android:id="@+id/feedbackMail"
             android:checked="false"
             android:icon="@drawable/ic_feedback"
             android:title="Feedback" />
 
-
-
     </group>
+
 </menu>

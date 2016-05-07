@@ -1,8 +1,9 @@
-package com.example.android.dtuhostelmess;
+package utils;
 
 import android.app.Activity;
 import android.os.Bundle;
 
+import com.example.android.dtuhostelmess.R;
 
 public class DummyClass extends Activity {
     int onStartCount = 0;

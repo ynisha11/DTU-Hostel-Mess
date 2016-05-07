@@ -1,6 +1,5 @@
 package com.example.android.dtuhostelmess;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -20,22 +19,20 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import utils.GlobalVariables;
 import utils.MyAsyncTask;
 import utils.URLS;
 
 public class Register extends AppCompatActivity {
 
-    EditText e1, e2, e3, e4, e5, e6 ,eRoom;
+    EditText e1, e2, e3, e4, e5, e6, eRoom;
     LinearLayout LinearRoll;
-
     RadioButton rveg, rnon;
     CheckBox cbAdmin;
-    int basicBill = 0;
+    int basicBill = 0, onStartCount = 0;
     ProgressBar progressBar;
     Switch aSwitch;
-
     Spinner dropdown1, dropdown2, dropdownHostel, dropdownMess;
-    int onStartCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,68 +49,40 @@ public class Register extends AppCompatActivity {
             onStartCount = 2;
         }
 
-        LinearRoll = (LinearLayout)findViewById(R.id.LRoll);
-        e1=(EditText)findViewById(R.id.etRollNo);
-
+        LinearRoll = (LinearLayout) findViewById(R.id.LRoll);
+        e1 = (EditText) findViewById(R.id.etRollNo);
         e2 = (EditText) findViewById(R.id.etName);
-        e3 = (EditText)findViewById(R.id.etUsername);
-
+        e3 = (EditText) findViewById(R.id.etUsername);
         e4 = (EditText) findViewById(R.id.etEmail);
         e5 = (EditText) findViewById(R.id.etPassword);
         e6 = (EditText) findViewById(R.id.etPhoneNo);
-
-        eRoom = (EditText)findViewById(R.id.etRoomNo);
-
+        eRoom = (EditText) findViewById(R.id.etRoomNo);
         rveg = (RadioButton) findViewById(R.id.veg);
         rnon = (RadioButton) findViewById(R.id.non);
-
         cbAdmin = (CheckBox) findViewById(R.id.cb1);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
-
-
         aSwitch = (Switch) findViewById(R.id.toggleButton);
 
-        dropdown1 = (Spinner)findViewById(R.id.spinner1);
-        dropdown2 = (Spinner)findViewById(R.id.spinner2);
-
-
+        dropdown1 = (Spinner) findViewById(R.id.spinner1);
         String[] items1 = new String[]{"2K10/", "2K11/", "2K12/", "2K13/", "2K14/", "2K15/", "2K16/"};
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items1);
         dropdown1.setAdapter(adapter1);
 
+        dropdown2 = (Spinner) findViewById(R.id.spinner2);
         String[] items2 = new String[]{"HO/", "HO/G/"};
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items2);
         dropdown2.setAdapter(adapter2);
 
-        dropdownHostel = (Spinner)findViewById(R.id.spinnerHostel);
+        dropdownHostel = (Spinner) findViewById(R.id.spinnerHostel);
 
-        String[] items = new String[]{"KCH", "SNH", "Type II", "Type III", "Aryabhatta", "BCH", "CVR", "HJB", "JCB", "Ramanujan", "Type – II B-5" ,"VMH", "VVS"};
+        String[] items = new String[]{"KCH", "SNH", "Type II", "Type III", "Aryabhatta", "BCH", "CVR", "HJB", "JCB", "Ramanujan", "Type – II B-5", "VMH", "VVS"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
         dropdownHostel.setAdapter(adapter);
-
 
         dropdownMess = (Spinner) findViewById(R.id.spinnerMess);
         String[] itemsM = new String[]{"Aryabhatta Mess", "CVR Mess", "HJB Mess", "VVS Mess", "SNH Mess"};
         ArrayAdapter<String> adapterM = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, itemsM);
         dropdownMess.setAdapter(adapterM);
-
-
-//        aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//
-//                if(isChecked){
-//
-//                    tv.setText("Admin View");
-//                    tv.setVisibility(View.VISIBLE);
-//                    e1.setText("Username");
-//                    e1.setVisibility(View.VISIBLE);
-//                }
-//                else
-//                    tv.setText("User View");
-//                e1.setText("Roll Number");
-//            }
-//        });
 
     }
 
@@ -141,9 +110,6 @@ public class Register extends AppCompatActivity {
 
     public void toggle(View v) {
         if (aSwitch.isChecked()) {
-
-          //  e1.setHint("Username");
-          //  e3.setHint("Mess Assigned");
             LinearRoll.setVisibility(View.GONE);
             dropdownHostel.setVisibility(View.GONE);
             eRoom.setVisibility(View.GONE);
@@ -154,12 +120,7 @@ public class Register extends AppCompatActivity {
 
             e3.setVisibility(View.VISIBLE);
             dropdownMess.setVisibility(View.VISIBLE);
-
         } else {
-
-          //  e1.setHint("Roll Number");
-          //  e3.setHint("Hostel");
-
             e3.setVisibility(View.GONE);
             dropdownMess.setVisibility(View.GONE);
 
@@ -170,10 +131,7 @@ public class Register extends AppCompatActivity {
             rveg.setVisibility(View.VISIBLE);
             rnon.setVisibility(View.VISIBLE);
             cbAdmin.setVisibility(View.VISIBLE);
-
         }
-
-
     }
 
     public void submit(View v) {
@@ -183,7 +141,6 @@ public class Register extends AppCompatActivity {
         } else if (rnon.isChecked())
             basicBill = 1925;
 
-
         String phoneNumber = e6.getText().toString();
         if (phoneNumber.length() != 10) {
             Toast.makeText(this, "Enter a valid phone number", Toast.LENGTH_LONG).show();
@@ -192,39 +149,32 @@ public class Register extends AppCompatActivity {
 
             final String rollNo, hostel;
 
-            if(aSwitch.isChecked()){
+            if (aSwitch.isChecked()) {
                 rollNo = e3.getText().toString();
                 hostel = dropdownMess.getSelectedItem().toString();
-            }
-
-            else{
+            } else {
                 String RnoPart1 = dropdown1.getSelectedItem().toString();
                 String RnoPart2 = dropdown2.getSelectedItem().toString();
-                rollNo = RnoPart1 +RnoPart2 + e1.getText().toString();
-              hostel = dropdownHostel.getSelectedItem().toString();
+                rollNo = RnoPart1 + RnoPart2 + e1.getText().toString();
+                hostel = dropdownHostel.getSelectedItem().toString();
             }
-
-
 
             String name = e2.getText().toString();
             String emailId = e4.getText().toString();
             String password = e5.getText().toString();
             String phoneNo = e6.getText().toString();
-            String messBill = basicBill + "";
-
             String room = eRoom.getText().toString();
 
-            int isVeg=0;
+            int isVeg = 0;
             if (rveg.isChecked()) {
                 isVeg = 1;
             } else isVeg = 0;
 
-            int isAdmin=0;
+            int isAdmin = 0;
 
             if (cbAdmin.isChecked()) {
                 isAdmin = 1;
             } else isAdmin = 0;
-
 
             progressBar.setVisibility(View.VISIBLE);
 
@@ -240,76 +190,51 @@ public class Register extends AppCompatActivity {
                 jsonObject.put("password", password);
                 jsonObject.put("is_admin", isAdmin);
 
-
                 GlobalVariables.currentRollNo = rollNo;
                 GlobalVariables.currentName = name;
                 GlobalVariables.currentHostel = hostel;
-                GlobalVariables.currentRoomNo=room;
+                GlobalVariables.currentRoomNo = room;
                 GlobalVariables.currentEmailID = emailId;
                 GlobalVariables.currentPhoneNo = phoneNo;
-                if(isVeg == 1) {
+                if (isVeg == 1) {
                     GlobalVariables.currentVegOrNon = "Veg";
-                    GlobalVariables.currentMessBill="1875";
+                    GlobalVariables.currentMessBill = "1875";
+                } else {
+                    GlobalVariables.currentVegOrNon = "Non-Veg";
+                    GlobalVariables.currentMessBill = "1925";
                 }
-                else {
-                    GlobalVariables.currentVegOrNon ="Non-Veg";
-                    GlobalVariables.currentMessBill="1925";
-                }
-
 
             } catch (JSONException e) {
                 // TODO Auto-generated catch block
                 System.out.println("DATA NOT INSERTED. Please try again!" + e);
             }
 
-
-            final Context temp = this;
-
-
             new MyAsyncTask(Register.this, jsonObject.toString(), URLS.API_register_URL, new MyAsyncTask.AsyncResponse() {
                 @Override
                 public void processFinish(String output) {
                     progressBar.setVisibility(View.GONE);
                     try {
-
                         JSONObject response = new JSONObject(output);
-
                         String resultedMessage = response.getString("responseType");
 
-                        if(resultedMessage.equals("success")) {
-                            Toast.makeText(temp, "Congrats! You have successfully registered.", Toast.LENGTH_LONG).show();
-
-
-                            startActivity(new Intent(temp, MessSubscribe.class));
+                        if (resultedMessage.equals("success")) {
+                            Toast.makeText(Register.this, "Congrats! You have successfully registered.", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(Register.this, MessSubscribe.class));
+                        } else {
+                            JSONObject payload = response.getJSONObject("payload");
+                            String errorMessage = payload.getString("message");
+                            Toast.makeText(Register.this, errorMessage, Toast.LENGTH_LONG).show();
                         }
-
-
-                        else {
-
-                            String errorMessage = response.getString("message");
-
-                            Toast.makeText(temp, errorMessage, Toast.LENGTH_LONG).show();
-                        }
-
-
 
                     } catch (Exception e) {
-
-
-                        Toast.makeText(temp, "Please try again! Exception ", Toast.LENGTH_LONG).show();
+                        Toast.makeText(Register.this, "Please try again! Exception ", Toast.LENGTH_LONG).show();
                     }
-
                 }
             }).execute();
-
-
-
-
         }
     }
 
-    public void login(View v)
-    {
+    public void login(View v) {
         startActivity(new Intent(this, MainActivity.class));
     }
 
@@ -324,7 +249,6 @@ public class Register extends AppCompatActivity {
         } else if (onStartCount == 1) {
             onStartCount++;
         }
-
     }
 
 
