@@ -30,7 +30,12 @@
                 android:textColor="#00bfa5"
                 android:textSize="20sp" />
 
-            <TextView
+            <ListView
+                android:id="@+id/counterList"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+            <!--<TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -81,7 +86,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="SNH Mess" />
+                android:text="SNH Mess" />-->
 
             <Button
                 android:id="@+id/btSubscribe"
