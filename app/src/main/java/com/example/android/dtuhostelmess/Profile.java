@@ -23,6 +23,8 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import utils.AppPreferences;
+import utils.Constants;
 import utils.GlobalVariables;
 import utils.MyAsyncTask;
 import utils.URLS;
@@ -39,11 +41,13 @@ public class Profile extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
     private String mActivityTitle;
+    private AppPreferences prefManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        prefManager= AppPreferences.getInstance(this);
 
         e1 = (EditText) findViewById(R.id.tvName);
         e2 = (TextView) findViewById(R.id.tvRollNo);
@@ -124,6 +128,13 @@ public class Profile extends AppCompatActivity {
 
                     case R.id.buy: {
                         startActivity(new Intent(Profile.this, Buy.class));
+                        return true;
+                    }
+
+                    case R.id.logout:
+                    {
+                        prefManager.putString(Constants.RollNumber, "");
+                        startActivity(new Intent(Profile.this, MainActivity.class));
                         return true;
                     }
 
