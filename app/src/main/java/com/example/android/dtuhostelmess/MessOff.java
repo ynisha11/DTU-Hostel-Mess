@@ -28,6 +28,7 @@ import java.text.DateFormatSymbols;
 import java.util.ArrayList;
 
 import utils.AppPreferences;
+import utils.AppUtils;
 import utils.Constants;
 import utils.GlobalVariables;
 import utils.ListModel;
@@ -100,12 +101,7 @@ public class MessOff extends AppCompatActivity {
 
 
                     case R.id.feedbackMail: {
-                        Intent intent = new Intent(Intent.ACTION_SEND);
-                        intent.setType("plain/text");
-                        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"ynisha11@gmail.com", "maskaravivek@gmail.com"});
-                        intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback: DTU Hostel Mess App");
-                        intent.putExtra(Intent.EXTRA_TEXT, "We would love to hear your feedback!");
-                        startActivity(Intent.createChooser(intent, ""));
+                        startActivity(Intent.createChooser(AppUtils.SendFeedBack(), ""));
                         return true;
                     }
 
@@ -124,7 +120,7 @@ public class MessOff extends AppCompatActivity {
 
 
                     case R.id.billPay:
-                        goToUrl("https://www.onlinesbi.com/prelogin/icollecthome.htm");
+                        goToUrl(Constants.MessBillPaymentUrl);
                         return true;
 
                     default:

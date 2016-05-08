@@ -12,4 +12,6 @@ public class Constants {
     public final static String CurrentHostel= "currentHostel";
     public final static String CurrentRoomNumber= "currentRoomNumber";
     public final static String CurrentVegOrNonVeg= "currentVegOrNonVeg";
+
+    public final static String MessBillPaymentUrl= "https://www.onlinesbi.com/prelogin/icollecthome.htm";
 }
