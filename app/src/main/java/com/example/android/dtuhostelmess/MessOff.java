@@ -336,17 +336,17 @@ public class MessOff extends AppCompatActivity {
 
                     JSONObject response = new JSONObject(output);
                     String resultedMessage = response.getString("responseType");
-
+                    //Toast.makeText(MessOff.this, resultedMessage, Toast.LENGTH_SHORT).show();
                     if (resultedMessage.equals("success")) {
-                        Toast.makeText(MessOff.this, "Successfully added Mess Off!.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MessOff.this, "Successfully added Mess Off", Toast.LENGTH_LONG).show();
                         startActivity(new Intent(MessOff.this, MessMenu.class));
                     } else {
-                        String errorMessage = response.getString("message");
-                        Toast.makeText(MessOff.this, errorMessage, Toast.LENGTH_LONG).show();
+                        //String errorMessage = response.getString("message");
+                        Toast.makeText(MessOff.this, "error", Toast.LENGTH_LONG).show();
                     }
 
                 } catch (Exception e) {
-                    Toast.makeText(MessOff.this, "Please try again! Exception ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MessOff.this, e.getMessage(), Toast.LENGTH_LONG).show();
                 }
 
             }
