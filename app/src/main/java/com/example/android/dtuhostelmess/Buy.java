@@ -87,8 +87,7 @@ public class Buy extends AppCompatActivity {
         cbOthersPrice = (EditText) findViewById(R.id.othersPrice);
 
         dropdown1 = (Spinner) findViewById(R.id.spinner1);
-        String[] items = new String[]{"Aryabhatta Mess", "CVR Mess", "HJB Mess", "VVS Mess", "SNH Mess"};
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, Constants.MessList);
         dropdown1.setAdapter(adapter1);
 
         list.setVisibility(View.INVISIBLE);

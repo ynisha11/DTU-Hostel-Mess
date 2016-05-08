@@ -14,4 +14,9 @@ public class Constants {
     public final static String CurrentVegOrNonVeg= "currentVegOrNonVeg";
 
     public final static String MessBillPaymentUrl= "https://www.onlinesbi.com/prelogin/icollecthome.htm";
+
+    public final static String[] MessList = new String[]{"Aryabhatta Mess", "CVR Mess", "HJB Mess", "VVS Mess", "SNH Mess"};
+    public final static String[] HostelList = new String[]{
+            "KCH", "SNH", "Type II", "Type III", "Aryabhatta", "BCH", "CVR", "HJB", "JCB", "Ramanujan", "Type – II B-5", "VMH", "VVS"
+    };
 }

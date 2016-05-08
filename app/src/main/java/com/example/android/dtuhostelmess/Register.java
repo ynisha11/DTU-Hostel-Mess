@@ -90,13 +90,12 @@ public class Register extends AppCompatActivity {
 
         dropdownHostel = (Spinner) findViewById(R.id.spinnerHostel);
 
-        String[] items = new String[]{"KCH", "SNH", "Type II", "Type III", "Aryabhatta", "BCH", "CVR", "HJB", "JCB", "Ramanujan", "Type – II B-5", "VMH", "VVS"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, Constants.HostelList);
         dropdownHostel.setAdapter(adapter);
 
         dropdownMess = (Spinner) findViewById(R.id.spinnerMess);
-        String[] itemsM = new String[]{"Aryabhatta Mess", "CVR Mess", "HJB Mess", "VVS Mess", "SNH Mess"};
-        ArrayAdapter<String> adapterM = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, itemsM);
+        ArrayAdapter<String> adapterM = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, Constants.MessList);
         dropdownMess.setAdapter(adapterM);
 
     }

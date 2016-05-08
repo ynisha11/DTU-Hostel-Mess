@@ -69,20 +69,20 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/Buy.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="328" column="89" selection-start-line="328" selection-start-column="24" selection-end-line="328" selection-end-column="89" />
+              <caret line="89" column="136" selection-start-line="89" selection-start-column="136" selection-end-line="89" selection-end-column="136" />
               <folding>
-                <element signature="e#12157#14550#0" expanded="true" />
-                <element signature="e#14549#14550#0" expanded="true" />
+                <element signature="e#12064#14457#0" expanded="true" />
+                <element signature="e#14456#14457#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/utils/AppUtils.java">
+      <file leaf-file-name="ConfirmPurchase.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/ConfirmPurchase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+            <state vertical-scroll-proportion="-1.0796325">
+              <caret line="27" column="105" selection-start-line="27" selection-start-column="105" selection-end-line="27" selection-end-column="105" />
               <folding />
             </state>
           </provider>
@@ -92,7 +92,27 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MessMenu.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="114" column="89" selection-start-line="114" selection-start-column="89" selection-end-line="114" selection-end-column="89" />
+              <caret line="191" column="5" selection-start-line="191" selection-start-column="5" selection-end-line="191" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="304" column="80" selection-start-line="304" selection-start-column="24" selection-end-line="304" selection-end-column="80" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Register.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/Register.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="93" column="117" selection-start-line="93" selection-start-column="117" selection-end-line="93" selection-end-column="137" />
               <folding />
             </state>
           </provider>
@@ -112,17 +132,17 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/Profile.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="118" column="89" selection-start-line="118" selection-start-column="89" selection-end-line="118" selection-end-column="89" />
+              <caret line="63" column="137" selection-start-line="63" selection-start-column="137" selection-end-line="63" selection-end-column="137" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MonthlyBill.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MonthlyBill.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MonthlyBill.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.78101075">
-              <caret line="112" column="89" selection-start-line="112" selection-start-column="89" selection-end-line="112" selection-end-column="89" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -142,7 +162,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/utils/Constants.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="49" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="49" />
+              <caret line="18" column="43" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -1625,16 +1645,16 @@
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_buy.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/ConfirmPurchase.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MessSubscribe.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/Register.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/drawer.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/utils/Constants.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/utils/AppUtils.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/Buy.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MessMenu.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MessOff.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/Profile.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MonthlyBill.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/Buy.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/utils/Constants.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/Register.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/Profile.java" />
       </list>
     </option>
   </component>
@@ -2112,7 +2132,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/Buy.java</url>
-          <line>462</line>
+          <line>461</line>
           <properties />
         </line-breakpoint>
       </breakpoints>
@@ -2126,8 +2146,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#12157#14550#0" expanded="true" />
-            <element signature="e#14549#14550#0" expanded="true" />
+            <element signature="e#12064#14457#0" expanded="true" />
+            <element signature="e#14456#14457#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2161,8 +2181,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#12157#14550#0" expanded="true" />
-            <element signature="e#14549#14550#0" expanded="true" />
+            <element signature="e#12064#14457#0" expanded="true" />
+            <element signature="e#14456#14457#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2172,8 +2192,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#12157#14550#0" expanded="true" />
-            <element signature="e#14549#14550#0" expanded="true" />
+            <element signature="e#12064#14457#0" expanded="true" />
+            <element signature="e#14456#14457#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2366,50 +2386,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="304" column="80" selection-start-line="304" selection-start-column="24" selection-end-line="304" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/utils/AppPreferences.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/Register.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.9356815">
-          <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/ConfirmPurchase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18376723">
-          <caret line="27" column="105" selection-start-line="27" selection-start-column="105" selection-end-line="27" selection-end-column="105" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/utils/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="49" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MessSubscribe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2422,21 +2402,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/Buy.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="328" column="89" selection-start-line="328" selection-start-column="24" selection-end-line="328" selection-end-column="89" />
-          <folding>
-            <element signature="e#12157#14550#0" expanded="true" />
-            <element signature="e#14549#14550#0" expanded="true" />
-          </folding>
+          <caret line="304" column="80" selection-start-line="304" selection-start-column="24" selection-end-line="304" selection-end-column="80" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MessMenu.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/utils/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="114" column="89" selection-start-line="114" selection-start-column="89" selection-end-line="114" selection-end-column="89" />
+          <caret line="18" column="43" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/Register.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="93" column="117" selection-start-line="93" selection-start-column="117" selection-end-line="93" selection-end-column="137" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/Profile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="63" column="137" selection-start-line="63" selection-start-column="137" selection-end-line="63" selection-end-column="137" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MonthlyBill.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MessSubscribe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2449,18 +2458,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/Profile.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MessMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="118" column="89" selection-start-line="118" selection-start-column="89" selection-end-line="118" selection-end-column="89" />
+          <caret line="191" column="5" selection-start-line="191" selection-start-column="5" selection-end-line="191" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MonthlyBill.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/Buy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.78101075">
-          <caret line="112" column="89" selection-start-line="112" selection-start-column="89" selection-end-line="112" selection-end-column="89" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="89" column="136" selection-start-line="89" selection-start-column="136" selection-end-line="89" selection-end-column="136" />
+          <folding>
+            <element signature="e#12064#14457#0" expanded="true" />
+            <element signature="e#14456#14457#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/ConfirmPurchase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.0796325">
+          <caret line="27" column="105" selection-start-line="27" selection-start-column="105" selection-end-line="27" selection-end-column="105" />
           <folding />
         </state>
       </provider>

@@ -61,8 +61,7 @@ public class Profile extends AppCompatActivity {
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         dropdownHostel = (Spinner) findViewById(R.id.spinnerHostel);
 
-        String[] items = new String[]{"KCH", "SNH", "Type II", "Type III", "Aryabhatta", "BCH", "CVR", "HJB", "JCB", "Ramanujan", "Type – II B-5", "VMH", "VVS"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, Constants.HostelList);
         dropdownHostel.setAdapter(adapter);
         dropdownHostel.setSelection(adapter.getPosition(GlobalVariables.currentHostel));
 
