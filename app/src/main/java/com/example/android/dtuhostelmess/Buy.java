@@ -29,6 +29,8 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import utils.AppPreferences;
+import utils.Constants;
 import utils.GlobalVariables;
 import utils.ListModel;
 import utils.MyAsyncTask;
@@ -52,11 +54,15 @@ public class Buy extends AppCompatActivity {
     private ActionBarDrawerToggle mDrawerToggle;
     private String mActivityTitle;
     ProgressBar progressBar;
+    private AppPreferences prefManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buy);
+
+        prefManager= AppPreferences.getInstance(this);
+
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
       //  type = (TextView) findViewById(R.id.tvType);
@@ -338,7 +344,8 @@ public class Buy extends AppCompatActivity {
 
                     case R.id.logout:
                     {
-
+                        prefManager.putString(Constants.RollNumber, "");
+                        startActivity(new Intent(Buy.this, MainActivity.class));
                         return true;
                     }
 

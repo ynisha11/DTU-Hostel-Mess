@@ -27,6 +27,8 @@ import org.json.JSONObject;
 import java.text.DateFormatSymbols;
 import java.util.ArrayList;
 
+import utils.AppPreferences;
+import utils.Constants;
 import utils.GlobalVariables;
 import utils.ListModel;
 import utils.MyAsyncTask;
@@ -47,11 +49,13 @@ public class MessOff extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
     private String mActivityTitle;
+    private AppPreferences prefManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mess_off);
+        prefManager= AppPreferences.getInstance(this);
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         btMessOff = (Button) findViewById(R.id.btMessOff);
@@ -108,6 +112,13 @@ public class MessOff extends AppCompatActivity {
 
                     case R.id.buy: {
                         startActivity(new Intent(MessOff.this, Buy.class));
+                        return true;
+                    }
+
+                    case R.id.logout:
+                    {
+                        prefManager.putString(Constants.RollNumber, "");
+                        startActivity(new Intent(MessOff.this, MainActivity.class));
                         return true;
                     }
 

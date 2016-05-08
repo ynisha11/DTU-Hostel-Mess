@@ -28,6 +28,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
 
+import utils.AppPreferences;
+import utils.Constants;
 import utils.GlobalVariables;
 import utils.ListModel;
 import utils.MyAsyncTask;
@@ -48,11 +50,13 @@ public class MessMenu extends AppCompatActivity {
     private ActionBarDrawerToggle mDrawerToggle;
     private String mActivityTitle;
     ProgressBar progressBar;
+    private AppPreferences prefManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mess_menu);
+        prefManager= AppPreferences.getInstance(this);
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         // Initializing Toolbar and setting it as the actionbar
@@ -113,6 +117,13 @@ public class MessMenu extends AppCompatActivity {
                         intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback: DTU Hostel Mess App");
                         intent.putExtra(Intent.EXTRA_TEXT, "We would love to hear your feedback!");
                         startActivity(Intent.createChooser(intent, ""));
+                        return true;
+                    }
+
+                    case R.id.logout:
+                    {
+                        prefManager.putString(Constants.RollNumber, "");
+                        startActivity(new Intent(MessMenu.this, MainActivity.class));
                         return true;
                     }
 

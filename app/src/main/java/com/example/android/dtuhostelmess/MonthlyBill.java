@@ -25,6 +25,8 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import utils.AppPreferences;
+import utils.Constants;
 import utils.GlobalVariables;
 import utils.ListModel;
 import utils.MyAsyncTask;
@@ -43,11 +45,13 @@ public class MonthlyBill extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
     private String mActivityTitle;
+    private AppPreferences prefManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_monthly_bill);
+        prefManager= AppPreferences.getInstance(this);
 
         tv = (TextView) findViewById(R.id.tvBill);
         des = (TextView) findViewById(R.id.tvDes);
@@ -57,6 +61,8 @@ public class MonthlyBill extends AppCompatActivity {
 
         month = (Spinner) findViewById(R.id.spinnerMonth);
         year = (Spinner) findViewById(R.id.spinnerYear);
+
+        //Todo: replace hardcoded month and year names
         String[] items1 = new String[]{"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items1);
         month.setAdapter(adapter1);
@@ -116,6 +122,13 @@ public class MonthlyBill extends AppCompatActivity {
 
                     case R.id.buy: {
                         startActivity(new Intent(MonthlyBill.this, Buy.class));
+                        return true;
+                    }
+
+                    case R.id.logout:
+                    {
+                        prefManager.putString(Constants.RollNumber, "");
+                        startActivity(new Intent(MonthlyBill.this, MainActivity.class));
                         return true;
                     }
 
