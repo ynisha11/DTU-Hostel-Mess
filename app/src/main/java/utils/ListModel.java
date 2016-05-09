@@ -23,6 +23,16 @@ public class ListModel extends AppCompatActivity {
 
     private String counterName = "";
 
+    private String messOffDeduct ="";
+
+    public String getMessOffDeduct(){
+        return this.messOffDeduct;
+    }
+
+    public void setMessOffDeduct(String str){
+        this.messOffDeduct = str;
+    }
+
     public String getCounterName(){
         return this.counterName;
     }

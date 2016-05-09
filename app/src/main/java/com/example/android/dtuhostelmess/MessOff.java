@@ -352,6 +352,36 @@ public class MessOff extends AppCompatActivity {
             }
         }).execute();
 
+        JSONObject jsonObject2 = new JSONObject();
+        try {
+            jsonObject2.put("roll_number", GlobalVariables.currentRollNo);
+        } catch (Exception e) {
+            Toast.makeText(MessOff.this, "" + e, Toast.LENGTH_LONG).show();
+            // System.out.println("Exception in json encoding "+e);
+        }
+        new MyAsyncTask(MessOff.this, jsonObject2.toString(), URLS.CurrentBill_URL, new MyAsyncTask.AsyncResponse() {
+            @Override
+            public void processFinish(String output) {
+                progressBar.setVisibility(View.GONE);
+                try {
+                    JSONObject response = new JSONObject(output);
+                    String resultedMessage = response.getString("responseType");
+                    if (resultedMessage.equals("success")) {
+                        response = response.getJSONObject("payload");
+                        String latestBill = response.getString("bill_amount");
+                        GlobalVariables.currentMessBill = latestBill;
+                        startActivity(new Intent(MessOff.this, MessMenu.class));
+                    } else {
+                        response = response.getJSONObject("payload");
+                        String errorMessage = response.getString("message");
+                        Toast.makeText(MessOff.this, errorMessage, Toast.LENGTH_LONG).show();
+                    }
+                } catch (Exception e) {
+                    // Toast.makeText(MainActivity.this,""+ e, Toast.LENGTH_LONG).show();
+                }
+            }
+        }).execute();
+
     }
 
     public void onItemClick(int mPosition) {

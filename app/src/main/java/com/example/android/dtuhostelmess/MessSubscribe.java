@@ -7,17 +7,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
-import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-
-import Models.CounterItem;
 import utils.GlobalVariables;
 import utils.MyAsyncTask;
 import utils.URLS;
@@ -26,10 +21,8 @@ public class MessSubscribe extends AppCompatActivity {
 
     CheckBox cb1, cb2, cb3, cb4, cb5;
     ProgressBar progressBar;
-    String listOfCounters="";
+    String listOfCounters;
     int onStartCount = 0;
-    CustomAdapterMessSubscribe adapter;
-    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,20 +41,11 @@ public class MessSubscribe extends AppCompatActivity {
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
-        ArrayList<CounterItem> counters = new ArrayList<CounterItem>();
-        counters.add( new CounterItem("0","Mess", true, true));
-        counters.add( new CounterItem("1","CVR Mess", true, false));
-        counters.add( new CounterItem("2","HJB Mess", true, false));
-        counters.add( new CounterItem("3","VVS Mess", true, false));
-        counters.add( new CounterItem("4","Aryabhatta Mess", true, false));
-        counters.add( new CounterItem("0","Mess", false, true));
-        counters.add( new CounterItem("5","SNH Mess", false, false));
-
-        adapter = new CustomAdapterMessSubscribe(this, counters);
-
-        listView = (ListView) findViewById(R.id.counterList);
-        listView.setAdapter(adapter);
-
+        cb1 = (CheckBox) findViewById(R.id.counter1);
+        cb2 = (CheckBox) findViewById(R.id.counter2);
+        cb3 = (CheckBox) findViewById(R.id.counter3);
+        cb4 = (CheckBox) findViewById(R.id.counter4);
+        cb5 = (CheckBox) findViewById(R.id.counter5);
     }
 
     @Override
@@ -79,7 +63,6 @@ public class MessSubscribe extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -89,27 +72,96 @@ public class MessSubscribe extends AppCompatActivity {
         boolean checked;
         String counter;
 
-        int sizeOfList = adapter.getCount();
+//        OpenHelper h = new OpenHelper(this);
+//        SQLiteDatabase db = h.getWritableDatabase();
 
-        for (int x = 0; x < sizeOfList; x++) {
+        checked = cb1.isChecked();
+        if (checked) {
+            counter = "1";
+            addToList(counter);
+//            ContentValues c = new ContentValues();
+//            c.put("Id", "1");
+//            c.put("CounterName", "CVR Mess");
+//            c.put("MenuVersion", "0");
+//            long id = db.insert("Counter", null, c);
+//
+//            if (id == -1)
+//                Toast.makeText(this, "Not Subscribed CVR Mess Menu", Toast.LENGTH_SHORT).show();
+//            else {
+//                Toast.makeText(this, "Subscribed CVR Mess Menu", Toast.LENGTH_SHORT).show();
+//            }
 
-            View view = listView.getChildAt(x);
-            if(view!=null)
-            {
-                CheckBox cb = (CheckBox) view.findViewById(R.id.counter);
-                if(cb!=null)
-                {
-                    if (cb.isChecked()) {
-                        Toast.makeText(MessSubscribe.this, "checked ", Toast.LENGTH_LONG).show();
-                        if(!adapter.isSeperator(x))
-                        {
-                            addToList(adapter.getCounterId(x));
-                        }
-                    }
-                }
-            }
         }
-        
+
+        checked = cb2.isChecked();
+        if (checked) {
+            counter = "2";
+            addToList(counter);
+//            ContentValues c = new ContentValues();
+//            c.put("Id", "2");
+//            c.put("CounterName", "HJB Mess");
+//            c.put("MenuVersion", "0");
+//            long id = db.insert("Counter", null, c);
+//
+//            if (id == -1)
+//                Toast.makeText(this, "Not Subscribed HJB Mess Menu", Toast.LENGTH_SHORT).show();
+//            else {
+//                Toast.makeText(this, "Subscribed HJB Mess Menu", Toast.LENGTH_SHORT).show();
+//            }
+        }
+
+        checked = cb3.isChecked();
+        if (checked) {
+            counter = "3";
+            addToList(counter);
+//            ContentValues c = new ContentValues();
+//            c.put("Id", "3");
+//            c.put("CounterName", "VVS Mess");
+//            c.put("MenuVersion", "0");
+//            long id = db.insert("Counter", null, c);
+//
+//            if (id == -1)
+//                Toast.makeText(this, "Not Subscribed VVS Mess Menu", Toast.LENGTH_SHORT).show();
+//            else {
+//                Toast.makeText(this, "Subscribed VVS Mess Menu", Toast.LENGTH_SHORT).show();
+//            }
+        }
+
+        checked = cb4.isChecked();
+        if (checked) {
+            counter = "4";
+            addToList(counter);
+//            ContentValues c = new ContentValues();
+//            c.put("Id", "4");
+//            c.put("CounterName", "Aryabhatta Mess");
+//            c.put("MenuVersion", "0");
+//            long id = db.insert("Counter", null, c);
+//
+//            if (id == -1)
+//                Toast.makeText(this, "Not Subscribed Aryabhatta Mess Menu", Toast.LENGTH_SHORT).show();
+//            else {
+//                Toast.makeText(this, "Subscribed Aryabhatta Mess Menu", Toast.LENGTH_SHORT).show();
+//            }
+        }
+
+
+        checked = cb5.isChecked();
+        if (checked) {
+            counter = "5";
+            addToList(counter);
+//            ContentValues c = new ContentValues();
+//            c.put("Id", "5");
+//            c.put("CounterName", "SNH Mess");
+//            c.put("MenuVersion", "0");
+//            long id = db.insert("Counter", null, c);
+//
+//            if (id == -1)
+//                Toast.makeText(this, "Not Subscribed SNH Mess Menu", Toast.LENGTH_SHORT).show();
+//            else {
+//                Toast.makeText(this, "Subscribed SNH Mess Menu", Toast.LENGTH_SHORT).show();
+//            }
+        }
+
         subscribeToCounter(listOfCounters);
     }
 
@@ -172,4 +224,3 @@ public class MessSubscribe extends AppCompatActivity {
     }
 
 }
-

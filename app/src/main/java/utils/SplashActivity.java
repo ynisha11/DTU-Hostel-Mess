@@ -15,7 +15,7 @@ import com.example.android.dtuhostelmess.R;
 public class SplashActivity extends Activity {
 
     // Splash screen timer
-    private int mSplashTime= 800;
+    private int mSplashTime= 500;
     private static int SPLASH_TIME_OUT = 3000;
     private AppPreferences prefManager;
 

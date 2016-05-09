@@ -273,7 +273,9 @@ public class MonthlyBill extends AppCompatActivity {
                         String totalBill = response.getString("bill_amount");
                         JSONArray responseArr = response.getJSONArray("history");
 
-                        if (responseArr.length() == 0) {
+                        JSONArray responseArr2 = response.getJSONArray("mess_off");
+
+                        if (responseArr.length() == 0 && responseArr2.length()==0) {
                             AlertDialog alertDialog = new AlertDialog.Builder(MonthlyBill.this).create(); //Read Update
                             alertDialog.setTitle("No History");
                             alertDialog.setMessage("You haven't bought any food items in the selected Month and Year\nPlease choose again!");
@@ -314,6 +316,26 @@ public class MonthlyBill extends AppCompatActivity {
                             // Take Model Object in ArrayList
                             CustomListViewValuesArr.add(sched);
                         }
+
+
+                        for (int i = 0; i < responseArr2.length(); i++) {
+
+                            JSONObject childJSONObject = responseArr2.getJSONObject(i);
+                            String date = childJSONObject.getString("date");
+                            String food = childJSONObject.getString("holiday");
+
+                            final ListModel sched = new ListModel();
+
+                            // Firstly take data in model object
+                            sched.setDateTime(date);
+                            sched.setMess("All Mess");
+                            sched.setFood(food);
+                            sched.setMessOffDeduct("65");
+
+                            // Take Model Object in ArrayList
+                            CustomListViewValuesArr.add(sched);
+                        }
+
 
                         Resources res = getResources();
                         adapter = new CustomAdapterBill(CustomListView, CustomListViewValuesArr, res);

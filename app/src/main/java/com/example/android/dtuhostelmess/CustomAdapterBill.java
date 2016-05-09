@@ -84,7 +84,10 @@ public class CustomAdapterBill extends BaseAdapter implements View.OnClickListen
             holder.date.setText(tempValues.getDateTime());
             holder.mess.setText(tempValues.getMess());
             holder.food.setText(tempValues.getFood());
-            holder.total.setText("Rs " + tempValues.getTotal());
+            if(tempValues.getMessOffDeduct()==""){
+                holder.total.setText("  Rs " + tempValues.getTotal());
+            }
+           else holder.total.setText("- Rs " + tempValues.getMessOffDeduct());
 
             //Set Item Click Listner for LayoutInflater for each row
             vi.setOnClickListener(new OnItemClickListener(position));
