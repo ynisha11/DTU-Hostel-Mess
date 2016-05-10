@@ -105,24 +105,6 @@ public class MessSubscribe extends AppCompatActivity {
             }
         }
 
-
-        checked = cb5.isChecked();
-        if (checked) {
-            counter = "5";
-            addToList(counter);
-//            ContentValues c = new ContentValues();
-//            c.put("Id", "5");
-//            c.put("CounterName", "SNH Mess");
-//            c.put("MenuVersion", "0");
-//            long id = db.insert("Counter", null, c);
-//
-//            if (id == -1)
-//                Toast.makeText(this, "Not Subscribed SNH Mess Menu", Toast.LENGTH_SHORT).show();
-//            else {
-//                Toast.makeText(this, "Subscribed SNH Mess Menu", Toast.LENGTH_SHORT).show();
-//            }
-        }
-
         subscribeToCounter(listOfCounters);
     }
 

@@ -349,10 +349,8 @@ public class Buy extends AppCompatActivity {
 
     public void placeOrder(View v) {
 
-        String boughtInMess = dropdown1.getSelectedItem().toString();
+        GlobalVariables.selectedCounter = dropdown1.getSelectedItem().toString();
         int sizeOfList = buyItemsAdapter.getCount();
-        Intent i = new Intent(this, ConfirmPurchase.class);
-
 
         ArrayList<FoodItem> selectedFoodItems= new ArrayList<FoodItem>();
 

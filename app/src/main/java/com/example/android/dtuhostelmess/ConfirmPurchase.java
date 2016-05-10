@@ -34,6 +34,7 @@ public class ConfirmPurchase extends Activity {
     int numberOfItems = 0, onStartCount = 0;
     ProgressBar progressBar;
     private ArrayList<FoodItem> foodItemsList;
+    TextView mess;
     public ListView list;
     private ConfirmItemsAdapter confirmItemsAdapter;
 
@@ -60,8 +61,8 @@ public class ConfirmPurchase extends Activity {
         list.setAdapter(confirmItemsAdapter);
 
 
-        //mess = (TextView) findViewById(R.id.tvmess);
-
+        mess = (TextView) findViewById(R.id.tvmess);
+        mess.setText(GlobalVariables.selectedCounter);
 
         confirm = (Button) findViewById(R.id.btConfirmOrder);
 
@@ -89,19 +90,20 @@ public class ConfirmPurchase extends Activity {
         String counter = null;
         progressBar.setVisibility(View.VISIBLE);
 
-//        if (messSelected.equals("CVR Mess")) {
-//            counter = "1";
-//        } else if (messSelected.equals("HJB Mess")) {
-//            counter = "2";
-//        } else if (messSelected.equals("HJB Mess")) {
-//            counter = "2";
-//        } else if (messSelected.equals("VVS Mess")) {
-//            counter = "3";
-//        } else if (messSelected.equals("Aryabhatta Mess")) {
-//            counter = "4";
-//        } else if (messSelected.equals("SNH Mess")) {
-//            counter = "5";
-//        }
+        String messSelected= GlobalVariables.selectedCounter;
+        if (messSelected.equals("CVR Mess")) {
+            counter = "1";
+        } else if (messSelected.equals("HJB Mess")) {
+            counter = "2";
+        } else if (messSelected.equals("HJB Mess")) {
+            counter = "2";
+        } else if (messSelected.equals("VVS Mess")) {
+            counter = "3";
+        } else if (messSelected.equals("Aryabhatta Mess")) {
+            counter = "4";
+        } else if (messSelected.equals("SNH Mess")) {
+            counter = "5";
+        }
 
         int sizeOfList = confirmItemsAdapter.getCount();
 
@@ -113,7 +115,7 @@ public class ConfirmPurchase extends Activity {
                 jsonObject.put("item_id", item.getmFoodId());
                 jsonObject.put("quantity", item.getmQuantity());
                 jsonObject.put("cost", item.getmCost());
-                jsonObject.put("counter_id", "1");
+                jsonObject.put("counter_id", counter);
             } catch (Exception e) {
                 Toast.makeText(ConfirmPurchase.this, "" + e, Toast.LENGTH_SHORT).show();
                 // System.out.println("Exception in json encoding "+e);
