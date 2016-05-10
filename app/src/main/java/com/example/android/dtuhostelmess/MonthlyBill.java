@@ -268,7 +268,7 @@ public class MonthlyBill extends AppCompatActivity {
                     String resultedMessage = response.getString("responseType");
 
                     if (resultedMessage.equals("success")) {
-
+                        CustomListViewValuesArr= new ArrayList<ListModel>();
                         response = response.getJSONObject("payload");
                         String totalBill = response.getString("bill_amount");
                         JSONArray responseArr = response.getJSONArray("history");
