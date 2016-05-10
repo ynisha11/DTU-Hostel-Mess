@@ -19,4 +19,6 @@ public class Constants {
     public final static String[] HostelList = new String[]{
             "KCH", "SNH", "Type II", "Type III", "Aryabhatta", "BCH", "CVR", "HJB", "JCB", "Ramanujan", "Type – II B-5", "VMH", "VVS"
     };
+
+    public final static String OtherFoodId= "10";
 }

@@ -1,6 +1,13 @@
 package utils;
 
+import java.util.ArrayList;
+
+import Models.FoodItem;
+
 public class GlobalVariables {
+
+    public static ArrayList<FoodItem> selectedFoodItems;
+
     public static String currentMessBill;
     public static String currentRollNo;
     public static String currentName;

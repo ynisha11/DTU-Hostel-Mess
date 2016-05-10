@@ -7,9 +7,11 @@
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="49d3f6b2-e23d-446a-b93e-c19df3204f3d" name="Default" comment="">
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
       <change type="DELETED" beforePath="$PROJECT_DIR$/DTU-Hostel-Mess.iml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" />
@@ -35,6 +37,24 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_22_2_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_22_2_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/tabitembill.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/tabitembill.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+=======
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/CustomAdapter.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/outputFileStates.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/Buy.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/Buy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/ConfirmPurchase.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/ConfirmPurchase.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/utils/Constants.java" afterPath="$PROJECT_DIR$/app/src/main/java/utils/Constants.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/utils/GlobalVariables.java" afterPath="$PROJECT_DIR$/app/src/main/java/utils/GlobalVariables.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_buy.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_buy.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_confirm_purchase.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_confirm_purchase.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
+>>>>>>> fixed buy item flow
     </list>
     <ignored path="DTUHostelMess.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -93,22 +113,46 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MonthlyBill.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
               <caret line="304" column="47" selection-start-line="304" selection-start-column="47" selection-end-line="304" selection-end-column="47" />
               <folding />
+=======
+              <caret line="367" column="9" selection-start-line="352" selection-start-column="8" selection-end-line="367" selection-end-column="9" />
+              <folding>
+                <element signature="e#3150#3158#0" expanded="true" />
+                <element signature="e#3999#7732#0" expanded="true" />
+                <element signature="e#4589#4619#0" expanded="true" />
+                <element signature="e#7731#7732#0" expanded="true" />
+                <element signature="e#14711#14721#0" expanded="true" />
+              </folding>
+>>>>>>> fixed buy item flow
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
       <file leaf-file-name="CustomAdapterBill.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/CustomAdapterBill.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="74" column="44" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="44" />
               <folding />
+=======
+      <file leaf-file-name="ConfirmPurchase.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/ConfirmPurchase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.094527364">
+              <caret line="115" column="47" selection-start-line="115" selection-start-column="47" selection-end-line="115" selection-end-column="47" />
+              <folding>
+                <element signature="e#4151#5247#0" expanded="true" />
+                <element signature="e#5246#5247#0" expanded="true" />
+              </folding>
+>>>>>>> fixed buy item flow
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
       <file leaf-file-name="activity_monthly_bill.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_monthly_bill.xml">
           <provider selected="true" editor-type-id="text-editor">
@@ -141,10 +185,63 @@
             <state vertical-scroll-proportion="0.37593985">
               <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
               <folding />
+=======
+      <file leaf-file-name="CustomAdapterMessOff.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/CustomAdapterMessOff.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="activity_confirm_purchase.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_confirm_purchase.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.8301888">
+              <caret line="26" column="45" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="confirm_purchase_item.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/confirm_purchase_item.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.6792452">
+              <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BuyItemsAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/Adapters/BuyItemsAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="136" column="30" selection-start-line="0" selection-start-column="0" selection-end-line="203" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1235#1236#0" expanded="true" />
+                <element signature="e#1267#1268#0" expanded="true" />
+                <element signature="e#3872#4132#0" expanded="true" />
+                <element signature="e#4131#4132#0" expanded="true" />
+                <element signature="e#4600#4860#0" expanded="true" />
+                <element signature="e#4859#4860#0" expanded="true" />
+              </folding>
+>>>>>>> fixed buy item flow
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
       <file leaf-file-name="tabitembill.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tabitembill.xml">
           <provider selected="true" editor-type-id="text-editor">
@@ -155,6 +252,49 @@
           </provider>
           <provider editor-type-id="android-designer">
             <state />
+=======
+      <file leaf-file-name="ConfirmItemsAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/Adapters/ConfirmItemsAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="97" column="43" selection-start-line="97" selection-start-column="43" selection-end-line="97" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#967#968#0" expanded="true" />
+                <element signature="e#999#1000#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FoodItem.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/Models/FoodItem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-25.294117">
+              <caret line="86" column="15" selection-start-line="86" selection-start-column="15" selection-end-line="86" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomAdapterMessMenu.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/CustomAdapterMessMenu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+              <folding />
+            </state>
+>>>>>>> fixed buy item flow
           </provider>
         </entry>
       </file>
@@ -1620,7 +1760,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/utils/AppPreferences.java" />
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+=======
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/splash_screen_layout.xml" />
+>>>>>>> fixed buy item flow
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/SplashActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_register.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_profile.xml" />
@@ -1631,19 +1775,23 @@
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_confirm_purchase.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_buy.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/ConfirmPurchase.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/drawer.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/utils/AppUtils.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MessMenu.java" />
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/Buy.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/utils/Constants.java" />
+=======
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MonthlyBill.java" />
+>>>>>>> fixed buy item flow
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/Register.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/Profile.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/mess_section_header.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/counter_item.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/Models/CounterItem.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/CustomAdapterMessSubscribe.java" />
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_mess_subscribe.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MessSubscribe.java" />
@@ -1655,6 +1803,25 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_monthly_bill.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/splash_screen_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/utils/SplashActivity.java" />
+=======
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MessSubscribe.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MessOff.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/buy_items_header.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/utils/Constants.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/Models/FoodItemObject.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/utils/GlobalVariables.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_buy.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/buy_other_item.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/Adapters/BuyItemsAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/Buy.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/confirm_purchase_item.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_confirm_purchase.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/Adapters/ConfirmItemsAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/Models/FoodItem.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/ConfirmPurchase.java" />
+>>>>>>> fixed buy item flow
       </list>
     </option>
   </component>
@@ -1701,6 +1868,24 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Gradle Scripts" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DTUHostelMess" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="values" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -1812,6 +1997,31 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
+=======
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Adapters" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DTUHostelMess" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manifests" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidManifestsGroupNode" />
+            </PATH_ELEMENT>
+>>>>>>> fixed buy item flow
           </PATH>
         </subPane>
       </pane>
@@ -1826,7 +2036,6 @@
     <property name="recentsLimit" value="5" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="R89SU4EYLRBQHYUC" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_23_x86" />
-    <property name="FullScreen" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/java" />
   </component>
   <component name="RunManager" selected="Android Application.app">
@@ -2037,6 +2246,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
@@ -2070,6 +2280,41 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+=======
+    <frame x="0" y="23" width="1440" height="797" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25844347" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3876652" sideWeight="0.50429183" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36857563" sideWeight="0.49570817" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3268921" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.49713877" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2496318" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26967096" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3274596" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2496318" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3979442" sideWeight="0.49713877" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19967794" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+>>>>>>> fixed buy item flow
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -2117,6 +2362,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/Buy.java</url>
@@ -2124,11 +2370,14 @@
           <properties />
         </line-breakpoint>
       </breakpoints>
+=======
+>>>>>>> fixed buy item flow
       <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MonthlyBill.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2228,6 +2477,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3470437">
           <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/utils/SplashActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16094421">
+          <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+          <folding>
+            <element signature="e#1944#2208#0" expanded="false" />
+            <element signature="e#2207#2208#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/splash_screen_layout.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3448276">
+          <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+>>>>>>> fixed buy item flow
           <folding />
         </state>
       </provider>
@@ -2352,14 +2621,22 @@
         </state>
       </provider>
     </entry>
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MessMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="191" column="5" selection-start-line="191" selection-start-column="5" selection-end-line="191" selection-end-column="5" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/Register.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="93" column="117" selection-start-line="93" selection-start-column="117" selection-end-line="93" selection-end-column="137" />
+>>>>>>> fixed buy item flow
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/CustomAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2371,6 +2648,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/Profile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="63" column="137" selection-start-line="63" selection-start-column="137" selection-end-line="63" selection-end-column="137" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MessMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="191" column="5" selection-start-line="191" selection-start-column="5" selection-end-line="191" selection-end-column="5" />
+>>>>>>> fixed buy item flow
           <folding />
         </state>
       </provider>
@@ -2378,18 +2669,54 @@
         <state />
       </provider>
     </entry>
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/Buy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="481" column="0" selection-start-line="461" selection-start-column="8" selection-end-line="480" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MonthlyBill.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+>>>>>>> fixed buy item flow
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="28" selection-start-line="17" selection-start-column="12" selection-end-line="21" selection-end-column="28" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tabitemmessoff.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_mess_off.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.1509433">
+          <caret line="55" column="45" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MessOff.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="349" column="17" selection-start-line="349" selection-start-column="17" selection-end-line="349" selection-end-column="17" />
+>>>>>>> fixed buy item flow
           <folding />
         </state>
       </provider>
@@ -2402,15 +2729,32 @@
         </state>
       </provider>
     </entry>
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
     <entry file="file://$PROJECT_DIR$/app/src/main/java/utils/AppPreferences.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tabitemconfirm.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> fixed buy item flow
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MainActivity.java">
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tabitemmenu.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+>>>>>>> fixed buy item flow
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21615201">
           <caret line="316" column="76" selection-start-line="316" selection-start-column="76" selection-end-line="316" selection-end-column="76" />
@@ -2418,40 +2762,36 @@
         </state>
       </provider>
     </entry>
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
     <entry file="file://$PROJECT_DIR$/app/src/main/java/Models/CounterItem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.038004752">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
         </state>
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tabitembill.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+>>>>>>> fixed buy item flow
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_mess_off.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="55" column="45" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tabitemmessoff.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="2.54717">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_buy.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/CustomAdapterBill.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="61" column="42" selection-start-line="61" selection-start-column="42" selection-end-line="61" selection-end-column="42" />
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
+          <caret line="55" column="45" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
+=======
+          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+>>>>>>> fixed buy item flow
           <folding />
         </state>
       </provider>
@@ -2459,10 +2799,64 @@
         <state />
       </provider>
     </entry>
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tabitemmessoff.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/utils/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+>>>>>>> fixed buy item flow
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_buy.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="61" column="42" selection-start-line="61" selection-start-column="42" selection-end-line="61" selection-end-column="42" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/Models/FoodItemObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+          <folding>
+            <element signature="e#624#625#0" expanded="true" />
+            <element signature="e#652#653#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MessSubscribe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="111" column="8" selection-start-line="111" selection-start-column="8" selection-end-line="111" selection-end-column="8" />
+>>>>>>> fixed buy item flow
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_mess_subscribe.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-50.80645">
           <caret line="105" column="13" selection-start-line="105" selection-start-column="13" selection-end-line="105" selection-end-column="13" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/CustomAdapterMessSubscribe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
+>>>>>>> fixed buy item flow
           <folding />
         </state>
       </provider>
@@ -2472,6 +2866,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MessSubscribe.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
         <state vertical-scroll-proportion="1.7458432">
           <caret line="64" column="46" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
           <folding>
@@ -2479,34 +2874,123 @@
             <element signature="e#5607#5608#0" expanded="false" />
             <element signature="e#6319#7317#0" expanded="false" />
             <element signature="e#7316#7317#0" expanded="false" />
+=======
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="e#776#777#0" expanded="false" />
+            <element signature="e#816#817#0" expanded="false" />
+>>>>>>> fixed buy item flow
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/ConfirmPurchase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21377672">
           <caret line="691" column="48" selection-start-line="691" selection-start-column="48" selection-end-line="691" selection-end-column="48" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/mess_section_header.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.245283">
+          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_mess_subscribe.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.6415094">
+          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+>>>>>>> fixed buy item flow
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
     <entry file="file://$PROJECT_DIR$/app/src/main/java/utils/ListModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.65052634">
           <caret line="32" column="26" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/buy_items_header.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.6792452">
+          <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+>>>>>>> fixed buy item flow
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/CustomAdapterBill.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="74" column="44" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="44" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tabitem.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.981132">
+          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.375">
+          <caret line="38" column="51" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/buy_other_item.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.3773584">
+          <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/utils/GlobalVariables.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="56" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_buy.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.6603775">
+          <caret line="64" column="52" selection-start-line="59" selection-start-column="20" selection-end-line="64" selection-end-column="52" />
+>>>>>>> fixed buy item flow
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MessOff.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2520,18 +3004,40 @@
             <element signature="e#14368#14369#0" expanded="true" />
             <element signature="e#14793#15951#0" expanded="true" />
             <element signature="e#15950#15951#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/Adapters/BuyItemsAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="136" column="30" selection-start-line="0" selection-start-column="0" selection-end-line="203" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1235#1236#0" expanded="true" />
+            <element signature="e#1267#1268#0" expanded="true" />
+            <element signature="e#3872#4132#0" expanded="true" />
+            <element signature="e#4131#4132#0" expanded="true" />
+            <element signature="e#4600#4860#0" expanded="true" />
+            <element signature="e#4859#4860#0" expanded="true" />
+>>>>>>> fixed buy item flow
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/MonthlyBill.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="304" column="47" selection-start-line="304" selection-start-column="47" selection-end-line="304" selection-end-column="47" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/CustomAdapterMessMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+>>>>>>> fixed buy item flow
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tabitembill.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.2580645">
@@ -2539,25 +3045,59 @@
           <folding />
         </state>
       </provider>
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/CustomAdapterMessOff.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/confirm_purchase_item.xml">
+>>>>>>> fixed buy item flow
       <provider editor-type-id="android-designer">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_monthly_bill.xml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
         <state vertical-scroll-proportion="-10.387096">
           <caret line="134" column="55" selection-start-line="134" selection-start-column="55" selection-end-line="134" selection-end-column="55" />
           <folding />
         </state>
       </provider>
+=======
+        <state vertical-scroll-proportion="-3.6792452">
+          <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-25.294117">
+          <caret line="86" column="15" selection-start-line="86" selection-start-column="15" selection-end-line="86" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_confirm_purchase.xml">
+>>>>>>> fixed buy item flow
       <provider editor-type-id="android-designer">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/splash_screen_layout.xml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
         <state vertical-scroll-proportion="-3.8709676">
           <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+=======
+        <state vertical-scroll-proportion="-2.8301888">
+          <caret line="26" column="45" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="45" />
+>>>>>>> fixed buy item flow
           <folding />
         </state>
       </provider>
@@ -2565,11 +3105,55 @@
         <state />
       </provider>
     </entry>
+<<<<<<< 4772f7f98d12bd2277386cae1c9ff08985a69f01
     <entry file="file://$PROJECT_DIR$/app/src/main/java/utils/SplashActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.37593985">
           <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/Buy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="367" column="9" selection-start-line="352" selection-start-column="8" selection-end-line="367" selection-end-column="9" />
+          <folding>
+            <element signature="e#3150#3158#0" expanded="true" />
+            <element signature="e#3999#7732#0" expanded="true" />
+            <element signature="e#4589#4619#0" expanded="true" />
+            <element signature="e#7731#7732#0" expanded="true" />
+            <element signature="e#14711#14721#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/Adapters/ConfirmItemsAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="97" column="43" selection-start-line="97" selection-start-column="43" selection-end-line="97" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#967#968#0" expanded="true" />
+            <element signature="e#999#1000#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/Models/FoodItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+>>>>>>> fixed buy item flow
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/android/dtuhostelmess/ConfirmPurchase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.094527364">
+          <caret line="115" column="47" selection-start-line="115" selection-start-column="47" selection-end-line="115" selection-end-column="47" />
+          <folding>
+            <element signature="e#4151#5247#0" expanded="true" />
+            <element signature="e#5246#5247#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

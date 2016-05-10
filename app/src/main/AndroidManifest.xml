@@ -3,6 +3,7 @@
     package="com.example.android.dtuhostelmess" >
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SET_DEBUG_APP"></uses-permission>
 
     <application
         android:allowBackup="true"
@@ -35,6 +36,7 @@
             android:label="@string/title_activity_profile" >
         </activity>
         <activity
+            android:windowSoftInputMode="adjustPan"
             android:name=".Buy"
             android:label="@string/title_activity_buy" >
         </activity>

@@ -28,7 +28,15 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.StringTokenizer;
 
+import Adapters.BuyItemsAdapter;
+import Models.FoodItem;
+import Models.FoodItemObject;
 import utils.AppPreferences;
 import utils.AppUtils;
 import utils.Constants;
@@ -40,8 +48,7 @@ import utils.URLS;
 public class Buy extends AppCompatActivity {
 
     public ListView list;
-    public CustomAdapter adapter;
-    public Buy CustomListView = null;
+    //public Buy CustomListView = null;
     public ArrayList<ListModel> CustomListViewValuesArr = new ArrayList<ListModel>();
     TextView tv1, tv2, tvHeaderName, tvHeaderBill, type;
     CheckBox tv;
@@ -56,6 +63,8 @@ public class Buy extends AppCompatActivity {
     private String mActivityTitle;
     ProgressBar progressBar;
     private AppPreferences prefManager;
+    private BuyItemsAdapter buyItemsAdapter;
+    private ArrayList<FoodItem> foodItemsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,40 +73,37 @@ public class Buy extends AppCompatActivity {
 
         prefManager= AppPreferences.getInstance(this);
 
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        //progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
       //  type = (TextView) findViewById(R.id.tvType);
-        tv = (CheckBox) findViewById(R.id.text);
-        tv1 = (TextView) findViewById(R.id.text2);
-        tv2 = (TextView) findViewById(R.id.text3);
-        bt = (Button) findViewById(R.id.btPlaceOrder);
+//        tv = (CheckBox) findViewById(R.id.text);
+//        tv1 = (TextView) findViewById(R.id.text2);
+//        tv2 = (TextView) findViewById(R.id.text3);
+        //bt = (Button) findViewById(R.id.btPlaceOrder);
 
-        CustomListView = this;
-        /******** Take some data in Arraylist ( CustomListViewValuesArr ) ***********/
-        Resources res = getResources();
+        foodItemsList= new ArrayList<FoodItem>();
         list = (ListView) findViewById(R.id.list);
 
-        /**************** Create Custom Adapter *********/
-        adapter = new CustomAdapter(CustomListView, CustomListViewValuesArr, res);
-        list.setAdapter(adapter);
+        buyItemsAdapter = new BuyItemsAdapter(this, foodItemsList);
+        list.setAdapter(buyItemsAdapter);
 
 
-        cbOthers = (CheckBox) findViewById(R.id.others);
-        cbOthersName = (EditText) findViewById(R.id.othersName);
-        cbOthersPrice = (EditText) findViewById(R.id.othersPrice);
+//        cbOthers = (CheckBox) findViewById(R.id.others);
+//        cbOthersName = (EditText) findViewById(R.id.othersName);
+//        cbOthersPrice = (EditText) findViewById(R.id.othersPrice);
 
         dropdown1 = (Spinner) findViewById(R.id.spinner1);
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, Constants.MessList);
         dropdown1.setAdapter(adapter1);
 
-        list.setVisibility(View.INVISIBLE);
-        dropdown1.setVisibility(View.INVISIBLE);
-        cbOthers.setVisibility(View.INVISIBLE);
-        cbOthersName.setVisibility(View.INVISIBLE);
-        cbOthersPrice.setVisibility(View.INVISIBLE);
-        bt.setVisibility(View.INVISIBLE);
+//        list.setVisibility(View.INVISIBLE);
+//        dropdown1.setVisibility(View.INVISIBLE);
+//        cbOthers.setVisibility(View.INVISIBLE);
+//        cbOthersName.setVisibility(View.INVISIBLE);
+//        cbOthersPrice.setVisibility(View.INVISIBLE);
+//        bt.setVisibility(View.INVISIBLE);
 
-        progressBar.setVisibility(View.VISIBLE);
+        //progressBar.setVisibility(View.VISIBLE);
 
         JSONObject jsonObject = new JSONObject();
         try {
@@ -122,155 +128,60 @@ public class Buy extends AppCompatActivity {
                         response = response.getJSONObject("payload");
                         JSONArray responseArr = response.getJSONArray("food_items");
 
-                      //  int flagBeverages=0, flagChips =0, flagBiscuits =0, flagIceCreams=0;
 
 
+                        Map<String, List<FoodItemObject>> foodItemObjectMap= new HashMap<String, List<FoodItemObject>>();
 
                         for (int i = 0; i < responseArr.length(); i++) {
 
                             JSONObject childJSONObject = responseArr.getJSONObject(i);
                             String name = childJSONObject.getString("name");
-                            String cost = childJSONObject.getString("cost");
+                            double cost = Integer.parseInt(childJSONObject.getString("cost"));
                             String id = childJSONObject.getString("food_id");
+                            String calories = childJSONObject.getString("calories");
+                            String nutrition = childJSONObject.getString("nutrition");
+                            String picture = childJSONObject.getString("picture");
                             String type = childJSONObject.getString("type");
 
-//                            if(type.equals("Beverages")){
+                            final FoodItemObject foodItemObject= new FoodItemObject(id, name, type, calories, nutrition, picture, cost);
+
+                            List<FoodItemObject> itemList= foodItemObjectMap.get(foodItemObject.getType());
+                            if (itemList ==null){
+                                itemList = new ArrayList<>();
+                                foodItemObjectMap.put(foodItemObject.getType(),itemList);
+                            }
+
+                            itemList.add(foodItemObject);
+                        }
+
+                        for ( String key : foodItemObjectMap.keySet() ) {
+                            foodItemsList.add(new FoodItem(key, true));
+                            List<FoodItemObject> itemList= foodItemObjectMap.get(key);
+                            for(FoodItemObject item: itemList)
+                            {
+                                foodItemsList.add(new FoodItem(item, false));
+                            }
+                        }
+
+                        //adding Other Item
+                        foodItemsList.add(new FoodItem(Constants.OtherFoodId, "Others","Others", true));
+                        foodItemsList.add(new FoodItem(Constants.OtherFoodId, "Others","Others", false));
+                        //adding Other Item
+
+                        buyItemsAdapter.setItemList(foodItemsList);
+                        buyItemsAdapter.notifyDataSetChanged();
 
 
 
-//                              if(flagBeverages ==0){
-//                                  final ListModel sched1 = new ListModel();
-//                                  sched1.setType("Beverages");
-//                                  CustomListViewValuesArr.add(sched1);
-//                                  flagBeverages =1;
-//
-//                                  Resources res = getResources();
-//                                  adapter = new CustomAdapter(CustomListView, CustomListViewValuesArr, res);
-//                                  list.setAdapter(adapter);
-//
-//                              }
 
-                                final ListModel sched2 = new ListModel();
 
-                                /******* Firstly take data in model object ******/
-
-                                sched2.setItemName(name);
-                                sched2.setCost(cost);
-                                sched2.setFoodId(id);
-
-                                /******** Take Model Object in ArrayList **********/
-                                CustomListViewValuesArr.add(sched2);
-
-                                Resources res = getResources();
-                                adapter = new CustomAdapter(CustomListView, CustomListViewValuesArr, res);
-                                list.setAdapter(adapter);
-
-//                            }
-//
-//                            if(type.equals("Ice Creams")){
-//
-//
-//
-//                                if(flagIceCreams ==0){
-//                                    final ListModel sched3 = new ListModel();
-//                                    sched3.setType("Ice Creams");
-//                                    CustomListViewValuesArr.add(sched3);
-//                                    flagIceCreams =1;
-//
-//                                    Resources res = getResources();
-//                                    adapter = new CustomAdapter(CustomListView, CustomListViewValuesArr, res);
-//                                    list.setAdapter(adapter);
-//
-//                                }
-//
-//                               final ListModel sched4 = new ListModel();
-//
-//                                /******* Firstly take data in model object ******/
-//                                sched4.setType("");
-//                                sched4.setItemName(name);
-//                                sched4.setCost(cost);
-//                                sched4.setFoodId(id);
-//
-//                                /******** Take Model Object in ArrayList **********/
-//                                CustomListViewValuesArr.add(sched4);
-//
-//                                Resources res = getResources();
-//                                adapter = new CustomAdapter(CustomListView, CustomListViewValuesArr, res);
-//                                list.setAdapter(adapter);
-//
-//                            }
-//
-//                            if(type.equals("Chips")){
-//
-//
-//                                if(flagChips ==0){
-//                                    final ListModel sched5 = new ListModel();
-//
-//                                    sched5.setType("Chips");
-//                                    CustomListViewValuesArr.add(sched5);
-//                                    flagChips =1;
-//
-//                                }
-//
-//                                final ListModel sched6 = new ListModel();
-//
-//                                /******* Firstly take data in model object ******/
-//                                sched6.setType("");
-//                                sched6.setItemName(name);
-//                                sched6.setCost(cost);
-//                                sched6.setFoodId(id);
-//
-//                                /******** Take Model Object in ArrayList **********/
-//                                CustomListViewValuesArr.add(sched6);
-//
-//                                Resources res = getResources();
-//                                adapter = new CustomAdapter(CustomListView, CustomListViewValuesArr, res);
-//                                list.setAdapter(adapter);
-//
-//
-//
-//                            }
-//
-//
-//                            if(type.equals("Biscuits")){
-//
-//
-//
-//                                if(flagBiscuits ==0){
-//                                    final ListModel sched7 = new ListModel();
-//                                    sched7.setType("Biscuits");
-//                                    CustomListViewValuesArr.add(sched7);
-//                                    flagBiscuits =1;
-//
-//                                }
-//
-//                                final ListModel sched8 = new ListModel();
-//                                /******* Firstly take data in model object ******/
-//                                sched8.setType("");
-//                                sched8.setItemName(name);
-//                                sched8.setCost(cost);
-//                                sched8.setFoodId(id);
-//
-//                                /******** Take Model Object in ArrayList **********/
-//                                CustomListViewValuesArr.add(sched8);
-//
-//                                Resources res = getResources();
-//                                adapter = new CustomAdapter(CustomListView, CustomListViewValuesArr, res);
-//                                list.setAdapter(adapter);
-//
-//                            }
-
-//                            Resources res = getResources();
-//                            adapter = new CustomAdapter(CustomListView, CustomListViewValuesArr, res);
-//                            list.setAdapter(adapter);
-                   }
-                        list.setVisibility(View.VISIBLE);
-                        dropdown1.setVisibility(View.VISIBLE);
-                        cbOthers.setVisibility(View.VISIBLE);
-                        cbOthersName.setVisibility(View.VISIBLE);
-                        cbOthersPrice.setVisibility(View.VISIBLE);
-                        bt.setVisibility(View.VISIBLE);
-                        progressBar.setVisibility(View.GONE);
+//                        list.setVisibility(View.VISIBLE);
+//                        dropdown1.setVisibility(View.VISIBLE);
+//                        cbOthers.setVisibility(View.VISIBLE);
+//                        cbOthersName.setVisibility(View.VISIBLE);
+//                        cbOthersPrice.setVisibility(View.VISIBLE);
+//                        bt.setVisibility(View.VISIBLE);
+//                        progressBar.setVisibility(View.GONE);
 
 
                     } else {
@@ -280,7 +191,7 @@ public class Buy extends AppCompatActivity {
                     }
 
                 } catch (Exception e) {
-                    Toast.makeText(Buy.this, "" + e, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Buy.this, "" + e, Toast.LENGTH_LONG).show();
                 }
 
             }
@@ -439,68 +350,27 @@ public class Buy extends AppCompatActivity {
     public void placeOrder(View v) {
 
         String boughtInMess = dropdown1.getSelectedItem().toString();
-        int sizeOfList = CustomListViewValuesArr.size();
+        int sizeOfList = buyItemsAdapter.getCount();
         Intent i = new Intent(this, ConfirmPurchase.class);
 
-        boolean check = false;
-        if (cbOthers.isChecked() && !(cbOthersPrice.getText().toString()).equals("")) {
 
-            check = true;
-            i.putExtra("OthersChecked", "1");
-            i.putExtra("OthersName", cbOthersName.getText().toString());
-            i.putExtra("OthersPrice", cbOthersPrice.getText().toString());
-        } else {
-            i.putExtra("OthersChecked", "0");
-        }
-
-        CheckBox cb;
-        TextView tv2, tv3;
-        int count = 1, total = 0;
+        ArrayList<FoodItem> selectedFoodItems= new ArrayList<FoodItem>();
 
         for (int x = 0; x < sizeOfList; x++) {
-
-            View view = list.getChildAt(x);
-            if(view!=null)
+            FoodItem item= (FoodItem) buyItemsAdapter.getItem(x);
+            if(!item.ismIsSeparator())
             {
-                cb = (CheckBox) view.findViewById(R.id.text);
-                tv2 = (TextView) view.findViewById(R.id.text2);
-                tv3 = (TextView) view.findViewById(R.id.text3);
-
-                if (cb.isChecked()) {
-
-                    total = total + 1;
-                    i.putExtra(count + "", cb.getText().toString());
-                    i.putExtra(count + 1 + "", tv2.getText().toString());
-                    i.putExtra(count + 2 + "", tv3.getText().toString());
-                    count = count + 3;
+                if(item.ismIsSelected())
+                {
+                    selectedFoodItems.add(item);
                 }
             }
         }
 
-        i.putExtra("TotalItem", total + "");
-        i.putExtra("mess", boughtInMess);
-
-
-
-        if (total == 0 && check == false) {
-            AlertDialog alertDialog = new AlertDialog.Builder(Buy.this).create(); //Read Update
-            alertDialog.setTitle("Please Select");
-            alertDialog.setMessage("You haven't selected any food item to Place Order!");
-            alertDialog.show();
-        } else if (total > 7) {
-            AlertDialog alertDialog = new AlertDialog.Builder(Buy.this).create(); //Read Update
-            alertDialog.setTitle("Try Again");
-            alertDialog.setMessage("Please select at max any 7 items in one go!");
-            alertDialog.show();
-        } else {
-            startActivity(i);
-        }
+        GlobalVariables.selectedFoodItems= new ArrayList<FoodItem>(selectedFoodItems);
+        startActivity(new Intent(Buy.this, ConfirmPurchase.class));
     }
 
-    public void onItemClick(int mPosition) {
-        ListModel tempValues = (ListModel) CustomListViewValuesArr.get(mPosition);
-        // Toast.makeText(CustomListView,tempValues.getItemName() +  " \nCost:" + tempValues.getCost(),Toast.LENGTH_LONG).show();
-    }
 
     private void goToUrl(String url) {
         Uri uriUrl = Uri.parse(url);
