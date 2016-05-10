@@ -1,20 +1,28 @@
 package com.example.android.dtuhostelmess;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
+import Models.CounterItem;
+import Storage.CountersTable;
 import utils.GlobalVariables;
 import utils.MyAsyncTask;
+import utils.OpenHelper;
 import utils.URLS;
 
 public class MessSubscribe extends AppCompatActivity {
@@ -23,6 +31,9 @@ public class MessSubscribe extends AppCompatActivity {
     ProgressBar progressBar;
     String listOfCounters;
     int onStartCount = 0;
+    CustomAdapterMessSubscribe adapter;
+    ListView listView;
+    private ArrayList<CounterItem> selectedCounters;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,76 +83,26 @@ public class MessSubscribe extends AppCompatActivity {
         boolean checked;
         String counter;
 
-//        OpenHelper h = new OpenHelper(this);
-//        SQLiteDatabase db = h.getWritableDatabase();
+        int sizeOfList = adapter.getCount();
+        selectedCounters= new ArrayList<CounterItem>();
 
-        checked = cb1.isChecked();
-        if (checked) {
-            counter = "1";
-            addToList(counter);
-//            ContentValues c = new ContentValues();
-//            c.put("Id", "1");
-//            c.put("CounterName", "CVR Mess");
-//            c.put("MenuVersion", "0");
-//            long id = db.insert("Counter", null, c);
-//
-//            if (id == -1)
-//                Toast.makeText(this, "Not Subscribed CVR Mess Menu", Toast.LENGTH_SHORT).show();
-//            else {
-//                Toast.makeText(this, "Subscribed CVR Mess Menu", Toast.LENGTH_SHORT).show();
-//            }
+        for (int x = 0; x < sizeOfList; x++) {
 
-        }
-
-        checked = cb2.isChecked();
-        if (checked) {
-            counter = "2";
-            addToList(counter);
-//            ContentValues c = new ContentValues();
-//            c.put("Id", "2");
-//            c.put("CounterName", "HJB Mess");
-//            c.put("MenuVersion", "0");
-//            long id = db.insert("Counter", null, c);
-//
-//            if (id == -1)
-//                Toast.makeText(this, "Not Subscribed HJB Mess Menu", Toast.LENGTH_SHORT).show();
-//            else {
-//                Toast.makeText(this, "Subscribed HJB Mess Menu", Toast.LENGTH_SHORT).show();
-//            }
-        }
-
-        checked = cb3.isChecked();
-        if (checked) {
-            counter = "3";
-            addToList(counter);
-//            ContentValues c = new ContentValues();
-//            c.put("Id", "3");
-//            c.put("CounterName", "VVS Mess");
-//            c.put("MenuVersion", "0");
-//            long id = db.insert("Counter", null, c);
-//
-//            if (id == -1)
-//                Toast.makeText(this, "Not Subscribed VVS Mess Menu", Toast.LENGTH_SHORT).show();
-//            else {
-//                Toast.makeText(this, "Subscribed VVS Mess Menu", Toast.LENGTH_SHORT).show();
-//            }
-        }
-
-        checked = cb4.isChecked();
-        if (checked) {
-            counter = "4";
-            addToList(counter);
-//            ContentValues c = new ContentValues();
-//            c.put("Id", "4");
-//            c.put("CounterName", "Aryabhatta Mess");
-//            c.put("MenuVersion", "0");
-//            long id = db.insert("Counter", null, c);
-//
-//            if (id == -1)
-//                Toast.makeText(this, "Not Subscribed Aryabhatta Mess Menu", Toast.LENGTH_SHORT).show();
-//            else {
-//                Toast.makeText(this, "Subscribed Aryabhatta Mess Menu", Toast.LENGTH_SHORT).show();
-//            }
+            View view = listView.getChildAt(x);
+            if(view!=null)
+            {
+                CheckBox cb = (CheckBox) view.findViewById(R.id.counter);
+                if(cb!=null)
+                {
+                    if (cb.isChecked()) {
+                        if(!adapter.isSeperator(x))
+                        {
+                            addToList(adapter.getCounterId(x));
+                            selectedCounters.add((CounterItem) adapter.getItem(x));
+                        }
+                    }
+                }
+            }
         }
 
 
@@ -172,7 +133,6 @@ public class MessSubscribe extends AppCompatActivity {
     public void subscribeToCounter(String counterNumbersList) {
 
         int length = counterNumbersList.length();
-        counterNumbersList = counterNumbersList.substring(4, length - 1);
         progressBar.setVisibility(View.VISIBLE);
 
         JSONObject jsonObject = new JSONObject();
@@ -194,11 +154,15 @@ public class MessSubscribe extends AppCompatActivity {
                     JSONObject response = new JSONObject(output);
                     response = response.getJSONObject("payload");
                     try {
-                        String resultedMessage = response.getString("message");
-                        Toast.makeText(MessSubscribe.this, resultedMessage, Toast.LENGTH_LONG).show();
-                    } catch (Exception er) {
-                        Toast.makeText(MessSubscribe.this, "Successfully subscribed.", Toast.LENGTH_SHORT).show();
+                        for(CounterItem item:selectedCounters)
+                        {
+                            long insertId= CountersTable.InsertCounter(getBaseContext(), item);
+                        }
+                        Toast.makeText(MessSubscribe.this, "Mess subscribed successfully.", Toast.LENGTH_LONG).show();
                         startActivity(new Intent(MessSubscribe.this, MessMenu.class));
+                    } catch (Exception er) {
+                        Toast.makeText(MessSubscribe.this, "Some error occured.", Toast.LENGTH_SHORT).show();
+                        //startActivity(new Intent(MessSubscribe.this, MessMenu.class));
                     }
 
                 } catch (Exception e) {
