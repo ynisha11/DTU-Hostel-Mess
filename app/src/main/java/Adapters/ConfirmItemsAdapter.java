@@ -95,7 +95,7 @@ public class ConfirmItemsAdapter extends BaseAdapter {
                 public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                     int quantity= Integer.parseInt(itemQuantity.getSelectedItem().toString());
                     contact.setQuantity(quantity);
-                    itemPrice.setText("Rs. "+contact.getAmount());
+                    itemPrice.setText("Rs. "+(int)contact.getAmount());
                 }
 
                 @Override
