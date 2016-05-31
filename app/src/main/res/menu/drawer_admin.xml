@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/ViewCurrentOrders"
+            android:checked="false"
+            android:icon="@drawable/ic_buy_black"
+            android:title="Current Orders" />
+
+        <item
+            android:id="@+id/EditMessMenu"
+            android:checked="false"
+            android:icon="@drawable/ic_messmenu_black"
+            android:title="Edit Mess Menu" />
+
+        <item
+            android:id="@+id/ViewMessOff"
+            android:checked="false"
+            android:icon="@drawable/ic_messoff_black"
+            android:title="Mess Off" />
+
+        <item
+            android:id="@+id/ViewBillDetails"
+            android:checked="false"
+            android:icon="@drawable/ic_messbill_black"
+            android:title="Bill Details" />
+
+
+        <item
+            android:id="@+id/logout"
+            android:checked="false"
+            android:icon="@drawable/logout"
+            android:title="Log Out" />
+
+    </group>
+
+</menu>

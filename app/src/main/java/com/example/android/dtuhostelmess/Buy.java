@@ -1,9 +1,7 @@
 package com.example.android.dtuhostelmess;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -29,10 +27,8 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.StringTokenizer;
 
 import Adapters.BuyItemsAdapter;
 import Models.FoodItem;
@@ -73,13 +69,13 @@ public class Buy extends AppCompatActivity {
 
         prefManager= AppPreferences.getInstance(this);
 
-        //progressBar = (ProgressBar) findViewById(R.id.progressBar);
+       progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
       //  type = (TextView) findViewById(R.id.tvType);
 //        tv = (CheckBox) findViewById(R.id.text);
 //        tv1 = (TextView) findViewById(R.id.text2);
 //        tv2 = (TextView) findViewById(R.id.text3);
-        //bt = (Button) findViewById(R.id.btPlaceOrder);
+       bt = (Button) findViewById(R.id.btPlaceOrder);
 
         foodItemsList= new ArrayList<FoodItem>();
         list = (ListView) findViewById(R.id.list);
@@ -96,14 +92,15 @@ public class Buy extends AppCompatActivity {
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, Constants.MessList);
         dropdown1.setAdapter(adapter1);
 
-//        list.setVisibility(View.INVISIBLE);
-//        dropdown1.setVisibility(View.INVISIBLE);
+        list.setVisibility(View.INVISIBLE);
+        dropdown1.setVisibility(View.INVISIBLE);
+
 //        cbOthers.setVisibility(View.INVISIBLE);
 //        cbOthersName.setVisibility(View.INVISIBLE);
 //        cbOthersPrice.setVisibility(View.INVISIBLE);
-//        bt.setVisibility(View.INVISIBLE);
+      bt.setVisibility(View.INVISIBLE);
 
-        //progressBar.setVisibility(View.VISIBLE);
+        progressBar.setVisibility(View.VISIBLE);
 
         JSONObject jsonObject = new JSONObject();
         try {
@@ -175,13 +172,14 @@ public class Buy extends AppCompatActivity {
 
 
 
-//                        list.setVisibility(View.VISIBLE);
-//                        dropdown1.setVisibility(View.VISIBLE);
+                        list.setVisibility(View.VISIBLE);
+                        dropdown1.setVisibility(View.VISIBLE);
+
 //                        cbOthers.setVisibility(View.VISIBLE);
 //                        cbOthersName.setVisibility(View.VISIBLE);
 //                        cbOthersPrice.setVisibility(View.VISIBLE);
-//                        bt.setVisibility(View.VISIBLE);
-//                        progressBar.setVisibility(View.GONE);
+                        bt.setVisibility(View.VISIBLE);
+                        progressBar.setVisibility(View.GONE);
 
 
                     } else {

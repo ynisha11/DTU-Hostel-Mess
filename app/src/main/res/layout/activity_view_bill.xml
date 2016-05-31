@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/drawer"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:fitsSystemWindows="true"
+tools:context="com.example.android.dtuhostelmess.ViewBill">
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/SCROLLER_ID"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:gravity="top"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/tool_bar_monthlybill" />
+
+        <FrameLayout
+            android:id="@+id/frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/LRoll"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <Spinner
+                        android:id="@+id/spinner1"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight=".41"
+                        android:background="@android:drawable/btn_dropdown"
+                        android:spinnerMode="dropdown" />
+
+                    <Spinner
+                        android:id="@+id/spinner2"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight=".42"
+                        android:background="@android:drawable/btn_dropdown"
+                        android:spinnerMode="dropdown" />
+
+                    <EditText
+                        android:id="@+id/etRollNo"
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="top"
+                        android:layout_marginTop="1dp"
+                        android:layout_weight=".17"
+                        android:background="#e0e0e0"
+                        android:inputType="phone" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingBottom="15dp"
+
+                    android:weightSum="1">
+
+                    <Spinner
+                        android:id="@+id/spinnerMonth"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight=".41"
+                        android:background="@android:drawable/btn_dropdown"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:spinnerMode="dropdown" />
+
+                    <Spinner
+                        android:id="@+id/spinnerYear"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight=".42"
+                        android:background="@android:drawable/btn_dropdown"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:spinnerMode="dropdown" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="36dp"
+                        android:layout_weight=".17"
+                        android:background="#33691e"
+                        android:onClick="go"
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:text="GO"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvBill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="6dp"
+                    android:paddingBottom="5dp"
+                    android:textColor="#33691e"
+                    android:textSize="18dp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/tvMon"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dip"
+                        android:layout_weight="0.26"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tvDes"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dip"
+                        android:layout_weight="0.25"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tvbasicDes"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dip"
+                        android:layout_weight="0.31"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tvbasicAmo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dip"
+                        android:layout_weight="0.18"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <ListView
+                    android:id="@+id/listBill"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</ScrollView>
+
+<android.support.design.widget.NavigationView
+    android:id="@+id/navigation_view"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    app:headerLayout="@layout/header"
+    app:menu="@menu/drawer" />
+
+</android.support.v4.widget.DrawerLayout>

@@ -86,5 +86,8 @@
         <item>4</item>
         <item>5</item>
     </string-array>
+    <string name="title_activity_current_orders">CurrentOrders</string>
+    <string name="title_activity_custom_adapter_current_orders">CustomAdapterCurrentOrders</string>
+    <string name="title_activity_view_bill">ViewBill</string>
 
 </resources>

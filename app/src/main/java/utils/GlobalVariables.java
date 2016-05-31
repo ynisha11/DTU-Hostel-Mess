@@ -2,10 +2,11 @@ package utils;
 
 import java.util.ArrayList;
 
-import Models.CounterItem;
 import Models.FoodItem;
 
 public class GlobalVariables {
+
+    public static int isAdminLogged;
 
     public static String selectedCounter;
     public static ArrayList<FoodItem> selectedFoodItems;

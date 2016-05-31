@@ -206,10 +206,12 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
     public void login(View v) {
         if (aSwitch.isChecked()) {
             RNo = e3.getText().toString();
+            GlobalVariables.isAdminLogged = 1;
         } else {
             String RnoPart1 = dropdown1.getSelectedItem().toString();
             String RnoPart2 = dropdown2.getSelectedItem().toString();
             RNo = RnoPart1 + RnoPart2 + e1.getText().toString();
+            GlobalVariables.isAdminLogged =0;
         }
         Pass = e2.getText().toString();
         progressBar.setVisibility(View.VISIBLE);
@@ -309,9 +311,16 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
                         prefManager.putString(Constants.CurrentName, name);
                         prefManager.putString(Constants.CurrentPhoneNumber, phoneNumber);
                         prefManager.putString(Constants.CurrentRoomNumber, roomNumber);
-                        prefManager.putString(Constants.CurrentVegOrNonVeg, isVeg==1?"Veg":"Non-Veg");
+                        prefManager.putString(Constants.CurrentVegOrNonVeg, isVeg == 1 ? "Veg" : "Non-Veg");
 
-                        startActivity(new Intent(MainActivity.this, MessMenu.class));
+                       if(GlobalVariables.isAdminLogged ==  1){
+                            startActivity(new Intent(MainActivity.this, CurrentOrders.class));
+                        }
+
+                        else
+                            startActivity(new Intent(MainActivity.this, MessMenu.class));
+
+
                     } else {
                         response = response.getJSONObject("payload");
                         String errorMessage = response.getString("message");

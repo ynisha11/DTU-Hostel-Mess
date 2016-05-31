@@ -29,7 +29,6 @@ import java.util.Calendar;
 import java.util.Locale;
 
 import utils.AppPreferences;
-import utils.AppUtils;
 import utils.Constants;
 import utils.GlobalVariables;
 import utils.ListModel;
@@ -37,11 +36,11 @@ import utils.MyAsyncTask;
 import utils.OpenHelper;
 import utils.URLS;
 
-public class MessMenu extends AppCompatActivity {
+public class CurrentOrders extends AppCompatActivity {
 
     public ListView listMenu;
     public CustomAdapterMessMenu adapter;
-    public MessMenu CustomListView = null;
+    public CurrentOrders CustomListView = null;
     public ArrayList<ListModel> CustomListViewValuesArr = new ArrayList<ListModel>();
     TextView tvHeaderName, tvHeaderBill;
     //Defining Variables
@@ -56,7 +55,7 @@ public class MessMenu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mess_menu);
+        setContentView(R.layout.activity_current_orders);
         prefManager= AppPreferences.getInstance(this);
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
@@ -79,48 +78,29 @@ public class MessMenu extends AppCompatActivity {
                 switch (menuItem.getItemId()) {
                     //Replacing the main content with ContentFragment Which is our Inbox View;
 
-                    case R.id.messMenu: {
-
+                    case R.id.ViewCurrentOrders: {
                         //startActivity(new Intent(MessMenu.this, MessMenu.class));
                         return true;
                     }
 
-
-                    case R.id.monthly_bill:
-                        startActivity(new Intent(MessMenu.this, MonthlyBill.class));
-                        return true;
-
-                    case R.id.mess_off:
-                        startActivity(new Intent(MessMenu.this, MessOff.class));
-                        return true;
-
-                    case R.id.profile: {
-                        startActivity(new Intent(MessMenu.this, Profile.class));
-                        return true;
-                    }
-
-
-
-                    case R.id.buy: {
-                        startActivity(new Intent(MessMenu.this, Buy.class));
-                        return true;
-                    }
-
-
-                    case R.id.billPay:
+                    case R.id.EditMessMenu:
                         goToUrl(Constants.MessBillPaymentUrl);
                         return true;
 
-                    case R.id.feedbackMail: {
-                        startActivity(Intent.createChooser(AppUtils.SendFeedBack(), ""));
+                    case R.id.ViewMessOff:
+                       // startActivity(new Intent(CurrentOrders.this, ViewMessOff.class));
+                        return true;
+
+                    case R.id.ViewBillDetails: {
+                       startActivity(new Intent(CurrentOrders.this, ViewBill.class));
                         return true;
                     }
+
 
                     case R.id.logout:
                     {
                         prefManager.putString(Constants.RollNumber, "");
-                        GlobalVariables.isAdminLogged = 0;
-                        startActivity(new Intent(MessMenu.this, MainActivity.class));
+                        startActivity(new Intent(CurrentOrders.this, MainActivity.class));
                         return true;
                     }
 
@@ -158,7 +138,8 @@ public class MessMenu extends AppCompatActivity {
         tvHeaderName = (TextView) findViewById(R.id.headerName);
         tvHeaderBill = (TextView) findViewById(R.id.headerBill);
         tvHeaderName.setText(GlobalVariables.currentName);
-        tvHeaderBill.setText("Current Mess Bill : " + GlobalVariables.currentMessBill);
+
+        // tvHeaderBill.setText("Current Mess Bill : " + GlobalVariables.currentMessBill);
 
         CustomListView = this;
         // Take some data in Arraylist ( CustomListViewValuesArr )
@@ -245,7 +226,7 @@ public class MessMenu extends AppCompatActivity {
         while (c.moveToNext()) {
 
             final String id = c.getString(0);
-           final String counterName = c.getString(1);
+            final String counterName = c.getString(1);
             String menuVersion = c.getString(2);
 
 
@@ -254,13 +235,13 @@ public class MessMenu extends AppCompatActivity {
                 jsonObject.put("counter", id);
                 jsonObject.put("previous_version", menuVersion);
             } catch (Exception e) {
-                Toast.makeText(MessMenu.this, "" + e, Toast.LENGTH_SHORT).show();
+                Toast.makeText(CurrentOrders.this, "" + e, Toast.LENGTH_SHORT).show();
                 // System.out.println("Exception in json encoding "+e);
             }
 
 
 
-            new MyAsyncTask(MessMenu.this, jsonObject.toString(), URLS.API_GetMenu_URL, new MyAsyncTask.AsyncResponse() {
+            new MyAsyncTask(CurrentOrders.this, jsonObject.toString(), URLS.API_GetMenu_URL, new MyAsyncTask.AsyncResponse() {
                 @Override
                 public void processFinish(String output) {
 
@@ -417,7 +398,7 @@ public class MessMenu extends AppCompatActivity {
                         } else {
                             response = response.getJSONObject("payload");
                             String errorMessage = response.getString("message");
-                            Toast.makeText(MessMenu.this, errorMessage, Toast.LENGTH_LONG).show();
+                            Toast.makeText(CurrentOrders.this, errorMessage, Toast.LENGTH_LONG).show();
                         }
                     } catch (Exception e) {
                         // Toast.makeText(MainActivity.this,""+ e, Toast.LENGTH_LONG).show();

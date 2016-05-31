@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="top"
+    android:paddingTop="0dip">
+
+    <TableRow
+        android:id="@+id/tableLayout"
+        android:weightSum="1"
+        >
+
+        <TextView
+            android:id="@+id/CounterName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dip"
+            android:textColor="#000000"
+            android:textSize="18sp"
+
+            />
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dip"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/Meal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dip"
+            android:textSize="16sp"
+            android:inputType="textMultiLine"
+            android:layout_weight="0.9"
+            />
+
+
+
+    </TableRow>
+
+</TableLayout>
+
+
+
