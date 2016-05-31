@@ -20,6 +20,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -28,6 +31,10 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
 
+import Adapters.CurrentOrdersAdapter;
+import Models.CurrentOrdersHistory;
+import Models.History;
+import Models.ResponseData;
 import utils.AppPreferences;
 import utils.Constants;
 import utils.GlobalVariables;
@@ -38,10 +45,9 @@ import utils.URLS;
 
 public class CurrentOrders extends AppCompatActivity {
 
-    public ListView listMenu;
-    public CustomAdapterMessMenu adapter;
-    public CurrentOrders CustomListView = null;
-    public ArrayList<ListModel> CustomListViewValuesArr = new ArrayList<ListModel>();
+    public ListView currentOrdersListView;
+    public CurrentOrdersAdapter currentOrdersAdapter;
+    public ArrayList<History> currentOrderHistoryList=new ArrayList<History>();
     TextView tvHeaderName, tvHeaderBill;
     //Defining Variables
     private Toolbar toolbar;
@@ -141,16 +147,15 @@ public class CurrentOrders extends AppCompatActivity {
 
         // tvHeaderBill.setText("Current Mess Bill : " + GlobalVariables.currentMessBill);
 
-        CustomListView = this;
         // Take some data in Arraylist ( CustomListViewValuesArr )
         Resources res = getResources();
-        listMenu = (ListView) findViewById(R.id.listMenu);
+        currentOrdersListView = (ListView) findViewById(R.id.listMenu);
 
         // Create Custom Adapter
-        adapter = new CustomAdapterMessMenu(CustomListView, CustomListViewValuesArr, res);
-        listMenu.setAdapter(adapter);
+        currentOrdersAdapter = new CurrentOrdersAdapter(CurrentOrders.this, currentOrderHistoryList);
+        currentOrdersListView.setAdapter(currentOrdersAdapter);
 
-        getMessMenu();
+        getCurrentOrders();
     }
 
     private void setupDrawer() {
@@ -214,186 +219,36 @@ public class CurrentOrders extends AppCompatActivity {
         startActivity(launchBrowser);
     }
 
-    public void getMessMenu() {
+    public void getCurrentOrders() {
 
         progressBar.setVisibility(View.VISIBLE);
 
-        OpenHelper h = new OpenHelper(this);
-        String col[] = {"Id", "CounterName", "MenuVersion"};
-        SQLiteDatabase db = h.getReadableDatabase();
-        Cursor c = db.query("Counter", col, null, null, null, null, null);
-
-        while (c.moveToNext()) {
-
-            final String id = c.getString(0);
-            final String counterName = c.getString(1);
-            String menuVersion = c.getString(2);
-
-
-            JSONObject jsonObject = new JSONObject();
-            try {
-                jsonObject.put("counter", id);
-                jsonObject.put("previous_version", menuVersion);
-            } catch (Exception e) {
-                Toast.makeText(CurrentOrders.this, "" + e, Toast.LENGTH_SHORT).show();
-                // System.out.println("Exception in json encoding "+e);
-            }
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("counter_id", "4");
+        } catch (Exception e) {
+            Toast.makeText(CurrentOrders.this, "" + e, Toast.LENGTH_SHORT).show();
+            // System.out.println("Exception in json encoding "+e);
+        }
 
 
 
-            new MyAsyncTask(CurrentOrders.this, jsonObject.toString(), URLS.API_GetMenu_URL, new MyAsyncTask.AsyncResponse() {
+            new MyAsyncTask(CurrentOrders.this, jsonObject.toString(), URLS.API_GetCurrentOrders_URL, new MyAsyncTask.AsyncResponse() {
                 @Override
                 public void processFinish(String output) {
 
                     try {
+                        Gson gson = new Gson();
+                        ResponseData responseData = gson.fromJson(output, ResponseData.class);
+
                         JSONObject response = new JSONObject(output);
-                        String resultedMessage = response.getString("responseType");
 
-                        if (resultedMessage.equals("success")) {
-                            response = response.getJSONObject("payload");
+                        if (responseData.getResponseType().equals(Constants.SuccessResponse)) {
+                            CurrentOrdersHistory currentOrderHistory=  gson.fromJson(responseData.getPayload(), CurrentOrdersHistory.class);
 
-                            JSONArray responseArr = response.getJSONArray("menu");
-
-                            int flag =0;
-
-
-
-                            for (int i = 0; i < responseArr.length(); i++) {
-
-                                JSONObject childJSONObject = responseArr.getJSONObject(i);
-
-                                String menuId = childJSONObject.getString("menu_id");
-                                String day = childJSONObject.getString("day");
-                                String startTime = childJSONObject.getString("start_time");
-                                String endTime = childJSONObject.getString("end_time");
-                                String type = childJSONObject.getString("type");
-                                String cost = childJSONObject.getString("cost");
-                                String version = childJSONObject.getString("version");
-
-//                                OpenHelper h = new OpenHelper(MessMenu.this);
-//                                SQLiteDatabase db = h.getWritableDatabase();
-//                                ContentValues c = new ContentValues();
-//
-//                                c.put("CounterId", id);
-//                                c.put("Day", day);
-//                                c.put("StartTime", startTime);
-//                                c.put("EndTime", endTime);
-//                                c.put("MenuType", type);
-//                                c.put("Cost", cost);
-//                                c.put("Version", version);
-//
-//                                long id = db.insert("Menu", null, c);
-//
-//                                if (id == -1)
-//                                    Toast.makeText(MessMenu.this, "DATA NOT INSERTED", Toast.LENGTH_SHORT).show();
-//                                else {
-//                                    Toast.makeText(MessMenu.this, "DATA INSERTED", Toast.LENGTH_SHORT).show();
-//
-                                //                     }
-
-                                if (flag == 0) {
-
-                                    final ListModel sched0 = new ListModel();
-                                    // Firstly take data in model object
-                                    sched0.setFoodName("");
-
-                                    // Take Model Object in ArrayList
-                                    CustomListViewValuesArr.add(sched0);
-
-                                    final ListModel sched = new ListModel();
-                                    // Firstly take data in model object
-                                    sched.setCounterName(counterName);
-                                    // sched.setFoodName(name);
-
-                                    // Take Model Object in ArrayList
-                                    CustomListViewValuesArr.add(sched);
-                                    flag = 1;
-
-
-                                    final ListModel sched4 = new ListModel();
-                                    // Firstly take data in model object
-                                    sched4.setFoodName("");
-
-                                    // Take Model Object in ArrayList
-                                    CustomListViewValuesArr.add(sched4);
-
-                                }
-
-                                String weekDay;
-                                SimpleDateFormat dayFormat = new SimpleDateFormat("EEEE", Locale.ENGLISH);
-
-                                Calendar calendar = Calendar.getInstance();
-                                weekDay = dayFormat.format(calendar.getTime());
-
-                                //  Toast.makeText(MessMenu.this, "Here and weekday is : "+weekDay, Toast.LENGTH_SHORT).show();
-
-                                if (day.equals(weekDay)) {
-
-                                    final ListModel sched = new ListModel();
-                                    // Firstly take data in model object
-                                    sched.setFoodName(day + " " + type);
-                                    // sched.setMealName(day);
-
-                                    // Take Model Object in ArrayList
-                                    CustomListViewValuesArr.add(sched);
-
-
-                                    JSONArray items = childJSONObject.getJSONArray("items");
-
-                                    String wholeName = "";
-
-                                    for (int k = 0; k < items.length(); k++) {
-
-                                        JSONObject childJSONObject2 = items.getJSONObject(k);
-                                        String name = childJSONObject2.getString("name");
-                                        String type2 = childJSONObject2.getString("type");
-
-//                                        ContentValues c3 = new ContentValues();
-//
-//                                        c3.put("MenuId", menuId);
-//                                        c3.put("Name", name);
-//                                        c3.put("Type", type2);
-//
-//                                        long id3 = db.insert("Item", null, c3);
-//
-//                                        if (id3 == -1)
-//                                            Toast.makeText(MessMenu.this, "DATA NOT INSERTED", Toast.LENGTH_SHORT).show();
-//                                        else {
-//                                            Toast.makeText(MessMenu.this, "DATA INSERTED", Toast.LENGTH_SHORT).show();
-
-
-                                        wholeName = wholeName.concat(name + ", ");
-
-                                        //     }
-
-
-                                    }
-
-                                    final ListModel sched3 = new ListModel();
-                                    // Firstly take data in model object
-                                    //  sched3.setMealName(type);
-                                    sched3.setMealName(wholeName.substring(0, wholeName.length() - 2));
-
-                                    // Take Model Object in ArrayList
-                                    CustomListViewValuesArr.add(sched3);
-
-                                    Resources res = getResources();
-                                    adapter = new CustomAdapterMessMenu(CustomListView, CustomListViewValuesArr, res);
-                                    listMenu.setAdapter(adapter);
-
-
-                                    final ListModel sched4 = new ListModel();
-                                    // Firstly take data in model object
-                                    sched4.setFoodName("");
-
-                                    // Take Model Object in ArrayList
-                                    CustomListViewValuesArr.add(sched4);
-
-
-                                }
-
-
-                            }
+                            ArrayList<History> currentOrderArrayList= new ArrayList<History>(currentOrderHistory.getHistory());
+                            currentOrdersAdapter = new CurrentOrdersAdapter(CurrentOrders.this, currentOrderArrayList);
+                            currentOrdersListView.setAdapter(currentOrdersAdapter);
 
                         } else {
                             response = response.getJSONObject("payload");
@@ -406,9 +261,6 @@ public class CurrentOrders extends AppCompatActivity {
                 }
             }).execute();
 
-
-        }
-
         progressBar.setVisibility(View.INVISIBLE);
     }
 
@@ -416,7 +268,7 @@ public class CurrentOrders extends AppCompatActivity {
 
 
     public void onItemClick(int mPosition) {
-        ListModel tempValues = (ListModel) CustomListViewValuesArr.get(mPosition);
+        //ListModel tempValues = (ListModel) CustomListViewValuesArr.get(mPosition);
         //Toast.makeText(CustomListView,tempValues.getItemName() +  " \nCost:" + tempValues.getCost(), Toast.LENGTH_LONG).show();
     }
 

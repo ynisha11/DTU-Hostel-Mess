@@ -24,6 +24,8 @@ public class URLS {
 
     public static String API_GetMenu_URL = "http://devilsnareapps.com/food/getMenu.php";
 
+    public static String API_GetCurrentOrders_URL = "http://devilsnareapps.com/food/admin/viewPurchaseHistory.php";
+
 }
 
 

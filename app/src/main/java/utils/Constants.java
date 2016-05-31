@@ -23,4 +23,6 @@ public class Constants {
     };
 
     public final static String OtherFoodId= "10";
+
+    public final static String SuccessResponse= "success";
 }
