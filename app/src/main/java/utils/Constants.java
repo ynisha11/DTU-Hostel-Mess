@@ -14,6 +14,7 @@ public class Constants {
     public final static String CurrentVegOrNonVeg= "currentVegOrNonVeg";
 
     public final static String MessBillPaymentUrl= "https://www.onlinesbi.com/prelogin/icollecthome.htm";
+    public final static String MessMenuUpdateUrl = "http://devilsnareapps.com/food/menu_items.php";
 
     public final static String[] MessList = new String[]{"Aryabhatta Mess", "CVR Mess", "HJB Mess", "VVS Mess", "SNH Mess"};
     public final static String[] HostelList = new String[]{

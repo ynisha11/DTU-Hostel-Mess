@@ -84,7 +84,7 @@ public class CurrentOrders extends AppCompatActivity {
                     }
 
                     case R.id.EditMessMenu:
-                        goToUrl(Constants.MessBillPaymentUrl);
+                        goToUrl(Constants.MessMenuUpdateUrl);
                         return true;
 
                     case R.id.ViewMessOff:
