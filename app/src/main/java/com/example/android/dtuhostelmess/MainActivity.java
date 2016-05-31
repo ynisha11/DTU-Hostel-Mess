@@ -237,6 +237,7 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
                         response = response1.getJSONObject("user_profile");
 
                         int isVeg = response.getInt("is_veg");
+                        String isAdmin = response.getString("is_admin");
                         String name = response.getString("name");
                         String phoneNumber = response.getString("phone_number");
                         String emailId = response.getString("email_id");
@@ -312,6 +313,7 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
                         prefManager.putString(Constants.CurrentPhoneNumber, phoneNumber);
                         prefManager.putString(Constants.CurrentRoomNumber, roomNumber);
                         prefManager.putString(Constants.CurrentVegOrNonVeg, isVeg == 1 ? "Veg" : "Non-Veg");
+                        prefManager.putString(Constants.IsAdmin, isAdmin);
 
                        if(GlobalVariables.isAdminLogged ==  1){
                             startActivity(new Intent(MainActivity.this, CurrentOrders.class));

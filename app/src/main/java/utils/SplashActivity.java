@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.example.android.dtuhostelmess.CurrentOrders;
 import com.example.android.dtuhostelmess.MainActivity;
 import com.example.android.dtuhostelmess.MessMenu;
 import com.example.android.dtuhostelmess.R;
@@ -35,13 +36,14 @@ public class SplashActivity extends Activity {
             GlobalVariables.currentRoomNo= prefManager.getString(Constants.CurrentRoomNumber,"");
             GlobalVariables.currentVegOrNon= prefManager.getString(Constants.CurrentVegOrNonVeg,"");
             GlobalVariables.currentRollNo= prefManager.getString(Constants.RollNumber,"");
+            GlobalVariables.isAdminLogged= Integer.parseInt(prefManager.getString(Constants.IsAdmin,""));
 
             new Handler().postDelayed(new Runnable() {
 
                 @Override
                 public void run() {
 
-                    Intent i = new Intent(SplashActivity.this, MessMenu.class);
+                    Intent i = new Intent(SplashActivity.this, GlobalVariables.isAdminLogged==1? CurrentOrders.class:MessMenu.class);
                     startActivity(i);
                     finish();
                 }

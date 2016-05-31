@@ -4,6 +4,7 @@ package utils;
  * Created by vivek on 07/05/16.
  */
 public class Constants {
+    public final static String IsAdmin= "isAdmin";
     public final static String RollNumber= "rollNumber";
     public final static String CurrentMessBill= "currentMessBill";
     public final static String CurrentName= "currentName";

@@ -182,11 +182,7 @@ public class Register extends AppCompatActivity {
                 isVeg = 1;
             } else isVeg = 0;
 
-            int isAdmin = 0;
-
-            if (cbAdmin.isChecked()) {
-                isAdmin = 1;
-            } else isAdmin = 0;
+            final int isAdmin = cbAdmin.isChecked()?1:0;
 
             progressBar.setVisibility(View.VISIBLE);
 
@@ -238,6 +234,7 @@ public class Register extends AppCompatActivity {
                             prefManager.putString(Constants.CurrentPhoneNumber, phoneNo);
                             prefManager.putString(Constants.CurrentRoomNumber, room);
                             prefManager.putString(Constants.CurrentVegOrNonVeg, isVeg==1?"Veg":"Non-Veg");
+                            prefManager.putString(Constants.IsAdmin, ""+isAdmin);
                             Toast.makeText(Register.this, "Congrats! You have successfully registered.", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(Register.this, MessSubscribe.class));
                         } else {
