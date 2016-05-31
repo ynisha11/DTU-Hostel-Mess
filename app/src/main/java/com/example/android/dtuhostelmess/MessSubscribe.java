@@ -52,11 +52,19 @@ public class MessSubscribe extends AppCompatActivity {
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
-        cb1 = (CheckBox) findViewById(R.id.counter1);
-        cb2 = (CheckBox) findViewById(R.id.counter2);
-        cb3 = (CheckBox) findViewById(R.id.counter3);
-        cb4 = (CheckBox) findViewById(R.id.counter4);
-        cb5 = (CheckBox) findViewById(R.id.counter5);
+        ArrayList<CounterItem> counters = new ArrayList<CounterItem>();
+        counters.add( new CounterItem("0","Mess", true, true));
+        counters.add( new CounterItem("1","CVR Mess", true, false));
+        counters.add( new CounterItem("2","HJB Mess", true, false));
+        counters.add( new CounterItem("3","VVS Mess", true, false));
+        counters.add( new CounterItem("4","Aryabhatta Mess", true, false));
+        counters.add( new CounterItem("0","Mess", false, true));
+        counters.add( new CounterItem("5","SNH Mess", false, false));
+
+        adapter = new CustomAdapterMessSubscribe(this, counters);
+
+        listView = (ListView) findViewById(R.id.mess_counters_list);
+        listView.setAdapter(adapter);
     }
 
     @Override

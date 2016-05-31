@@ -30,59 +30,11 @@
                 android:textColor="#00bfa5"
                 android:textSize="20sp" />
 
-            <TextView
-                android:layout_width="fill_parent"
+            <ListView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center_horizontal"
-                android:text="Boys Mess"
-                android:textColor="#00bfa5"
-                android:textSize="16sp" />
-
-            <CheckBox
-                android:id="@+id/counter4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Aryabhatta Mess" />
-
-            <CheckBox
-                android:id="@+id/counter1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="CVR Mess" />
-
-            <CheckBox
-                android:id="@+id/counter2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="HJB Mess" />
-
-            <CheckBox
-                android:id="@+id/counter3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="VVS Mess" />
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:paddingTop="30dp"
-                android:text="Girls Mess"
-                android:textColor="#00bfa5"
-                android:textSize="16sp" />
-
-            <CheckBox
-                android:id="@+id/counter5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="SNH Mess" />
-
+                android:id="@+id/mess_counters_list"
+                ></ListView>
             <Button
                 android:id="@+id/btSubscribe"
                 android:layout_width="fill_parent"
