@@ -2,11 +2,53 @@
 <items version="2" >
 
     <item
-        jar="/Users/vivek/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.6.2/f1bc476cc167b18e66c297df599b2377131a8947/gson-2.6.2.jar"
+        jar="/home/nisha/AndroidStudioProjects/DTUHostelMess/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/home/nisha/AndroidStudioProjects/DTUHostelMess/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-bfafcb8473ef0fb9c011e364bf7c31bfe7fb2e35.jar" />
+    </item>
+    <item
+        jar="/home/nisha/AndroidStudioProjects/DTUHostelMess/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/home/nisha/AndroidStudioProjects/DTUHostelMess/app/build/intermediates/pre-dexed/debug/classes-c7afcc9027fa94e55168cbd19e2c0d2bf8690510.jar" />
+    </item>
+    <item
+        jar="/home/nisha/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/home/nisha/AndroidStudioProjects/DTUHostelMess/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-944b8cf794ec06e936dd9939a813eb185bf84d41.jar" />
+    </item>
+    <item
+        jar="/home/nisha/AndroidStudioProjects/DTUHostelMess/app/build/intermediates/exploded-aar/com.android.support/design/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
+        <dex dex="/home/nisha/AndroidStudioProjects/DTUHostelMess/app/build/intermediates/pre-dexed/debug/classes-1990ecf564e361df97b65a7d6c87b5a0ab82b8fe.jar" />
+    </item>
+    <item
+        jar="/home/nisha/AndroidStudioProjects/DTUHostelMess/app/build/intermediates/exploded-aar/de.hdodenhof/circleimageview/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ac6948cce36f694f3eb3d73a135e298dc4b3527a">
+        <dex dex="/home/nisha/AndroidStudioProjects/DTUHostelMess/app/build/intermediates/pre-dexed/debug/classes-068d47f8c874ee19d930af095c227d71d7832ca1.jar" />
+    </item>
+    <item
+        jar="/home/nisha/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.6.2/f1bc476cc167b18e66c297df599b2377131a8947/gson-2.6.2.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="f1bc476cc167b18e66c297df599b2377131a8947">
-        <dex dex="/Users/vivek/Documents/Projects/android/DTU-Hostel-Mess/app/build/intermediates/pre-dexed/debug/gson-2.6.2-1520ea8e2e0d43dcb0e42850ea98941d599ffead.jar" />
+        <dex dex="/home/nisha/AndroidStudioProjects/DTUHostelMess/app/build/intermediates/pre-dexed/debug/gson-2.6.2-1d890626422551274c80b1b73835e418ecd77847.jar" />
+    </item>
+    <item
+        jar="/home/nisha/AndroidStudioProjects/DTUHostelMess/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/home/nisha/AndroidStudioProjects/DTUHostelMess/app/build/intermediates/pre-dexed/debug/classes-16802bbffbfac8ac9f87408148c1d4543045ab8a.jar" />
     </item>
 
 </items>

@@ -4,6 +4,8 @@ public class URLS {
 
     public static String API_URL = "http://devilsnareapps.com/food/user/login.php";
 
+    public static String API_ViewMessOff_URL = "http://devilsnareapps.com/food/admin/viewMessOff.php";
+
     public static String API_register_URL = "http://devilsnareapps.com/food/user/register.php";
 
     public static String API_messSubscription_URL = "http://devilsnareapps.com/food/user/subscribeCounter.php";

@@ -89,5 +89,6 @@
     <string name="title_activity_current_orders">CurrentOrders</string>
     <string name="title_activity_custom_adapter_current_orders">CustomAdapterCurrentOrders</string>
     <string name="title_activity_view_bill">ViewBill</string>
+    <string name="title_activity_view_mess_off">ViewMessOff</string>
 
 </resources>

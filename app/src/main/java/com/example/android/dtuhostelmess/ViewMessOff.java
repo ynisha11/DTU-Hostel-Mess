@@ -15,7 +15,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -24,76 +23,56 @@ import android.widget.Toast;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 import utils.AppPreferences;
 import utils.Constants;
-import utils.GlobalVariables;
 import utils.ListModel;
 import utils.MyAsyncTask;
 import utils.URLS;
 
-public class ViewBill extends AppCompatActivity {
+public class ViewMessOff extends AppCompatActivity {
 
     public ListView list2;
-    public CustomAdapterBill adapter;
-    public ViewBill CustomListView = null;
+    public CustomAdapterViewMessOff adapter;
+    public ViewMessOff CustomListView = null;
     public ArrayList<ListModel> CustomListViewValuesArr = new ArrayList<ListModel>();
-    TextView tv, tvHeaderName, tvHeaderBill, Veg, Basic, des, mo;
-    EditText e1;
-    Spinner month, year;
+    TextView tvName, tvRollNo, tvHos, tvRoomNo, TotalNoOff, tvHeaderName;
+    Spinner gender, day;
     private Toolbar toolbar;
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
     private String mActivityTitle;
     private AppPreferences prefManager;
-    Spinner dropdown1, dropdown2;
-    String RNo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_bill);
+        setContentView(R.layout.activity_view_mess_off);
         prefManager= AppPreferences.getInstance(this);
 
-        tv = (TextView) findViewById(R.id.tvBill);
-        des = (TextView) findViewById(R.id.tvDes);
-        mo = (TextView) findViewById(R.id.tvMon);
-        Veg = (TextView) findViewById(R.id.tvbasicDes);
-        Basic = (TextView) findViewById(R.id.tvbasicAmo);
+        tvName = (TextView) findViewById(R.id.tvBill);
+        tvRollNo = (TextView) findViewById(R.id.tvDes);
+        tvHos = (TextView) findViewById(R.id.tvMon);
+        tvRoomNo = (TextView) findViewById(R.id.tvbasicDes);
+        TotalNoOff = (TextView) findViewById(R.id.tvbasicAmo);
 
-        e1 = (EditText) findViewById(R.id.etRollNo);
-
-        dropdown1 = (Spinner) findViewById(R.id.spinner1);
-        String[] rollYearItems=new String[8];
-        Calendar c = Calendar.getInstance();
-        int currentYear = c.get(Calendar.YEAR);
-        int index= 0;
-        for(int i=currentYear-6;i<=currentYear+1;i++)
-        {
-            rollYearItems[index++]= Integer.toString(i).replaceFirst("0","K")+"/";
-        }
-        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, rollYearItems);
-        dropdown1.setAdapter(adapter3);
-
-        dropdown2 = (Spinner) findViewById(R.id.spinner2);
-        String[] items4 = new String[]{"HO/", "HO/G/"};
-        ArrayAdapter<String> adapter4 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items4);
-        dropdown2.setAdapter(adapter4);
-
-        month = (Spinner) findViewById(R.id.spinnerMonth);
-        year = (Spinner) findViewById(R.id.spinnerYear);
+        gender = (Spinner) findViewById(R.id.spinnerMonth);
+        day = (Spinner) findViewById(R.id.spinnerYear);
 
         //Todo: replace hardcoded month and year names
-        String[] items1 = new String[]{"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+        String[] items1 = new String[]{"Boys Mess", "Girls Mess"};
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items1);
-        month.setAdapter(adapter1);
+        gender.setAdapter(adapter1);
 
-        String[] items2 = new String[]{"2016", "2017", "2018"};
+        String[] items2 = new String[]{"Today", "Tomorrow"};
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items2);
-        year.setAdapter(adapter2);
+        day.setAdapter(adapter2);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -112,8 +91,9 @@ public class ViewBill extends AppCompatActivity {
                 //Check to see which item was being clicked and perform appropriate action
                 switch (menuItem.getItemId()) {
                     //Replacing the main content with ContentFragment Which is our Inbox View;
+
                     case R.id.ViewCurrentOrders: {
-                        startActivity(new Intent(ViewBill.this, CurrentOrders.class));
+                        startActivity(new Intent(ViewMessOff.this, CurrentOrders.class));
                         return true;
                     }
 
@@ -122,10 +102,11 @@ public class ViewBill extends AppCompatActivity {
                         return true;
 
                     case R.id.ViewMessOff:
-                         startActivity(new Intent(ViewBill.this, ViewMessOff.class));
+                       // startActivity(new Intent(ViewMessOff.this, ViewMessOff.class));
                         return true;
 
                     case R.id.ViewBillDetails: {
+                        startActivity(new Intent(ViewMessOff.this, ViewBill.class));
                         return true;
                     }
 
@@ -133,18 +114,16 @@ public class ViewBill extends AppCompatActivity {
                     case R.id.logout:
                     {
                         prefManager.putString(Constants.RollNumber, "");
-                        startActivity(new Intent(ViewBill.this, MainActivity.class));
+                        startActivity(new Intent(ViewMessOff.this, MainActivity.class));
                         return true;
                     }
-
-
-                    case R.id.billPay:
-                        goToUrl(Constants.MessBillPaymentUrl);
-                        return true;
 
                     default:
                         Toast.makeText(getApplicationContext(), "Somethings Wrong", Toast.LENGTH_SHORT).show();
                         return true;
+
+
+
                 }
             }
         });
@@ -173,9 +152,9 @@ public class ViewBill extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         tvHeaderName = (TextView) findViewById(R.id.headerName);
-        tvHeaderBill = (TextView) findViewById(R.id.headerBill);
-        tvHeaderName.setText(GlobalVariables.currentName);
-        tvHeaderBill.setText("Current Mess Bill : " + GlobalVariables.currentMessBill);
+//        tvHeaderBill = (TextView) findViewById(R.id.headerBill);
+//        tvHeaderName.setText(GlobalVariables.currentName);
+//        tvHeaderBill.setText("Current Mess Bill : " + GlobalVariables.currentMessBill);
 
         CustomListView = this;
 
@@ -184,7 +163,7 @@ public class ViewBill extends AppCompatActivity {
         list2 = (ListView) findViewById(R.id.listBill);
 
         // Create Custom Adapter
-        adapter = new CustomAdapterBill(CustomListView, CustomListViewValuesArr, res);
+        adapter = new CustomAdapterViewMessOff(CustomListView, CustomListViewValuesArr, res);
         list2.setAdapter(adapter);
     }
 
@@ -253,27 +232,43 @@ public class ViewBill extends AppCompatActivity {
 
     //Function to set data in ArrayList
     public void go(View view) {
+        final String genderSelected,date;
 
-        final String selectedMonth = month.getSelectedItem().toString();
-        String selectedYear = year.getSelectedItem().toString();
-        int year = Integer.parseInt(selectedYear);
+        final String selectedGender = gender.getSelectedItem().toString();
+        if(selectedGender.equals("Girls Mess"))
+            genderSelected = "female";
+
+        else
+            genderSelected = "male";
+
+      //  Toast.makeText(ViewMessOff.this, genderSelected + "", Toast.LENGTH_LONG).show();
+
+
+        String selectedDay = day.getSelectedItem().toString();
+        if(selectedDay.equals("Today")){
+           date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+           // Toast.makeText(ViewMessOff.this, date + "", Toast.LENGTH_LONG).show();
+        }
+        else{
+            Calendar calendar = Calendar.getInstance();
+            calendar.add(Calendar.DAY_OF_YEAR, 1);
+            Date tomorrow = calendar.getTime();
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+           date = dateFormat.format(tomorrow);
+           // Toast.makeText(ViewMessOff.this, date + "", Toast.LENGTH_LONG).show();
+        }
 
         JSONObject jsonObject = new JSONObject();
         try {
+            jsonObject.put("gender", genderSelected);
+            jsonObject.put("date", date);
 
-            String RnoPart1 = dropdown1.getSelectedItem().toString();
-            String RnoPart2 = dropdown2.getSelectedItem().toString();
-            RNo = RnoPart1 + RnoPart2 + e1.getText().toString();
-
-            jsonObject.put("roll_number", RNo);
-            jsonObject.put("month", selectedMonth);
-            jsonObject.put("year", year);
         } catch (Exception e) {
-            Toast.makeText(ViewBill.this, "" + e, Toast.LENGTH_LONG).show();
+            Toast.makeText(ViewMessOff.this, "" + e, Toast.LENGTH_LONG).show();
             // System.out.println("Exception in json encoding "+e);
         }
 
-        new MyAsyncTask(ViewBill.this, jsonObject.toString(), URLS.API_BillHistory_URL, new MyAsyncTask.AsyncResponse() {
+        new MyAsyncTask(ViewMessOff.this, jsonObject.toString(), URLS.API_ViewMessOff_URL, new MyAsyncTask.AsyncResponse() {
             @Override
             public void processFinish(String output) {
 
@@ -282,87 +277,72 @@ public class ViewBill extends AppCompatActivity {
                     String resultedMessage = response.getString("responseType");
 
                     if (resultedMessage.equals("success")) {
-                        CustomListViewValuesArr= new ArrayList<ListModel>();
+                        CustomListViewValuesArr = new ArrayList<ListModel>();
                         response = response.getJSONObject("payload");
-                        String totalBill = response.getString("bill_amount");
-                        JSONArray responseArr = response.getJSONArray("history");
 
-                        JSONArray responseArr2 = response.getJSONArray("mess_off");
 
-                        if (responseArr.length() == 0 && responseArr2.length()==0) {
-                            AlertDialog alertDialog = new AlertDialog.Builder(ViewBill.this).create(); //Read Update
-                            alertDialog.setTitle("No History");
-                            alertDialog.setMessage("The selected Roll No. hasn't bought any food items in the selected Month and Year\nPlease choose again!");
+                        JSONObject response2 = response.getJSONObject("mess_off");
+
+
+                     if (response2.equals(null) || response2==null) {
+                            AlertDialog alertDialog = new AlertDialog.Builder(ViewMessOff.this).create(); //Read Update
+                            alertDialog.setTitle("No Mess Off");
+                            alertDialog.setMessage("None of the students have done Mess Off for the selected date!");
                             alertDialog.show();
+
                         }
 
-                        for (int i = 0; i < responseArr.length(); i++) {
-                            JSONObject childJSONObject = responseArr.getJSONObject(i);
-                            String date = childJSONObject.getString("timestamp");
-                            String mess = childJSONObject.getString("counter_name");
-                            String food = childJSONObject.getString("food_item");
-                            String total = childJSONObject.getString("amount");
+                        String responseOfMessOff = response2.getString("mess_off");
+                                if(responseOfMessOff == null || responseOfMessOff.equals(null)){
+                                    Toast.makeText(ViewMessOff.this, "here", Toast.LENGTH_SHORT).show();
+                                }
+                        else {
 
-                            String dd = date.substring(8, 10);
-                            String mm = date.substring(5, 8);
-                            String yy = date.substring(0, 4);
-                            String time = date.substring(11);
 
-                            tv.setText("Total Mess Bill : Rs " + totalBill);
-                            Veg.setText(" " + GlobalVariables.currentVegOrNon);
+                            JSONArray responseArr = response.getJSONArray("mess_off");
 
-                            des.setText(" Basic Bill ");
-                            mo.setText(selectedMonth + " Month ");
-                            if (GlobalVariables.currentVegOrNon.equals("Vegetarian")) {
-                                Basic.setText("Rs 1875");
-                            } else {
-                                Basic.setText("Rs 1925");
+
+                            int count = responseArr.length() - 1;
+
+                            for (int i = 0; i < responseArr.length(); i++) {
+                                count++;
+                                JSONObject childJSONObject = responseArr.getJSONObject(i);
+                                String name = childJSONObject.getString("name");
+                                String roll_number = childJSONObject.getString("roll_number");
+                                String hostel = childJSONObject.getString("hostel");
+                                String room_no = childJSONObject.getString("room_no");
+
+                                tvName.setText(name);
+                                tvRollNo.setText(roll_number);
+                                tvHos.setText(hostel);
+                                tvRoomNo.setText(room_no);
+                                TotalNoOff.setText(count);
+
+                                final ListModel sched = new ListModel();
+
+                                // Firstly take data in model object
+                                sched.setDateTime(name);
+                                sched.setMess(roll_number);
+                                sched.setFood(hostel);
+                                sched.setTotal(room_no);
+
+                                // Take Model Object in ArrayList
+                                CustomListViewValuesArr.add(sched);
                             }
 
-                            final ListModel sched = new ListModel();
+                            Resources res = getResources();
+                            adapter = new CustomAdapterViewMessOff(CustomListView, CustomListViewValuesArr, res);
+                            list2.setAdapter(adapter);
 
-                            // Firstly take data in model object
-                            sched.setDateTime(dd + "-" + mm + yy + " " + time);
-                            sched.setMess(mess);
-                            sched.setFood(food);
-                            sched.setTotal(total);
-
-                            // Take Model Object in ArrayList
-                            CustomListViewValuesArr.add(sched);
                         }
-
-
-                        for (int i = 0; i < responseArr2.length(); i++) {
-
-                            JSONObject childJSONObject = responseArr2.getJSONObject(i);
-                            String date = childJSONObject.getString("date");
-                            String food = childJSONObject.getString("holiday");
-
-                            final ListModel sched = new ListModel();
-
-                            // Firstly take data in model object
-                            sched.setDateTime(date);
-                            sched.setMess("All Mess");
-                            sched.setFood(food);
-                            sched.setMessOffDeduct("65");
-
-                            // Take Model Object in ArrayList
-                            CustomListViewValuesArr.add(sched);
-                        }
-
-
-                        Resources res = getResources();
-                        adapter = new CustomAdapterBill(CustomListView, CustomListViewValuesArr, res);
-                        list2.setAdapter(adapter);
-
-                    } else {
+                    }else {
                         response = response.getJSONObject("payload");
                         String errorMessage = response.getString("message");
-                        Toast.makeText(ViewBill.this, errorMessage, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ViewMessOff.this, errorMessage, Toast.LENGTH_SHORT).show();
                     }
 
                 } catch (Exception e) {
-                    Toast.makeText(ViewBill.this, "" + e, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ViewMessOff.this, "" + e, Toast.LENGTH_SHORT).show();
                 }
 
             }

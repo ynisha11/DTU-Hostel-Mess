@@ -3,8 +3,6 @@ package com.example.android.dtuhostelmess;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -21,15 +19,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonElement;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Locale;
 
 import Adapters.CurrentOrdersAdapter;
 import Models.CurrentOrdersHistory;
@@ -38,9 +31,7 @@ import Models.ResponseData;
 import utils.AppPreferences;
 import utils.Constants;
 import utils.GlobalVariables;
-import utils.ListModel;
 import utils.MyAsyncTask;
-import utils.OpenHelper;
 import utils.URLS;
 
 public class CurrentOrders extends AppCompatActivity {
@@ -94,7 +85,7 @@ public class CurrentOrders extends AppCompatActivity {
                         return true;
 
                     case R.id.ViewMessOff:
-                       // startActivity(new Intent(CurrentOrders.this, ViewMessOff.class));
+                      startActivity(new Intent(CurrentOrders.this, ViewMessOff.class));
                         return true;
 
                     case R.id.ViewBillDetails: {

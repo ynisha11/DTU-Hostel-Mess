@@ -19,13 +19,13 @@
             android:id="@+id/ViewMessOff"
             android:checked="false"
             android:icon="@drawable/ic_messoff_black"
-            android:title="Mess Off" />
+            android:title="View Mess Off" />
 
         <item
             android:id="@+id/ViewBillDetails"
             android:checked="false"
             android:icon="@drawable/ic_messbill_black"
-            android:title="Bill Details" />
+            android:title="View Bill Details" />
 
 
         <item

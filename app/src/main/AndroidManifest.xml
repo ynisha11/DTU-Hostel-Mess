@@ -70,6 +70,10 @@
             android:name=".ViewBill"
             android:label="@string/title_activity_view_bill" >
         </activity>
+        <activity
+            android:name=".ViewMessOff"
+            android:label="@string/title_activity_view_mess_off" >
+        </activity>
     </application>
 
 </manifest>
