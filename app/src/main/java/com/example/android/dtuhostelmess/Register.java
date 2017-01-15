@@ -14,6 +14,7 @@ import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -29,6 +30,7 @@ import utils.URLS;
 
 public class Register extends AppCompatActivity {
 
+    TextView t;
     EditText e1, e2, e3, e4, e5, e6, eRoom;
     LinearLayout LinearRoll;
     RadioButton rveg, rnon;
@@ -57,6 +59,7 @@ public class Register extends AppCompatActivity {
             onStartCount = 2;
         }
 
+        t = (TextView) findViewById(R.id.textView);
         LinearRoll = (LinearLayout) findViewById(R.id.LRoll);
         e1 = (EditText) findViewById(R.id.etRollNo);
         e2 = (EditText) findViewById(R.id.etName);
@@ -98,6 +101,7 @@ public class Register extends AppCompatActivity {
         ArrayAdapter<String> adapterM = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, Constants.MessList);
         dropdownMess.setAdapter(adapterM);
 
+        t.setText("FOR STUDENTS");
     }
 
     @Override
@@ -132,6 +136,7 @@ public class Register extends AppCompatActivity {
 
             e3.setVisibility(View.VISIBLE);
             dropdownMess.setVisibility(View.VISIBLE);
+            t.setText("FOR ADMINISTRATORS");
         } else {
             e3.setVisibility(View.GONE);
             dropdownMess.setVisibility(View.GONE);
@@ -143,6 +148,7 @@ public class Register extends AppCompatActivity {
             rveg.setVisibility(View.VISIBLE);
             rnon.setVisibility(View.VISIBLE);
             cbAdmin.setVisibility(View.VISIBLE);
+            t.setText("FOR STUDENTS");
         }
     }
 

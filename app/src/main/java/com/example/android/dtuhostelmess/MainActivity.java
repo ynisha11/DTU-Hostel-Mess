@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -33,6 +34,7 @@ import utils.OpenHelper;
 import utils.URLS;
 
 public class MainActivity extends AppCompatActivity implements Animation.AnimationListener {
+    TextView t;
     EditText e1, e2, e3;
     String RNo, Pass;
     Button b1;
@@ -64,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
 
         aSwitch = (Switch) findViewById(R.id.btnStart);
 
+        t = (TextView) findViewById(R.id.textView);
         b1 = (Button) findViewById(R.id.btLogin);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         e1 = (EditText) findViewById(R.id.etRollNo);
@@ -87,6 +90,7 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items2);
         dropdown2.setAdapter(adapter2);
 
+        t.setText("FOR STUDENTS");
         dropdown1.setVisibility(View.VISIBLE);
         dropdown2.setVisibility(View.VISIBLE);
         e1.setVisibility(View.VISIBLE);
@@ -142,6 +146,8 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
     public void toggle(View v) {
         if (aSwitch.isChecked()) {
 
+            t.setText("FOR ADMINISTRATORS");
+
             dropdown1.startAnimation(animFadeOut);
             dropdown2.startAnimation(animFadeOut);
             e1.startAnimation(animFadeOut);
@@ -153,6 +159,7 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
             e3.startAnimation(animFadeIn);
             e3.setVisibility(View.VISIBLE);
         } else {
+
             // start fade out animation
             e3.startAnimation(animFadeOut);
             e3.setVisibility(View.GONE);
@@ -174,6 +181,7 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
 
             aSwitch = (Switch) findViewById(R.id.btnStart);
 
+            t = (TextView) findViewById(R.id.textView);
             b1 = (Button) findViewById(R.id.btLogin);
             progressBar = (ProgressBar) findViewById(R.id.progressBar);
             e1 = (EditText) findViewById(R.id.etRollNo);
@@ -197,6 +205,7 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
             ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items2);
             dropdown2.setAdapter(adapter2);
 
+            t.setText("FOR STUDENTS");
             dropdown1.setVisibility(View.VISIBLE);
             dropdown2.setVisibility(View.VISIBLE);
             e1.setVisibility(View.VISIBLE);
