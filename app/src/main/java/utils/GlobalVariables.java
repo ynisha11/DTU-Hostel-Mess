@@ -19,6 +19,7 @@ public class GlobalVariables {
     public static String currentEmailID;
     public static String currentPhoneNo;
     public static String currentVegOrNon;
+    public static String currentPassword;
 
     public static int QuantityItem1;
     public static int QuantityItem2;

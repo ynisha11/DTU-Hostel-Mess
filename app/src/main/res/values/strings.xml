@@ -33,6 +33,7 @@
     <string name="hint_name">Fullname</string>
     <string name="hint_username">Username</string>
     <string name="btn_login">LOGIN</string>
+    <string name="btn_next">PROCEED</string>
     <string name="btn_register">REGISTER</string>
     <string name="btn_link_to_register">Not a member? Sign up now.</string>
     <string name="btn_link_to_login">Already registred! Login Me.</string>

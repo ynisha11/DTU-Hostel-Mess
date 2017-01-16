@@ -16,7 +16,6 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,7 +32,6 @@ import utils.URLS;
 public class Profile extends AppCompatActivity {
     TextView tvHeaderName, tvHeaderBill, e2, e6, e7, newE1, newE2;
     EditText e1, e3, e4, e5, e8;
-    Switch aSwitch;
     Spinner dropdownHostel;
     ProgressBar progressBar;
 
@@ -72,7 +70,6 @@ public class Profile extends AppCompatActivity {
         e5.setText(GlobalVariables.currentPhoneNo);
         e6.setText(GlobalVariables.currentMessBill);
         e7.setText(GlobalVariables.currentVegOrNon);
-        aSwitch = (Switch) findViewById(R.id.toggleButton);
 
         // Initializing Toolbar and setting it as the actionbar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -229,15 +226,6 @@ public class Profile extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void toggle(View v) {
-        if (aSwitch.isChecked()) {
-            newE1.setText("Username : ");
-            newE2.setText("Mess Assigned : ");
-        } else {
-            newE1.setText("Roll Number : ");
-            newE2.setText("Hostel : ");
-        }
-    }
 
     private void goToUrl(String url) {
         Uri uriUrl = Uri.parse(url);

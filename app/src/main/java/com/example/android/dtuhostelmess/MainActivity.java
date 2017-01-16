@@ -346,7 +346,7 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
 
 
     public void register(View v) {
-        Intent i = new Intent(this, Register.class);
+        Intent i = new Intent(this, RegistrationAuthentication.class);
         startActivity(i);
     }
 
