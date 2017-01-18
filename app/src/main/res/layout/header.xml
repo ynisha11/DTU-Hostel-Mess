@@ -22,26 +22,46 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.1245"
-            android:background="@color/PrimaryColor"
+            android:background="#1976D2"
             android:gravity="left"
             android:paddingBottom="5.2dp"
             android:paddingLeft="16dp"
             android:paddingTop="7dp"
-            android:textColor="#fff"
+            android:textColor="#E3F2FD"
             android:textSize="14sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/headerBill"
+        <LinearLayout
             android:layout_width="match_parent"
+            android:orientation="horizontal"
             android:layout_height="0dp"
-            android:layout_weight="0.1245"
-            android:background="@color/PrimaryColor"
+            android:layout_weight="0.1245">
+
+       <TextView
+            android:id="@+id/headerBill1"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+
+            android:background="#1976D2"
             android:gravity="left"
             android:paddingBottom="7.5dp"
             android:paddingLeft="16dp"
-            android:textColor="#fff"
+            android:textColor="#BBDEFB"
+            android:textSize="14sp"
+           android:text="Current Mess Bill: " />
+
+        <TextView
+            android:id="@+id/headerBill"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="#1976D2"
+            android:gravity="left"
+            android:paddingBottom="7.5dp"
+            android:textColor="#FFFFFF"
             android:textSize="14sp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

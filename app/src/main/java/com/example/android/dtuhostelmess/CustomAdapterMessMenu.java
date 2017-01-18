@@ -74,7 +74,7 @@ public class CustomAdapterMessMenu extends BaseAdapter implements View.OnClickLi
             holder = (ViewHolder) vi.getTag();
 
         if (data.size() <= 0) {
-            holder.text.setText("Please Wait. Loading...");
+            holder.text.setText("Please wait, loading...");
 
         } else {
             // Get each Model object from Arraylist
@@ -86,7 +86,7 @@ public class CustomAdapterMessMenu extends BaseAdapter implements View.OnClickLi
             holder.meal.setText(tempValues.getMealName());
 
             holder.text.setText(tempValues.getFoodName());
-            holder.text.setTextColor(Color.parseColor("#2196f3"));
+            holder.text.setTextColor(Color.parseColor("#00796B"));
 
             // Set Item Click Listner for LayoutInflater for each row
             vi.setOnClickListener(new OnItemClickListener(position));

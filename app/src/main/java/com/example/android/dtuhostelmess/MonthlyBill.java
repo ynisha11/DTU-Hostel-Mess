@@ -24,6 +24,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import utils.AppPreferences;
 import utils.AppUtils;
@@ -68,7 +69,12 @@ public class MonthlyBill extends AppCompatActivity {
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items1);
         month.setAdapter(adapter1);
 
-        String[] items2 = new String[]{"2016", "2017", "2018"};
+        String[] items2=new String[2];
+        Calendar c = Calendar.getInstance();
+        int currentYear = c.get(Calendar.YEAR);
+        items2[0] = Integer.toString(currentYear);
+        items2[1] = Integer.toString(currentYear -1);
+
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items2);
         year.setAdapter(adapter2);
 
@@ -134,7 +140,7 @@ public class MonthlyBill extends AppCompatActivity {
                         return true;
 
                     default:
-                        Toast.makeText(getApplicationContext(), "Somethings Wrong", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Something's wrong. Please try again!", Toast.LENGTH_SHORT).show();
                         return true;
                 }
             }
@@ -166,7 +172,7 @@ public class MonthlyBill extends AppCompatActivity {
         tvHeaderName = (TextView) findViewById(R.id.headerName);
         tvHeaderBill = (TextView) findViewById(R.id.headerBill);
         tvHeaderName.setText(GlobalVariables.currentName);
-        tvHeaderBill.setText("Current Mess Bill : " + GlobalVariables.currentMessBill);
+        tvHeaderBill.setText("₹ " + GlobalVariables.currentMessBill);
 
         CustomListView = this;
 
@@ -289,20 +295,22 @@ public class MonthlyBill extends AppCompatActivity {
                             String food = childJSONObject.getString("food_item");
                             String total = childJSONObject.getString("amount");
 
+                           // Toast.makeText(MonthlyBill.this, date +mess+food+total, Toast.LENGTH_SHORT).show();
+
                             String dd = date.substring(8, 10);
                             String mm = date.substring(5, 8);
                             String yy = date.substring(0, 4);
                             String time = date.substring(11);
 
-                            tv.setText("Total Mess Bill : Rs " + totalBill);
+                            tv.setText("Total Mess Bill: ₹ " + totalBill);
                             Veg.setText(" " + GlobalVariables.currentVegOrNon);
 
                             des.setText(" Basic Bill ");
                             mo.setText(selectedMonth + " Month ");
                             if (GlobalVariables.currentVegOrNon.equals("Vegetarian")) {
-                                Basic.setText("Rs 1875");
+                                Basic.setText("₹ 1875");
                             } else {
-                                Basic.setText("Rs 1925");
+                                Basic.setText("₹ 1925");
                             }
 
                             final ListModel sched = new ListModel();

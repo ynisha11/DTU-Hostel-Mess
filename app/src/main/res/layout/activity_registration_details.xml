@@ -163,7 +163,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dip"
-                android:background="#ea4c88"
+                android:background="@color/PrimaryColor"
                 android:onClick="submit"
                 android:text="@string/btn_register"
                 android:textColor="#FFFFFF" />

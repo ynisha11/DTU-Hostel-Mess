@@ -7,7 +7,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_mess"
+        android:icon="@drawable/logo2"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
@@ -60,6 +60,8 @@
             android:label="@string/title_activity_view_mess_off" />
         <activity android:name=".RegistrationDetails" />
         <activity android:name=".RegistrationAuthentication"></activity>
+
+
     </application>
 
 </manifest>

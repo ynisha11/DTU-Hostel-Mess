@@ -7,6 +7,8 @@
     android:fitsSystemWindows="true"
     tools:context=".com.example.android.dtuhostelmess.MessMenu">
 
+
+
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/SCROLLER_ID"

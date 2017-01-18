@@ -286,7 +286,7 @@ public class Buy extends AppCompatActivity {
         tvHeaderName = (TextView) findViewById(R.id.headerName);
         tvHeaderBill = (TextView) findViewById(R.id.headerBill);
         tvHeaderName.setText(GlobalVariables.currentName);
-        tvHeaderBill.setText("Current Mess Bill : " + GlobalVariables.currentMessBill);
+        tvHeaderBill.setText("₹ " + GlobalVariables.currentMessBill);
     }
 
     private void setupDrawer() {

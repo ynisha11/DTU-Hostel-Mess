@@ -134,7 +134,7 @@ public class BuyItemsAdapter extends BaseAdapter {
 
                 TextView foodCostView = (TextView) view.findViewById(R.id.text2);
                 foodNameView.setText( contact.mFoodName );
-                foodCostView.setText("Rs. "+(int)contact.mCost);
+                foodCostView.setText("₹ "+(int)contact.mCost);
 
                 foodNameView.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                     @Override

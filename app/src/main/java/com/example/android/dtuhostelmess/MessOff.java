@@ -124,7 +124,7 @@ public class MessOff extends AppCompatActivity {
                         return true;
 
                     default:
-                        Toast.makeText(getApplicationContext(), "Somethings Wrong", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Something's wrong. Please try again!", Toast.LENGTH_SHORT).show();
                         return true;
                 }
             }
@@ -156,7 +156,7 @@ public class MessOff extends AppCompatActivity {
         tvHeaderName = (TextView) findViewById(R.id.headerName);
         tvHeaderBill = (TextView) findViewById(R.id.headerBill);
         tvHeaderName.setText(GlobalVariables.currentName);
-        tvHeaderBill.setText("Current Mess Bill : " + GlobalVariables.currentMessBill);
+        tvHeaderBill.setText("₹ " + GlobalVariables.currentMessBill);
 
         CustomListView = this;
 

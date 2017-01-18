@@ -82,10 +82,10 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dip"
-                android:background="#ea4c88"
+                android:background="@color/PrimaryColor"
                 android:onClick="proceed"
                 android:text="@string/btn_next"
-                android:textColor="#FFFFFF" />
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btLinkToLoginScreen"
@@ -96,7 +96,7 @@
                 android:onClick="login"
                 android:text="@string/btn_link_to_login"
                 android:textAllCaps="false"
-                android:textColor="#ea4c88"
+                android:textColor="#80CBC4"
                 android:textSize="15dp" />
 
             <ProgressBar

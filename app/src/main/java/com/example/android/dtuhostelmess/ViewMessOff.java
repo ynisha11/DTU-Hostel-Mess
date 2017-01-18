@@ -119,7 +119,7 @@ public class ViewMessOff extends AppCompatActivity {
                     }
 
                     default:
-                        Toast.makeText(getApplicationContext(), "Somethings Wrong", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Something's wrong. Please try again!", Toast.LENGTH_SHORT).show();
                         return true;
 
 

@@ -85,7 +85,7 @@ public class CustomAdapterViewMessOff extends BaseAdapter implements View.OnClic
             holder.name.setText(tempValues.getDateTime());
             holder.roll_number.setText(tempValues.getMess());
             holder.hostel.setText(tempValues.getFood());
-            holder.room_number.setText("  Rs " + tempValues.getTotal());
+            holder.room_number.setText(" ₹ " + tempValues.getTotal());
 
             //Set Item Click Listner for LayoutInflater for each row
             vi.setOnClickListener(new OnItemClickListener(position));

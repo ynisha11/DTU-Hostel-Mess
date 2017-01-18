@@ -143,7 +143,7 @@ public class ViewBill extends AppCompatActivity {
                         return true;
 
                     default:
-                        Toast.makeText(getApplicationContext(), "Somethings Wrong", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Something's wrong. Please try again!", Toast.LENGTH_SHORT).show();
                         return true;
                 }
             }
@@ -308,15 +308,15 @@ public class ViewBill extends AppCompatActivity {
                             String yy = date.substring(0, 4);
                             String time = date.substring(11);
 
-                            tv.setText("Total Mess Bill : Rs " + totalBill);
+                            tv.setText("Total Mess Bill: ₹ " + totalBill);
                             Veg.setText(" " + GlobalVariables.currentVegOrNon);
 
                             des.setText(" Basic Bill ");
                             mo.setText(selectedMonth + " Month ");
                             if (GlobalVariables.currentVegOrNon.equals("Vegetarian")) {
-                                Basic.setText("Rs 1875");
+                                Basic.setText("₹ 1875");
                             } else {
-                                Basic.setText("Rs 1925");
+                                Basic.setText("₹ 1925");
                             }
 
                             final ListModel sched = new ListModel();

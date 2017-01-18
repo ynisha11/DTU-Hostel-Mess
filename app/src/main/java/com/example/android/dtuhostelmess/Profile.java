@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import utils.AppPreferences;
 import utils.AppUtils;
@@ -30,8 +31,8 @@ import utils.MyAsyncTask;
 import utils.URLS;
 
 public class Profile extends AppCompatActivity {
-    TextView tvHeaderName, tvHeaderBill, e2, e6, e7, newE1, newE2;
-    EditText e1, e3, e4, e5, e8;
+    TextView e1, e4, e8, tvHeaderName, tvHeaderBill, e2, e6, e7;
+    EditText e3, e5;
     Spinner dropdownHostel;
     ProgressBar progressBar;
 
@@ -48,14 +49,14 @@ public class Profile extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         prefManager= AppPreferences.getInstance(this);
 
-        e1 = (EditText) findViewById(R.id.tvName);
+        e1 = (TextView) findViewById(R.id.tvName);
         e2 = (TextView) findViewById(R.id.tvRollNo);
         e3 = (EditText) findViewById(R.id.tvRoom);
-        e4 = (EditText) findViewById(R.id.tvEmail);
+        e4 = (TextView) findViewById(R.id.tvEmail);
         e5 = (EditText) findViewById(R.id.tvPhoneNo);
         e6 = (TextView) findViewById(R.id.tvBill);
         e7 = (TextView) findViewById(R.id.tvVegOrNon);
-        e8 = (EditText) findViewById(R.id.phone);
+        e8 = (TextView) findViewById(R.id.phone);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         dropdownHostel = (Spinner) findViewById(R.id.spinnerHostel);
 
@@ -136,7 +137,7 @@ public class Profile extends AppCompatActivity {
                         return true;
 
                     default:
-                        Toast.makeText(getApplicationContext(), "Somethings Wrong", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Something's wrong. Please try again!", Toast.LENGTH_SHORT).show();
                         return true;
                 }
             }
@@ -168,7 +169,7 @@ public class Profile extends AppCompatActivity {
         tvHeaderName = (TextView) findViewById(R.id.headerName);
         tvHeaderBill = (TextView) findViewById(R.id.headerBill);
         tvHeaderName.setText(GlobalVariables.currentName);
-        tvHeaderBill.setText("Current Mess Bill : " + GlobalVariables.currentMessBill);
+        tvHeaderBill.setText("₹ " + GlobalVariables.currentMessBill);
     }
 
 
@@ -234,30 +235,24 @@ public class Profile extends AppCompatActivity {
     }
 
     public void save(View v) {
-        String name, room, email, phone;
+        String room, phone;
         progressBar.setVisibility(View.VISIBLE);
 
         JSONObject jsonObject = new JSONObject();
         try {
-            name = e1.getText().toString();
-            GlobalVariables.currentName = name;
-
             room = e3.getText().toString();
             GlobalVariables.currentRoomNo = room;
             GlobalVariables.currentHostel = dropdownHostel.getSelectedItem().toString();
 
-            email = e4.getText().toString();
-            GlobalVariables.currentEmailID = email;
-
             phone = e5.getText().toString();
             GlobalVariables.currentPhoneNo = phone;
 
-            jsonObject.put("name", name);
+            jsonObject.put("name", GlobalVariables.currentName);
             jsonObject.put("roll_number", GlobalVariables.currentRollNo);
             jsonObject.put("hostel", GlobalVariables.currentHostel);
             jsonObject.put("phone_number", phone);
             jsonObject.put("room_no", room);
-            jsonObject.put("email_id", email);
+            jsonObject.put("email_id", GlobalVariables.currentEmailID);
 
         } catch (JSONException e) {
             // TODO Auto-generated catch block

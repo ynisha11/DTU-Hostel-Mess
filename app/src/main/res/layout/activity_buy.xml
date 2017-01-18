@@ -29,7 +29,8 @@
             <FrameLayout
                 android:id="@+id/frame"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:paddingBottom="5dp">
 
                 <LinearLayout
                     android:id="@+id/linearMain"
@@ -43,12 +44,13 @@
                     <Spinner
                         android:id="@+id/spinner1"
                         android:layout_width="fill_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="45dp"
                         android:layout_gravity="center"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="12dp"
                         android:background="@android:drawable/btn_dropdown"
-                        android:spinnerMode="dropdown" />
+                        android:spinnerMode="dropdown"
+                        />
 
                     <ProgressBar
                         android:id="@+id/progressBar"
@@ -66,11 +68,15 @@
 
                     <Button
                         android:id="@+id/btPlaceOrder"
-                        android:layout_width="fill_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="30dip"
-                        android:background="#009688"
+                        android:layout_marginTop="15dip"
+                        android:layout_marginBottom="5dip"
+                        android:paddingLeft="20dip"
+                        android:paddingRight="20dip"
+                        android:background="#00796B"
                         android:onClick="placeOrder"
+                        android:layout_gravity="center_horizontal"
                         android:text="Place order"
                         android:textColor="@color/white" />
 

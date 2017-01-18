@@ -19,7 +19,7 @@ tools:context="com.example.android.dtuhostelmess.ViewBill">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFFFFF"
+        android:background="@color/PrimaryColor"
         android:gravity="top"
         android:orientation="vertical">
 
@@ -71,7 +71,7 @@ tools:context="com.example.android.dtuhostelmess.ViewBill">
                         android:layout_gravity="top"
                         android:layout_marginTop="1dp"
                         android:layout_weight=".17"
-                        android:background="#e0e0e0"
+                        android:background="@color/PrimaryColor"
                         android:inputType="phone" />
 
                 </LinearLayout>
@@ -111,7 +111,7 @@ tools:context="com.example.android.dtuhostelmess.ViewBill">
                         android:layout_width="0dp"
                         android:layout_height="36dp"
                         android:layout_weight=".17"
-                        android:background="#33691e"
+                        android:background="@color/PrimaryColor"
                         android:onClick="go"
                         android:paddingLeft="7dp"
                         android:paddingRight="7dp"
@@ -126,7 +126,7 @@ tools:context="com.example.android.dtuhostelmess.ViewBill">
                     android:layout_gravity="center"
                     android:layout_marginBottom="6dp"
                     android:paddingBottom="5dp"
-                    android:textColor="#33691e"
+                    android:textColor="@color/PrimaryColor"
                     android:textSize="18dp" />
 
                 <LinearLayout

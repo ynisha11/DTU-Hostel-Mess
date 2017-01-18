@@ -1,8 +1,6 @@
 package com.example.android.dtuhostelmess;
 
-import android.content.ContentValues;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -22,12 +20,10 @@ import Models.CounterItem;
 import Storage.CountersTable;
 import utils.GlobalVariables;
 import utils.MyAsyncTask;
-import utils.OpenHelper;
 import utils.URLS;
 
 public class MessSubscribe extends AppCompatActivity {
 
-    CheckBox cb1, cb2, cb3, cb4, cb5;
     ProgressBar progressBar;
     String listOfCounters;
     int onStartCount = 0;
@@ -53,13 +49,14 @@ public class MessSubscribe extends AppCompatActivity {
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
         ArrayList<CounterItem> counters = new ArrayList<CounterItem>();
-        counters.add( new CounterItem("0","Mess", true, true));
-        counters.add( new CounterItem("1","CVR Mess", true, false));
-        counters.add( new CounterItem("2","HJB Mess", true, false));
-        counters.add( new CounterItem("3","VVS Mess", true, false));
-        counters.add( new CounterItem("4","Aryabhatta Mess", true, false));
+
         counters.add( new CounterItem("0","Mess", false, true));
-        counters.add( new CounterItem("5","SNH Mess", false, false));
+        counters.add( new CounterItem("1","SNH Mess", false, false));
+        counters.add( new CounterItem("0","Mess", true, true));
+        counters.add( new CounterItem("2","Aryabhatta Mess", true, false));
+        counters.add( new CounterItem("3","CVR Mess", true, false));
+        counters.add( new CounterItem("4","HJB Mess", true, false));
+        counters.add( new CounterItem("5","VVS Mess", true, false));
 
         adapter = new CustomAdapterMessSubscribe(this, counters);
 
@@ -88,9 +85,6 @@ public class MessSubscribe extends AppCompatActivity {
 
     public void subscribe(View v) {
 
-        boolean checked;
-        String counter;
-
         int sizeOfList = adapter.getCount();
         selectedCounters= new ArrayList<CounterItem>();
 
@@ -113,6 +107,7 @@ public class MessSubscribe extends AppCompatActivity {
             }
         }
 
+        Toast.makeText(MessSubscribe.this, listOfCounters, Toast.LENGTH_LONG).show();
         subscribeToCounter(listOfCounters);
     }
 
@@ -148,7 +143,7 @@ public class MessSubscribe extends AppCompatActivity {
                         {
                             long insertId= CountersTable.InsertCounter(getBaseContext(), item);
                         }
-                        Toast.makeText(MessSubscribe.this, "Mess subscribed successfully.", Toast.LENGTH_LONG).show();
+                       // Toast.makeText(MessSubscribe.this, "Mess subscribed successfully.", Toast.LENGTH_LONG).show();
                         startActivity(new Intent(MessSubscribe.this, MessMenu.class));
                     } catch (Exception er) {
                         Toast.makeText(MessSubscribe.this, "Some error occured.", Toast.LENGTH_SHORT).show();

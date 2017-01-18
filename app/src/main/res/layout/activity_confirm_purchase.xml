@@ -3,7 +3,7 @@
     android:id="@+id/SCROLLER_ID"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#ea4c88"
+    android:background="@color/bg_register"
     android:fillViewport="true"
     android:scrollbars="vertical">
 
@@ -34,10 +34,10 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="3dip"
-            android:background="#FFFFFF"
+            android:background="@color/PrimaryColor"
             android:onClick="confirmOrder"
             android:text="Place order"
-            android:textColor="#ea4c88" />
+            android:textColor="@color/headerTextColor" />
 
         <ProgressBar
             android:id="@+id/progressBar"

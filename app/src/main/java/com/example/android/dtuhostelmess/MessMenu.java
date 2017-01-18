@@ -125,7 +125,7 @@ public class MessMenu extends AppCompatActivity {
                     }
 
                     default:
-                        Toast.makeText(getApplicationContext(), "Somethings Wrong", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Something's wrong. Please try again!", Toast.LENGTH_SHORT).show();
                         return true;
                 }
             }
@@ -158,7 +158,7 @@ public class MessMenu extends AppCompatActivity {
         tvHeaderName = (TextView) findViewById(R.id.headerName);
         tvHeaderBill = (TextView) findViewById(R.id.headerBill);
         tvHeaderName.setText(GlobalVariables.currentName);
-        tvHeaderBill.setText("Current Mess Bill : " + GlobalVariables.currentMessBill);
+        tvHeaderBill.setText("₹ " + GlobalVariables.currentMessBill);
 
         CustomListView = this;
         // Take some data in Arraylist ( CustomListViewValuesArr )
@@ -190,6 +190,8 @@ public class MessMenu extends AppCompatActivity {
         };
         mDrawerToggle.setDrawerIndicatorEnabled(true);
         drawerLayout.setDrawerListener(mDrawerToggle);
+
+
     }
 
     @Override
